@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Script Pilot - Flipper Zero Ducky Script Bundle</title>
+    <title>Script Pilot | Automated Solutions for Flipper Zero & IT Professionals</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Font: Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght=400;600;700&display=swap" rel="stylesheet">
     <!-- Include React and ReactDOM development versions -->
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
@@ -46,11 +46,11 @@
                   <div className="absolute -bottom-8 left-20 w-64 h-64 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
 
                   <div className="relative z-10 max-w-4xl px-4">
-                    <h1 className="text-5xl md:text-7xl font-extrabold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-500 mb-6 drop-shadow-lg">
-                      Unlock the Power of Automation with Script Pilot
+                    <h1 className="text-6xl md:text-8xl font-extrabold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-500 mb-6 drop-shadow-lg">
+                      Automated Power for Your Digital Tasks
                     </h1>
                     <p className="text-xl md:text-2xl text-gray-300 mb-10 leading-relaxed">
-                      Your Flipper Zero just got smarter. Master the digital world with our expertly crafted Ducky Script bundle.
+                      Discover powerful Ducky Scripts for Flipper Zero enthusiasts and advanced PowerShell solutions for IT professionals. Simplify your daily operations with precision.
                     </p>
                     <a
                       href="#purchase" // Replace with your actual sales link
@@ -88,12 +88,25 @@
                   `}</style>
                 </section>
 
+                {/* Over 7000 Downloads Section */}
+                <section className="py-12 px-4 bg-gray-950 text-center">
+                    <div className="container mx-auto max-w-4xl">
+                        <p className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500 mb-4">
+                            Over 7,000 Downloads and Counting!
+                        </p>
+                        <p className="text-lg text-gray-400">
+                            Join thousands of satisfied users who are already improving their capabilities with Script Pilot.
+                        </p>
+                    </div>
+                </section>
+
+
                 {/* About Script Pilot Section */}
                 <section className="py-20 px-4 bg-gray-800">
                   <div className="container mx-auto max-w-5xl text-center">
                     <h2 className="text-4xl font-bold text-teal-400 mb-8">What is Script Pilot?</h2>
                     <p className="text-lg text-gray-300 leading-relaxed">
-                      Script Pilot is a curated collection of powerful and practical Ducky Scripts, meticulously designed for your Flipper Zero's BadUSB capabilities. Forget manually typing complex commands – our bundle provides ready-to-deploy scripts that automate tasks, enhance system information gathering, and open new avenues for ethical exploration. Each script is carefully tested for compatibility and ease of use, making your Flipper Zero an even more indispensable tool.
+                      Script Pilot offers a comprehensive bundle of expertly crafted scripts designed to empower both Flipper Zero users and seasoned IT professionals. For Flipper Zero, dive into advanced BadUSB Ducky Scripts for automating tasks and gathering system intelligence. For IT professionals, gain access to a suite of robust, automated PowerShell scripts aimed at streamlining routine operations, enhancing system management, and boosting overall efficiency. Every script is thoroughly tested for reliability and smooth integration into your workflow.
                     </p>
                   </div>
                 </section>
@@ -101,7 +114,7 @@
                 {/* Features Section */}
                 <section className="py-20 px-4 bg-gray-900">
                   <div className="container mx-auto max-w-6xl">
-                    <h2 className="text-4xl font-bold text-teal-400 text-center mb-12">Features You'll Love</h2>
+                    <h2 className="text-4xl font-bold text-teal-400 text-center mb-12">Features You'll Appreciate</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
 
                       {/* Feature Card 1 */}
@@ -111,8 +124,8 @@
                             <path strokeLinecap="round" strokeLinejoin="round" d="M9 17v-2m3 2v-2m3 2v-2m3 2V7M9 7h.01M12 7h.01M15 7h.01M18 7h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                           </svg>
                         </div>
-                        <h3 className="text-2xl font-semibold text-gray-100 mb-4 text-center">System Insight</h3>
-                        <p className="text-gray-400 text-center">Quickly gather essential system information, network configurations, and user details with single-plug execution.</p>
+                        <h3 className="text-2xl font-semibold text-gray-100 mb-4 text-center">Comprehensive Automation</h3>
+                        <p className="text-gray-400 text-center">Automate tasks for both Flipper Zero operations and complex IT system management with ease.</p>
                       </div>
 
                       {/* Feature Card 2 */}
@@ -122,8 +135,8 @@
                             <path strokeLinecap="round" strokeLinejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                           </svg>
                         </div>
-                        <h3 className="text-2xl font-semibold text-gray-100 mb-4 text-center">Automation Made Easy</h3>
-                        <p className="text-gray-400 text-center">Automate repetitive tasks, launch applications, and streamline workflows with pre-built Ducky Scripts.</p>
+                        <h3 className="text-2xl font-semibold text-gray-100 mb-4 text-center">Professional-Grade Scripts</h3>
+                        <p className="text-gray-400 text-center">Leverage advanced PowerShell scripts designed to optimize IT workflows and increase daily productivity.</p>
                       </div>
 
                       {/* Feature Card 3 */}
@@ -133,8 +146,8 @@
                             <path strokeLinecap="round" strokeLinejoin="round" d="M12 15v2m-2 4h4m-4-10V4a2 2 0 012-2h4a2 2 0 012 2v7.586l-.293.293A1 1 0 0115 12h-2.172a2 2 0 00-1.414.586L10 14.172V15z" />
                           </svg>
                         </div>
-                        <h3 className="text-2xl font-semibold text-gray-100 mb-4 text-center">Tested & Reliable</h3>
-                        <p className="text-gray-400 text-center">Each script is rigorously tested to ensure compatibility and reliable performance on Windows systems.</p>
+                        <h3 className="text-2xl font-semibold text-gray-100 mb-4 text-center">Reliable & Tested Solutions</h3>
+                        <p className="text-gray-400 text-center">Each script is rigorously tested for compatibility and dependable performance on target systems.</p>
                       </div>
 
                     </div>
@@ -144,9 +157,9 @@
                 {/* Call to Action Section */}
                 <section id="purchase" className="py-20 px-4 bg-gradient-to-br from-gray-800 to-gray-900 text-center">
                   <div className="container mx-auto max-w-3xl">
-                    <h2 className="text-4xl font-bold text-teal-400 mb-6">Ready to Supercharge Your Flipper Zero?</h2>
+                    <h2 className="text-4xl font-bold text-teal-400 mb-6">Ready to Boost Your Operations?</h2>
                     <p className="text-xl text-gray-300 mb-8">
-                      Don't miss out on the ultimate collection of Ducky Scripts. Elevate your Flipper Zero capabilities today.
+                      Don't miss out on this ultimate collection of Ducky Scripts and PowerShell automations. Get your Script Pilot bundle today.
                     </p>
                     <a
                       href="#" // Replace with your actual sales link

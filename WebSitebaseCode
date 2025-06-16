@@ -47,16 +47,17 @@
                       Discover powerful Ducky Scripts for Flipper Zero enthusiasts and advanced PowerShell solutions for IT professionals. Simplify your daily operations with precision.
                     </p>
                     <a
-                      href="https://payhip.com/b/hMWCp" // Payhip sales link for PowerShell scripts bundle
+                      href="#bundles" // Link to the new bundles section
                       className="inline-block bg-gradient-to-r from-teal-500 to-blue-600 hover:from-teal-600 hover:to-blue-700 text-white font-bold py-3 px-7 md:py-4 md:px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out text-base md:text-lg animate-fade-in-up delay-600ms"
-                      aria-label="Get Your Script Pilot Bundle Today"
+                      aria-label="Explore Our Bundles"
                     >
-                      Get Your Script Pilot Bundle Today
+                      Explore Our Bundles
                     </a>
                   </div>
 
                   {/* Keyframes for blob and fade-in animations */}
-                  <style jsx>{`
+                  <style>
+                    {`
                     @keyframes blob {
                       0% { transform: translate(0px, 0px) scale(1); }
                       33% { transform: translate(30px, -50px) scale(1.1); }
@@ -74,7 +75,8 @@
                     .animate-fade-in-up { animation: fadeInUp 1s ease-out forwards; }
                     .delay-300ms { animation-delay: 0.3s; }
                     .delay-600ms { animation-delay: 0.6s; }
-                  `}</style>
+                    `}
+                  </style>
                 </section>
 
                 {/* Over 7000 Downloads Section */}
@@ -89,8 +91,49 @@
                     </div>
                 </section>
 
+                {/* Our Bundles Section (NEW) */}
+                <section id="bundles" className="py-16 md:py-20 px-4 bg-gray-800">
+                  <div className="container mx-auto max-w-6xl text-center">
+                    <h2 className="text-3xl md:text-4xl font-bold text-teal-400 mb-10 md:mb-12">Our Powerful Bundles</h2>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+
+                      {/* Flipper Zero Ducky Script Bundle Card */}
+                      <div className="bg-gray-900 rounded-xl p-6 md:p-8 shadow-xl border border-gray-700 flex flex-col items-center transform hover:scale-[1.02] transition-transform duration-300">
+                        <h3 className="text-2xl md:text-3xl font-semibold text-teal-300 mb-4">Flipper Zero Ducky Script Bundle</h3>
+                        <p className="text-gray-300 text-base md:text-lg mb-6 leading-relaxed">
+                          Unleash the full potential of your Flipper Zero with 10 essential Ducky Scripts. Automate tasks, gather system info, and explore BadUSB capabilities.
+                        </p>
+                        <a
+                          href="https://payhip.com/b/WwhKZ" // Payhip link for Flipper Zero Ducky Scripts
+                          className="inline-block bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out text-lg"
+                          aria-label="Buy Flipper Zero Ducky Script Bundle"
+                        >
+                          Buy Flipper Zero Bundle
+                        </a>
+                      </div>
+
+                      {/* Advanced PowerShell IT Toolkit Card */}
+                      <div className="bg-gray-900 rounded-xl p-6 md:p-8 shadow-xl border border-gray-700 flex flex-col items-center transform hover:scale-[1.02] transition-transform duration-300">
+                        <h3 className="text-2xl md:text-3xl font-semibold text-purple-300 mb-4">Advanced PowerShell IT Toolkit</h3>
+                        <p className="text-gray-300 text-base md:text-lg mb-6 leading-relaxed">
+                          Simplify your daily IT operations with 5 robust, menu-driven PowerShell scripts. Perfect for network diagnostics, service management, and system optimization.
+                        </p>
+                        <a
+                          href="https://payhip.com/b/hMWCp" // Payhip link for PowerShell scripts
+                          className="inline-block bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out text-lg"
+                          aria-label="Buy Advanced PowerShell IT Toolkit"
+                        >
+                          Buy PowerShell Toolkit
+                        </a>
+                      </div>
+
+                    </div>
+                  </div>
+                </section>
+
+
                 {/* About Script Pilot Section */}
-                <section className="py-16 md:py-20 px-4 bg-gray-800">
+                <section className="py-16 md:py-20 px-4 bg-gray-900">
                   <div className="container mx-auto max-w-5xl text-center">
                     <h2 className="text-3xl md:text-4xl font-bold text-teal-400 mb-6 md:mb-8">What is Script Pilot?</h2>
                     <p className="text-md md:text-lg text-gray-300 leading-relaxed px-2">
@@ -99,14 +142,14 @@
                   </div>
                 </section>
 
-                {/* Features Section */}
-                <section className="py-16 md:py-20 px-4 bg-gray-900">
+                {/* Features Section - Now applies to both bundles generally */}
+                <section className="py-16 md:py-20 px-4 bg-gray-800">
                   <div className="container mx-auto max-w-6xl">
-                    <h2 className="text-3xl md:text-4xl font-bold text-teal-400 text-center mb-10 md:mb-12">Features You'll Appreciate</h2>
+                    <h2 className="text-3xl md:text-4xl font-bold text-teal-400 text-center mb-10 md:mb-12">Why Choose Script Pilot?</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
 
                       {/* Feature Card 1 */}
-                      <div className="bg-gray-800 rounded-xl p-6 md:p-8 shadow-xl transform hover:scale-105 transition-all duration-300 border border-gray-700 flex flex-col items-center text-center">
+                      <div className="bg-gray-900 rounded-xl p-6 md:p-8 shadow-xl transform hover:scale-105 transition-all duration-300 border border-gray-700 flex flex-col items-center text-center">
                         <div className="text-4xl md:text-5xl mb-4 text-blue-400">
                           <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M9 17v-2m3 2v-2m3 2v-2m3 2V7M9 7h.01M12 7h.01M15 7h.01M18 7h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -117,18 +160,18 @@
                       </div>
 
                       {/* Feature Card 2 */}
-                      <div className="bg-gray-800 rounded-xl p-6 md:p-8 shadow-xl transform hover:scale-105 transition-all duration-300 border border-gray-700 flex flex-col items-center text-center">
+                      <div className="bg-gray-900 rounded-xl p-6 md:p-8 shadow-xl transform hover:scale-105 transition-all duration-300 border border-gray-700 flex flex-col items-center text-center">
                         <div className="text-4xl md:text-5xl mb-4 text-pink-400">
                           <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                           </svg>
                         </div>
-                        <h3 className="text-xl md:text-2xl font-semibold text-gray-100 mb-3">Professional-Grade Scripts</h3>
-                        <p className="text-gray-400 text-sm md:text-base">Leverage advanced PowerShell scripts designed to optimize IT workflows and increase daily productivity.</p>
+                        <h3 className="text-xl md:text-2xl font-semibold text-gray-100 mb-3">Professional-Grade Quality</h3>
+                        <p className="text-gray-400 text-sm md:text-base">Leverage advanced scripts designed to optimize workflows and increase daily productivity.</p>
                       </div>
 
                       {/* Feature Card 3 */}
-                      <div className="bg-gray-800 rounded-xl p-6 md:p-8 shadow-xl transform hover:scale-105 transition-all duration-300 border border-gray-700 flex flex-col items-center text-center">
+                      <div className="bg-gray-900 rounded-xl p-6 md:p-8 shadow-xl transform hover:scale-105 transition-all duration-300 border border-gray-700 flex flex-col items-center text-center">
                         <div className="text-4xl md:text-5xl mb-4 text-green-400">
                           <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M12 15v2m-2 4h4m-4-10V4a2 2 0 012-2h4a2 2 0 012 2v7.586l-.293.293A1 1 0 0115 12h-2.172a2 2 0 00-1.414.586L10 14.172V15z" />
@@ -142,19 +185,20 @@
                   </div>
                 </section>
 
-                {/* Call to Action Section */}
-                <section id="purchase" className="py-16 md:py-20 px-4 bg-gradient-to-br from-gray-800 to-gray-900 text-center">
+                {/* Final Call to Action Section (can be removed if "Our Bundles" is sufficient, or repurposed) */}
+                {/* For now, keeping it as a general CTA if user scrolls past bundles */}
+                <section className="py-16 md:py-20 px-4 bg-gradient-to-br from-gray-800 to-gray-900 text-center">
                   <div className="container mx-auto max-w-3xl">
                     <h2 className="text-3xl md:text-4xl font-bold text-teal-400 mb-6">Ready to Boost Your Operations?</h2>
                     <p className="text-md md:text-xl text-gray-300 mb-8">
-                      Don't miss out on this ultimate collection of Ducky Scripts and PowerShell automations. Get your Script Pilot bundle today.
+                      Find the perfect set of tools for your Flipper Zero or IT challenges.
                     </p>
                     <a
-                      href="https://payhip.com/b/hMWCp" // Payhip sales link for PowerShell scripts bundle
+                      href="#bundles"
                       className="inline-block bg-gradient-to-r from-teal-500 to-blue-600 hover:from-teal-600 hover:to-blue-700 text-white font-bold py-3 px-7 md:py-4 md:px-10 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out text-base md:text-xl"
-                      aria-label="Buy Now!"
+                      aria-label="View All Bundles"
                     >
-                      Buy Now!
+                      View All Bundles
                     </a>
                   </div>
                 </section>
@@ -172,7 +216,9 @@
         };
 
         // Render the React App component into the root div
-        ReactDOM.render(<App />, document.getElementById('root'));
+        const container = document.getElementById('root');
+        const root = ReactDOM.createRoot(container);
+        root.render(<App />);
     </script>
 </body>
 </html>

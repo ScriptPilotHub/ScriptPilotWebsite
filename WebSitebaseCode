@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Script Pilot - Flipper Zero Ducky Script Bundle</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Font: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Include React and ReactDOM development versions -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <!-- Include Babel for JSX transformation in the browser -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        // Main App component for the Script Pilot website
+        const App = () => {
+          return (
+            <div className="min-h-screen bg-gray-900 text-gray-100 font-sans">
+              {/* Main container with Inter font set */}
+              <div className="font-inter">
+                {/* Header/Navigation (optional, but good for larger sites) */}
+                <header className="absolute top-0 left-0 right-0 p-6 z-10">
+                  <nav className="container mx-auto flex justify-between items-center">
+                    <div className="text-2xl font-bold text-teal-400">Script Pilot</div>
+                    {/* You can add navigation links here if needed
+                    <ul className="flex space-x-6">
+                      <li><a href="#" className="hover:text-teal-400 transition-colors duration-300">Features</a></li>
+                      <li><a href="#" className="hover:text-teal-400 transition-colors duration-300">Pricing</a></li>
+                      <li><a href="#" className="hover:text-teal-400 transition-colors duration-300">Contact</a></li>
+                    </ul>
+                    */}
+                  </nav>
+                </header>
+
+                {/* Hero Section */}
+                <section className="relative h-screen flex items-center justify-center text-center bg-gradient-to-br from-gray-900 to-gray-800 overflow-hidden">
+                  {/* Background circles for visual effect */}
+                  <div className="absolute top-[-100px] left-[-100px] w-64 h-64 bg-teal-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
+                  <div className="absolute top-0 -right-4 w-64 h-64 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
+                  <div className="absolute -bottom-8 left-20 w-64 h-64 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
+
+                  <div className="relative z-10 max-w-4xl px-4">
+                    <h1 className="text-5xl md:text-7xl font-extrabold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-500 mb-6 drop-shadow-lg">
+                      Unlock the Power of Automation with Script Pilot
+                    </h1>
+                    <p className="text-xl md:text-2xl text-gray-300 mb-10 leading-relaxed">
+                      Your Flipper Zero just got smarter. Master the digital world with our expertly crafted Ducky Script bundle.
+                    </p>
+                    <a
+                      href="#purchase" // Replace with your actual sales link
+                      className="inline-block bg-gradient-to-r from-teal-500 to-blue-600 hover:from-teal-600 hover:to-blue-700 text-white font-bold py-4 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out text-lg"
+                    >
+                      Get Your Script Pilot Bundle Today
+                    </a>
+                  </div>
+
+                  {/* Keyframes for blob animation */}
+                  <style jsx>{`
+                    @keyframes blob {
+                      0% {
+                        transform: translate(0px, 0px) scale(1);
+                      }
+                      33% {
+                        transform: translate(30px, -50px) scale(1.1);
+                      }
+                      66% {
+                        transform: translate(-20px, 20px) scale(0.9);
+                      }
+                      100% {
+                        transform: translate(0px, 0px) scale(1);
+                      }
+                    }
+                    .animate-blob {
+                      animation: blob 7s infinite cubic-bezier(0.6, 0.4, 0.4, 0.8);
+                    }
+                    .animation-delay-2000 {
+                      animation-delay: 2s;
+                    }
+                    .animation-delay-4000 {
+                      animation-delay: 4s;
+                    }
+                  `}</style>
+                </section>
+
+                {/* About Script Pilot Section */}
+                <section className="py-20 px-4 bg-gray-800">
+                  <div className="container mx-auto max-w-5xl text-center">
+                    <h2 className="text-4xl font-bold text-teal-400 mb-8">What is Script Pilot?</h2>
+                    <p className="text-lg text-gray-300 leading-relaxed">
+                      Script Pilot is a curated collection of powerful and practical Ducky Scripts, meticulously designed for your Flipper Zero's BadUSB capabilities. Forget manually typing complex commands – our bundle provides ready-to-deploy scripts that automate tasks, enhance system information gathering, and open new avenues for ethical exploration. Each script is carefully tested for compatibility and ease of use, making your Flipper Zero an even more indispensable tool.
+                    </p>
+                  </div>
+                </section>
+
+                {/* Features Section */}
+                <section className="py-20 px-4 bg-gray-900">
+                  <div className="container mx-auto max-w-6xl">
+                    <h2 className="text-4xl font-bold text-teal-400 text-center mb-12">Features You'll Love</h2>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+                      {/* Feature Card 1 */}
+                      <div className="bg-gray-800 rounded-lg p-8 shadow-xl transform hover:scale-105 transition-all duration-300 border border-gray-700">
+                        <div className="text-5xl mb-4 text-blue-400">
+                          <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M9 17v-2m3 2v-2m3 2v-2m3 2V7M9 7h.01M12 7h.01M15 7h.01M18 7h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                        </div>
+                        <h3 className="text-2xl font-semibold text-gray-100 mb-4 text-center">System Insight</h3>
+                        <p className="text-gray-400 text-center">Quickly gather essential system information, network configurations, and user details with single-plug execution.</p>
+                      </div>
+
+                      {/* Feature Card 2 */}
+                      <div className="bg-gray-800 rounded-lg p-8 shadow-xl transform hover:scale-105 transition-all duration-300 border border-gray-700">
+                        <div className="text-5xl mb-4 text-pink-400">
+                          <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                          </svg>
+                        </div>
+                        <h3 className="text-2xl font-semibold text-gray-100 mb-4 text-center">Automation Made Easy</h3>
+                        <p className="text-gray-400 text-center">Automate repetitive tasks, launch applications, and streamline workflows with pre-built Ducky Scripts.</p>
+                      </div>
+
+                      {/* Feature Card 3 */}
+                      <div className="bg-gray-800 rounded-lg p-8 shadow-xl transform hover:scale-105 transition-all duration-300 border border-gray-700">
+                        <div className="text-5xl mb-4 text-green-400">
+                          <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M12 15v2m-2 4h4m-4-10V4a2 2 0 012-2h4a2 2 0 012 2v7.586l-.293.293A1 1 0 0115 12h-2.172a2 2 0 00-1.414.586L10 14.172V15z" />
+                          </svg>
+                        </div>
+                        <h3 className="text-2xl font-semibold text-gray-100 mb-4 text-center">Tested & Reliable</h3>
+                        <p className="text-gray-400 text-center">Each script is rigorously tested to ensure compatibility and reliable performance on Windows systems.</p>
+                      </div>
+
+                    </div>
+                  </div>
+                </section>
+
+                {/* Call to Action Section */}
+                <section id="purchase" className="py-20 px-4 bg-gradient-to-br from-gray-800 to-gray-900 text-center">
+                  <div className="container mx-auto max-w-3xl">
+                    <h2 className="text-4xl font-bold text-teal-400 mb-6">Ready to Supercharge Your Flipper Zero?</h2>
+                    <p className="text-xl text-gray-300 mb-8">
+                      Don't miss out on the ultimate collection of Ducky Scripts. Elevate your Flipper Zero capabilities today.
+                    </p>
+                    <a
+                      href="#" // Replace with your actual sales link
+                      className="inline-block bg-gradient-to-r from-teal-500 to-blue-600 hover:from-teal-600 hover:to-blue-700 text-white font-bold py-4 px-10 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out text-xl"
+                    >
+                      Buy Now!
+                    </a>
+                  </div>
+                </section>
+
+                {/* Footer */}
+                <footer className="py-10 px-4 bg-gray-950 text-gray-500 text-center">
+                  <p>&copy; {new Date().getFullYear()} Script Pilot. All rights reserved.</p>
+                  <p className="text-sm mt-2">
+                    Disclaimer: For educational and ethical use only. Use responsibly and with permission.
+                  </p>
+                </footer>
+              </div>
+            </div>
+          );
+        };
+
+        // Render the React App component into the root div
+        ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+</body>
+</html>

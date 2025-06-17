@@ -161,7 +161,7 @@
                                         </p>
                                         <p className="text-3xl font-bold text-gray-200 mb-6">
                                             <span className="line-through text-gray-400 text-2xl mr-2">$49.99</span>
-                                            <span className="text-yellow-300 text-5xl">$29.99</span> {/* Updated price here */}
+                                            <span className="text-yellow-300 text-5xl">$29.99</span>
                                         </p>
                                         <a
                                             href="https://payhip.com/b/ZBkCP" // Payhip link for custom script
@@ -301,7 +301,6 @@
                                     aria-label="View All Bundles"
                                 >
                                     View All Bundles
-                                
                                 </a>
                             </div>
                         </section>
@@ -309,6 +308,17 @@
                         {/* Footer */}
                         <footer className="py-8 md:py-10 px-4 bg-gray-950 text-gray-500 text-center text-sm md:text-base">
                             <p>&copy; {new Date().getFullYear()} Script Pilot. All rights reserved.</p>
+                            <div class="mt-4">
+                                <a
+                                    href="https://www.facebook.com/ScriptPilotOfficial"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-5 rounded-full shadow-md transform hover:scale-105 transition-all duration-200"
+                                    aria-label="Follow us on Facebook"
+                                >
+                                    Follow us on Facebook
+                                </a>
+                            </div>
                             <p className="mt-2">
                                 Disclaimer: For educational and ethical use only. Use responsibly and with permission.
                             </p>

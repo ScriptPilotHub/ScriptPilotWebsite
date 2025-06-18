@@ -3,25 +3,437 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test Page</title>
-    <style>
-        body {
-            font-family: sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            background-color: #f0f0f0;
-            color: #333;
-        }
-        h1 {
-            font-size: 3em;
-            color: #007bff;
-        }
-    </style>
+    <title>Script Pilot | Create Your Online Presence & Automate Tasks</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Font: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Include React and ReactDOM development versions -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <!-- Include Babel for JSX transformation in the browser -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XBVM9RFY0Y"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-XBVM9RFY0Y');
+    </script>
 </head>
 <body>
-    <h1>If you see this, Netlify is working!</h1>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        // Explicitly reference React and ReactDOM from the global window object
+        // This ensures they are properly defined within the Babel-processed script's scope.
+        const React = window.React;
+        const ReactDOM = window.ReactDOM;
+
+        // Main App component for the Script Pilot website
+        const App = () => {
+            return (
+                <div className="min-h-screen bg-gray-900 text-gray-100 font-sans antialiased">
+                    {/* Main container with Inter font set and anti-aliasing */}
+                    <div className="font-inter">
+                        {/* Header/Navigation */}
+                        <header className="fixed top-0 left-0 right-0 py-5 px-4 md:py-7 md:px-6 z-50 bg-gray-900 bg-opacity-80 backdrop-blur-sm shadow-lg">
+                            <nav className="container mx-auto flex justify-between items-center max-w-7xl">
+                                <div className="text-2xl font-bold text-teal-400">Script Pilot</div>
+                                {/* Navigation links */}
+                                <div className="hidden md:flex space-x-7">
+                                    <a href="#web-design" className="text-gray-300 hover:text-teal-400 transition-colors duration-200 text-lg">Web Design</a>
+                                    <a href="#bundles" className="text-gray-300 hover:text-teal-400 transition-colors duration-200 text-lg">Automation Tools</a>
+                                    <a href="#about" className="text-gray-300 hover:text-teal-400 transition-colors duration-200 text-lg">About Us</a>
+                                    <a href="#contact" className="text-gray-300 hover:text-teal-400 transition-colors duration-200 text-lg">Contact</a>
+                                </div>
+                            </nav>
+                        </header>
+
+                        {/* Hero Section */}
+                        <section className="relative h-screen flex flex-col items-center justify-center text-center bg-gradient-to-br from-gray-900 to-gray-800 overflow-hidden px-4 pt-24 pb-16">
+                            {/* Background circles for visual effect */}
+                            <div className="absolute top-[-100px] left-[-100px] w-64 h-64 bg-teal-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
+                            <div className="absolute top-0 -right-4 w-64 h-64 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
+                            <div className="absolute -bottom-8 left-20 w-64 h-64 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
+
+                            <div className="relative z-10 max-w-4xl w-full">
+                                <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-500 mb-6 drop-shadow-lg animate-fade-in-up">
+                                    Build Your Online Brand.<br className="md:hidden"/> Make Your Work Smarter.
+                                </h1>
+                                <p className="text-lg md:text-xl lg:text-2xl text-gray-300 mb-10 leading-relaxed max-w-2xl mx-auto animate-fade-in-up delay-300ms">
+                                    We create eye-catching websites that draw people in and develop clever automation tools to help you get things done quicker and easier.
+                                </p>
+                                <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-6">
+                                    <a
+                                        href="#web-design" // Link to the web design section first
+                                        className="inline-block bg-gradient-to-r from-blue-500 to-teal-600 hover:from-blue-600 hover:to-teal-700 text-white font-bold py-3 px-7 md:py-4 md:px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out text-base md:text-lg animate-fade-in-up delay-600ms group relative overflow-hidden"
+                                        aria-label="Discover Our Web Design Services"
+                                    >
+                                        <span className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300"></span>
+                                        Explore Our Web Design
+                                    </a>
+                                    <a
+                                        href="#bundles" // Link to the bundles section
+                                        className="inline-block bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 text-white font-bold py-3 px-7 md:py-4 md:px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out text-base md:text-lg animate-fade-in-up delay-700ms group relative overflow-hidden"
+                                        aria-label="Explore Our Automation Bundles"
+                                    >
+                                        <span className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300"></span>
+                                        Find Automation Tools
+                                    </a>
+                                </div>
+                            </div>
+
+                            {/* Keyframes for blob and fade-in animations */}
+                            <style>
+                                {`
+                                @keyframes blob {
+                                    0% { transform: translate(0px, 0px) scale(1); }
+                                    33% { transform: translate(30px, -50px) scale(1.1); }
+                                    66% { transform: translate(-20px, 20px) scale(0.9); }
+                                    100% { transform: translate(0px, 0px) scale(1); }
+                                }
+                                .animate-blob { animation: blob 7s infinite cubic-bezier(0.6, 0.4, 0.4, 0.8); }
+                                .animation-delay-2000 { animation-delay: 2s; }
+                                .animation-delay-4000 { animation-delay: 4s; }
+
+                                @keyframes fadeInUp {
+                                    from { opacity: 0; transform: translateY(20px); }
+                                    to { opacity: 1; transform: translateY(0); }
+                                }
+                                .animate-fade-in-up { animation: fadeInUp 1s ease-out forwards; }
+                                .delay-300ms { animation-delay: 0.3s; }
+                                .delay-600ms { animation-delay: 0.6s; }
+                                .delay-700ms { animation-delay: 0.7s; }
+
+                                @keyframes fadeInSection {
+                                    from { opacity: 0; transform: translateY(30px); }
+                                    to { opacity: 1; transform: translateY(0); }
+                                }
+                                .animate-fade-in-section { animation: fadeInSection 0.8s ease-out forwards; opacity: 0; }
+                                .section-delay-1 { animation-delay: 0.2s; }
+                                .section-delay-2 { animation-delay: 0.4s; }
+                                .section-delay-3 { animation-delay: 0.6s; }
+                                .section-delay-4 { animation-delay: 0.8s; }
+                                .section-delay-5 { animation-delay: 1.0s; }
+                                .section-delay-6 { animation-delay: 1.2s; }
+                                `}
+                            </style>
+                        </section>
+
+                        {/* Trusted by Clients Section */}
+                        <section className="py-10 md:py-14 px-4 bg-gray-950 text-center shadow-inner animate-fade-in-section">
+                            <div className="container mx-auto max-w-4xl">
+                                <p className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500 mb-2">
+                                    Trusted by clients who want real digital results.
+                                </p>
+                                <p className="text-md md:text-lg text-gray-400">
+                                    Join others who are already seeing the benefits of our sharp web designs and smart automation.
+                                </p>
+                            </div>
+                        </section>
+
+                        {/* Web Design Expertise Section */}
+                        <section id="web-design" className="py-16 md:py-20 px-4 bg-gray-900 animate-fade-in-section section-delay-1">
+                            <div className="container mx-auto max-w-6xl text-center">
+                                <h2 className="text-3xl md:text-4xl font-bold text-blue-400 mb-10 md:mb-12">Web Design: Creating Online Experiences That Connect</h2>
+                                <p className="text-lg md:text-xl text-gray-300 leading-relaxed mb-12 max-w-3xl mx-auto">
+                                    At Script Pilot, we don't just put pages online; we build engaging online spaces. Whether it's a website that tells your brand's story perfectly or an e-commerce site designed for easy shopping, our custom web designs are made to grab attention, show off your unique ideas, and help you get results. Let's make an online home that truly speaks to your audience.
+                                </p>
+                                {/* Adjusted to 2 columns on medium and large screens for better centering of 3 items */}
+                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 md:gap-10">
+                                    {/* Web Design Project Card 1 */}
+                                    <div className="bg-gray-800 rounded-xl p-6 md:p-8 shadow-xl border border-gray-700 flex flex-col items-center text-center transform hover:scale-105 transition-all duration-300 animate-fade-in-up delay-100ms group relative overflow-hidden">
+                                        <div className="absolute inset-0 bg-gradient-to-br from-blue-700 to-purple-800 opacity-0 group-hover:opacity-20 transition-opacity duration-300 rounded-xl"></div>
+                                        <img src="https://placehold.co/400x250/0f172a/67e8f9?text=Modern+Business" alt="Sleek Corporate Website Design" className="rounded-lg mb-6 shadow-md w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-300" />
+                                        <h3 className="text-2xl font-semibold text-teal-300 mb-3 relative z-10">Modern Business Websites</h3>
+                                        <p className="text-gray-400 text-base relative z-10">
+                                            Professional, easy-to-use designs that show off your expertise and build trust with clients.
+                                        </p>
+                                    </div>
+                                    {/* Web Design Project Card 2 */}
+                                    <div className="bg-gray-800 rounded-xl p-6 md:p-8 shadow-xl border border-gray-700 flex flex-col items-center text-center transform hover:scale-105 transition-all duration-300 animate-fade-in-up delay-200ms group relative overflow-hidden">
+                                        <div className="absolute inset-0 bg-gradient-to-br from-blue-700 to-purple-800 opacity-0 group-hover:opacity-20 transition-opacity duration-300 rounded-xl"></div>
+                                        <img src="https://placehold.co/400x250/0f172a/c084fc?text=Engaging+E-commerce" alt="Dynamic E-commerce Platform Design" className="rounded-lg mb-6 shadow-md w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-300" />
+                                        <h3 className="text-2xl font-semibold text-purple-300 mb-3 relative z-10">Shopfronts That Work</h3>
+                                        <p className="text-gray-400 text-base relative z-10">
+                                            Online stores designed for smooth shopping, leading to more sales and loyal customers.
+                                        </p>
+                                    </div>
+                                    {/* Web Design Project Card 3 */}
+                                    {/* To ensure centering, this card will appear on a new row in a 2-column layout */}
+                                    <div className="bg-gray-800 rounded-xl p-6 md:p-8 shadow-xl border border-gray-700 flex flex-col items-center text-center transform hover:scale-105 transition-all duration-300 md:col-span-2 lg:col-span-2 mx-auto max-w-md animate-fade-in-up delay-300ms group relative overflow-hidden">
+                                        <div className="absolute inset-0 bg-gradient-to-br from-blue-700 to-purple-800 opacity-0 group-hover:opacity-20 transition-opacity duration-300 rounded-xl"></div>
+                                        <img src="https://placehold.co/400x250/0f172a/f472b6?text=Creative+Portfolios" alt="Engaging Portfolio Website Design" className="rounded-lg mb-6 shadow-md w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-300" />
+                                        <h3 className="text-2xl font-semibold text-pink-300 mb-3 relative z-10">Showcase Your Creative Side</h3>
+                                        <p className="text-gray-400 text-sm relative z-10">
+                                            Beautiful portfolios and blogs to display your work and share your story, leaving a lasting impression.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div className="mt-12">
+                                    <a
+                                        href="#contact"
+                                        className="inline-block bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white font-bold py-4 px-10 rounded-full shadow-lg transform hover:scale-110 transition-all duration-300 ease-in-out text-xl uppercase tracking-wider group relative overflow-hidden"
+                                        aria-label="Discuss Your Web Design Project"
+                                    >
+                                        <span className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300"></span>
+                                        Let's Design Your Vision
+                                    </a>
+                                </div>
+                            </div>
+                        </section>
+
+                        {/* Our Bundles Section (Automation) */}
+                        <section id="bundles" className="py-16 md:py-20 px-4 bg-gray-800 animate-fade-in-section section-delay-2">
+                            <div className="container mx-auto max-w-6xl text-center">
+                                <h2 className="text-3xl md:text-4xl font-bold text-teal-400 mb-10 md:mb-12">Automation Tools: Make Your Work Flow</h2>
+                                {/* Grid container for bundles - Adjusted to 2 columns on medium and large screens */}
+                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 lg:gap-12">
+
+                                    {/* Flipper Zero Ducky Script Bundle Card */}
+                                    <div className="bg-gray-900 rounded-xl p-6 md:p-8 shadow-xl border border-gray-700 flex flex-col items-center transform hover:scale-[1.02] transition-transform duration-300 animate-fade-in-up delay-100ms group relative overflow-hidden">
+                                        <div className="absolute inset-0 bg-gradient-to-br from-teal-700 to-green-800 opacity-0 group-hover:opacity-20 transition-opacity duration-300 rounded-xl"></div>
+                                        <h3 className="text-2xl md:text-3xl font-semibold text-teal-300 mb-4 relative z-10">Flipper Zero Ducky Script Pack</h3>
+                                        <p className="text-gray-300 text-base md:text-lg mb-6 leading-relaxed relative z-10">
+                                            Get the most from your Flipper Zero with 10 key Ducky Scripts. Automate common tasks, gather system info, and explore BadUSB tricks.
+                                        </p>
+                                        <a
+                                            href="https://payhip.com/b/WwhKZ" // Payhip link for Flipper Zero Ducky Scripts
+                                            className="inline-block bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out text-lg group relative overflow-hidden"
+                                            aria-label="Buy Flipper Zero Ducky Script Bundle"
+                                        >
+                                            <span className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300"></span>
+                                            Buy Flipper Zero Pack
+                                        </a>
+                                    </div>
+
+                                    {/* ScriptPilot PowerShell Automation Toolkit Card */}
+                                    <div className="bg-gray-900 rounded-xl p-6 md:p-8 shadow-xl border border-gray-700 flex flex-col items-center transform hover:scale-[1.02] transition-transform duration-300 animate-fade-in-up delay-200ms group relative overflow-hidden">
+                                        <div className="absolute inset-0 bg-gradient-to-br from-teal-700 to-green-800 opacity-0 group-hover:opacity-20 transition-opacity duration-300 rounded-xl"></div>
+                                        <h3 className="text-2xl md:text-3xl font-semibold text-green-300 mb-4 relative z-10">ScriptPilot PowerShell Automation Kit (NEW!)</h3>
+                                        <p className="text-gray-300 text-base md:text-lg mb-6 leading-relaxed relative z-10">
+                                            The go-to set for IT pros. Includes advanced security checks, business-level performance tracking, and smart software/update installs.
+                                        </p>
+                                        <a
+                                            href="https://payhip.com/b/kc6jL" // Payhip link for the toolkit
+                                            className="inline-block bg-gradient-to-r from-teal-500 to-green-600 hover:from-teal-600 hover:to-green-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out text-lg group relative overflow-hidden"
+                                            aria-label="Buy ScriptPilot PowerShell Automation Toolkit"
+                                        >
+                                            <span className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300"></span>
+                                            Buy The Automation Kit
+                                        </a>
+                                    </div>
+                                    
+                                    {/* Original Advanced PowerShell IT Toolkit Card (Legacy) */}
+                                    <div className="bg-gray-900 rounded-xl p-6 md:p-8 shadow-xl border border-gray-700 flex flex-col items-center transform hover:scale-[1.02] transition-transform duration-300 animate-fade-in-up delay-300ms group relative overflow-hidden">
+                                        <div className="absolute inset-0 bg-gradient-to-br from-teal-700 to-green-800 opacity-0 group-hover:opacity-20 transition-opacity duration-300 rounded-xl"></div>
+                                        <h3 className="text-2xl md:text-3xl font-semibold text-purple-300 mb-4 relative z-10">Advanced PowerShell IT Kit (Older Version)</h3>
+                                        <p className="text-gray-300 text-base md:text-lg mb-6 leading-relaxed relative z-10">
+                                            Simplify your daily IT tasks with 5 solid, menu-driven PowerShell scripts. Great for checking network, managing services, and speeding up your systems.
+                                        </p>
+                                        <a
+                                            href="https://payhip.com/b/hMWCp" // Payhip link for PowerShell scripts
+                                            className="inline-block bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out text-lg group relative overflow-hidden"
+                                            aria-label="Buy Advanced PowerShell IT Toolkit"
+                                        >
+                                            <span className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300"></span>
+                                            Buy PowerShell Kit
+                                        </a>
+                                    </div>
+
+                                    {/* Custom Script Development Card */}
+                                    <div className="bg-gradient-to-br from-indigo-700 to-purple-900 rounded-xl p-6 md:p-8 shadow-2xl border border-purple-600 flex flex-col items-center transform hover:scale-[1.03] transition-transform duration-300 animate-fade-in-up delay-400ms group relative overflow-hidden">
+                                        <div className="absolute inset-0 bg-purple-900 opacity-0 group-hover:opacity-20 transition-opacity duration-300 rounded-xl"></div>
+                                        {/* Fixed "Featured" Banner */}
+                                        <div className="absolute top-4 right-4 bg-yellow-400 text-gray-900 text-xs font-bold px-3 py-1 rounded shadow-md z-10">
+                                            Featured
+                                        </div>
+                                        <h3 className="text-2xl md:text-3xl font-extrabold text-white mb-4 relative z-10">Custom Script Creation (One-Off)</h3>
+                                        <p className="text-gray-200 text-base md:text-lg mb-6 leading-relaxed relative z-10">
+                                            Need a specific script made just for your task? Get a single custom Ducky Script or PowerShell script built only for you.
+                                        </p>
+                                        <p className="text-3xl font-bold text-gray-200 mb-6 relative z-10">
+                                            <span className="line-through text-gray-400 text-2xl mr-2">$49.99</span>
+                                            <span className="text-yellow-300 text-5xl">$29.99</span>
+                                        </p>
+                                        <a
+                                            href="https://payhip.com/b/ZBkCP" // Payhip link for custom script
+                                            className="inline-block bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-gray-900 font-bold py-4 px-10 rounded-full shadow-lg transform hover:scale-110 transition-all duration-300 ease-in-out text-xl uppercase tracking-wider group relative overflow-hidden"
+                                            aria-label="Order Your Custom Script"
+                                        >
+                                            <span className="absolute inset-0 bg-gray-900 opacity-0 group-hover:opacity-10 transition-opacity duration-300"></span>
+                                            Order Your Custom Script
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </section>
+
+
+                        {/* About Script Pilot Section */}
+                        <section id="about" className="py-16 md:py-20 px-4 bg-gray-900 animate-fade-in-section section-delay-3">
+                            <div className="container mx-auto max-w-5xl text-center">
+                                <h2 className="text-3xl md:text-4xl font-bold text-teal-400 mb-6 md:mb-8">About Script Pilot: Where Ideas Become Reality</h2>
+                                <p className="text-md md:text-lg text-gray-300 leading-relaxed px-2">
+                                    At Script Pilot, we're all about helping your digital plans come to life. We mix creative web design with smart automation, giving you a unique set of services to boost your brand and simplify your daily work. From making a great-looking website that connects with your audience to building clever scripts that handle complex tasks for Flipper Zero users and IT pros, every solution we create is done with care. We make sure it's reliable, works well with your setup, and helps you succeed.
+                                </p>
+                            </div>
+                        </section>
+
+                        {/* Why Choose Us Section (Features) */}
+                        <section className="py-16 md:py-20 px-4 bg-gray-800 animate-fade-in-section section-delay-4">
+                            <div className="container mx-auto max-w-6xl">
+                                <h2 className="text-3xl md:text-4xl font-bold text-teal-400 text-center mb-10 md:mb-12">Why Choose Script Pilot? We're Here to Help You Succeed.</h2>
+                                {/* Grid container with centered items for 2-column layout when 3 items present */}
+                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 place-items-center">
+
+                                    {/* Feature Card 1 */}
+                                    <div className="bg-gray-900 rounded-xl p-6 md:p-8 shadow-xl transform hover:scale-105 transition-all duration-300 animate-fade-in-up delay-100ms group relative overflow-hidden">
+                                        <div className="absolute inset-0 bg-gradient-to-br from-blue-700 to-purple-800 opacity-0 group-hover:opacity-20 transition-opacity duration-300 rounded-xl"></div>
+                                        <div className="text-4xl md:text-5xl mb-4 text-blue-400 relative z-10">
+                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                                                <path strokeLinecap="round" strokeLinejoin="round" d="M9 17v-2m3 2v-2m3 2v-2m3 2V7M9 7h.01M12 7h.01M15 7h.01M18 7h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>
+                                        </div>
+                                        <h3 className="text-xl md:text-2xl font-semibold text-gray-100 mb-3 relative z-10">Complete Digital Solutions</h3>
+                                        <p className="text-gray-400 text-sm relative z-10">Get all your digital needs covered, from great web designs to smart automation scripts.</p>
+                                    </div>
+
+                                    {/* Feature Card 2 */}
+                                    <div className="bg-gray-900 rounded-xl p-6 md:p-8 shadow-xl transform hover:scale-105 transition-all duration-300 animate-fade-in-up delay-200ms group relative overflow-hidden">
+                                        <div className="absolute inset-0 bg-gradient-to-br from-pink-700 to-orange-800 opacity-0 group-hover:opacity-20 transition-opacity duration-300 rounded-xl"></div>
+                                        <div className="text-4xl md:text-5xl mb-4 text-pink-400 relative z-10">
+                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                                                <path strokeLinecap="round" strokeLinejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                                            </svg>
+                                        </div>
+                                        <h3 className="text-xl md:text-2xl font-semibold text-gray-100 mb-3 relative z-10">Custom-Made & Reliable</h3>
+                                        <p className="text-gray-400 text-sm relative z-10">Every project is built just for you and thoroughly tested to work perfectly.</p>
+                                    </div>
+
+                                    {/* Feature Card 3 - Client-Centric Collaboration (now automatically centered by grid) */}
+                                    <div className="bg-gray-900 rounded-xl p-6 md:p-8 shadow-xl transform hover:scale-105 transition-all duration-300 animate-fade-in-up delay-300ms group relative overflow-hidden">
+                                        <div className="absolute inset-0 bg-gradient-to-br from-green-700 to-teal-800 opacity-0 group-hover:opacity-20 transition-opacity duration-300 rounded-xl"></div>
+                                        <div className="text-4xl md:text-5xl mb-4 text-green-400 relative z-10">
+                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                                                <path strokeLinecap="round" strokeLinejoin="round" d="M12 15v2m-2 4h4m-4-10V4a2 2 0 012-2h4a2 2 0 012 2v7.586l-.293.293A1 1 0 0115 12h-2.172a2 2 0 00-1.414.586L10 14.172V15z" />
+                                            </svg>
+                                        </div>
+                                        <h3 className="text-xl md:text-2xl font-semibold text-gray-100 mb-3 relative z-10">We Work With You</h3>
+                                        <p className="text-gray-400 text-sm relative z-10">We'll be with you every step of the way to make sure your ideas become real, exactly as you picture them.</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </section>
+
+                        {/* Contact Us Section */}
+                        <section id="contact" className="py-16 md:py-20 px-4 bg-gray-800 animate-fade-in-section section-delay-5">
+                            <div className="container mx-auto max-w-2xl text-center">
+                                <h2 className="text-3xl md:text-4xl font-bold text-teal-400 mb-6 md:mb-8">Ready to Improve Your Digital World?</h2>
+                                <p className="text-md md:text-lg text-gray-300 leading-relaxed mb-8">
+                                    Whether you're dreaming of a fantastic new website, looking for smart automation solutions, or have a unique digital challenge, we're here to help. Reach out below, and let's talk about making your ideas happen.
+                                </p>
+
+                                {/* Contact Form */}
+                                <form action="https://formspree.io/f/mrbkkogr" method="POST" className="bg-gray-900 p-6 md:p-8 rounded-xl shadow-lg border border-gray-700">
+                                    <div className="mb-6 text-left">
+                                        <label htmlFor="name" className="block text-gray-300 text-sm font-bold mb-2">Name:</label>
+                                        <input
+                                            type="text"
+                                            id="name"
+                                            name="name"
+                                            className="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-900 leading-tight focus:outline-none focus:ring-2 focus:ring-teal-500 bg-gray-200 border-gray-600"
+                                            placeholder="Your Name"
+                                            required
+                                        />
+                                    </div>
+                                    <div className="mb-6 text-left">
+                                        <label htmlFor="email" className="block text-gray-300 text-sm font-bold mb-2">Email:</label>
+                                        <input
+                                            type="email"
+                                            id="email"
+                                            name="_replyto"
+                                            className="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-900 leading-tight focus:outline-none focus:ring-2 focus:ring-teal-500 bg-gray-200 border-gray-600"
+                                            placeholder="your@example.com"
+                                            required
+                                        />
+                                    </div>
+                                    <div className="mb-8 text-left">
+                                        <label htmlFor="message" className="block text-gray-300 text-sm font-bold mb-2">Message:</label>
+                                        <textarea
+                                            id="message"
+                                            name="message"
+                                            rows="5"
+                                            className="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-900 leading-tight focus:outline-none focus:ring-2 focus:ring-teal-500 bg-gray-200 border-gray-600"
+                                            placeholder="Tell us about your project or inquiry..."
+                                            required
+                                        ></textarea>
+                                    </div>
+                                    <div className="flex items-center justify-center">
+                                        <button
+                                            type="submit"
+                                            className="bg-gradient-to-r from-teal-500 to-blue-600 hover:from-teal-600 hover:to-blue-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out text-lg"
+                                        >
+                                            Send Message
+                                        </button>
+                                    </div>
+                                    {/* Hidden field for Formspree to prevent spam if using a basic setup */}
+                                    <input type="text" name="_gotcha" style={{display: 'none'}} />
+                                </form>
+                            </div>
+                        </section>
+
+
+                        {/* Final Call to Action Section */}
+                        <section className="py-16 md:py-20 px-4 bg-gradient-to-br from-gray-800 to-gray-900 text-center animate-fade-in-section section-delay-6">
+                            <div className="container mx-auto max-w-3xl">
+                                <h2 className="text-3xl md:text-4xl font-bold text-teal-400 mb-6">Ready to Make a Digital Impact?</h2>
+                                <p className="text-md md:text-xl text-gray-300 mb-8">
+                                    Let's build a great online presence or add smart automation to help you reach your goals.
+                                </p>
+                                <a
+                                    href="#contact"
+                                    className="inline-block bg-gradient-to-r from-teal-500 to-blue-600 hover:from-teal-600 hover:to-blue-700 text-white font-bold py-3 px-7 md:py-4 md:px-10 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out text-base md:text-xl group relative overflow-hidden"
+                                    aria-label="Get Started with Script Pilot"
+                                >
+                                    <span className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300"></span>
+                                    Get Started Today
+                                </a>
+                            </div>
+                        </section>
+
+                        {/* Footer */}
+                        <footer className="py-8 md:py-10 px-4 bg-gray-950 text-gray-500 text-center text-sm md:text-base">
+                            <p>&copy; {new Date().getFullYear()} Script Pilot. All rights reserved.</p>
+                            <div class="mt-4">
+                                <a
+                                    href="https://www.facebook.com/ScriptPilotOfficial"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-5 rounded-full shadow-md transform hover:scale-105 transition-all duration-200"
+                                    aria-label="Follow us on Facebook"
+                                >
+                                    Follow us on Facebook
+                                </a>
+                            </div>
+                            <p className="mt-2">
+                                Disclaimer: For educational and ethical use only. Use responsibly and with permission.
+                            </p>
+                        </footer>
+                    </div>
+                </div>
+            );
+        };
+
+        // Render the React App component into the root div
+        const container = document.getElementById('root');
+        const root = ReactDOM.createRoot(container);
+        root.render(<App />);
+    </script>
 </body>
 </html>

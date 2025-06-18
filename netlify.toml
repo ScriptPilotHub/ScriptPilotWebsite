@@ -1,3 +1,16 @@
+# netlify.toml
+# This file tells Netlify how to build and deploy your site.
+
 [build]
+  # Specifies the directory Netlify should publish.
+  # "." means the root directory of your repository.
   publish = "."
-  command = "echo 'No build command needed for this static HTML with in-browser React/Babel.'"
+
+  # Specifies the build command. Since your React code is transformed
+  # in the browser by Babel, no complex build step is needed here.
+  # This 'echo' command simply prints a message and succeeds.
+  command = "echo 'No server-side build command needed; React/Babel is in-browser.'"
+
+# You can add more configurations here if needed,
+# such as redirects, environment variables, etc.
+# For now, this minimal setup is ideal for your project.

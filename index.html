@@ -149,6 +149,60 @@
             transform: translateX(0);
         }
 
+        /* General Policy Page Styles */
+        .policy-container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: #1a202c; /* Gray-800 */
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+            color: #e2e8f0; /* Gray-200 */
+        }
+        .policy-container h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2dd4bf; /* Teal-400 */
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        .policy-container h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #67e8f9; /* Teal-300 */
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #475569; /* Gray-600 */
+            padding-bottom: 0.5rem;
+        }
+        .policy-container h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #a78bfa; /* Purple-400 */
+            margin-top: 1.8rem;
+            margin-bottom: 0.8rem;
+        }
+        .policy-container p {
+            margin-bottom: 1rem;
+        }
+        .policy-container ul {
+            list-style-type: disc;
+            margin-left: 25px;
+            margin-bottom: 1rem;
+        }
+        .policy-container ol {
+            list-style-type: decimal;
+            margin-left: 25px;
+            margin-bottom: 1rem;
+        }
+        .policy-container a {
+            color: #38b2ac; /* Teal-500 */
+            text-decoration: none;
+        }
+        .policy-container a:hover {
+            text-decoration: underline;
+        }
+
         /* E-Sign Contract Specific Styles (if contract page were to be re-integrated) */
         .contract-container {
             max-width: 900px;
@@ -652,6 +706,185 @@
             );
         };
 
+        // --- Privacy Policy Page Component ---
+        const PrivacyPolicyPage = () => (
+            <section className="py-16 md:py-20 px-4 bg-gray-900 min-h-screen">
+                <div class="policy-container">
+                    <h1>Privacy Policy for Script Pilot</h1>
+
+                    <p><strong>Last Updated:</strong> June 20, 2025</p>
+
+                    <p>At Script Pilot, we are committed to protecting your privacy. This Privacy Policy explains what information we collect, how we use it, and your choices regarding your information when you use our website and services.</p>
+
+                    <h2>1. Information We Collect</h2>
+
+                    <p>We collect information to provide and improve our services to you.</p>
+
+                    <h3>a. Personal Information You Provide:</h3>
+                    <ul>
+                        <li><strong>Contact Information:</strong> When you fill out our contact form, make a purchase, or communicate with us, we may collect your name, email address, phone number, and any other information you choose to provide in your message.</li>
+                        <li><strong>Payment Information:</strong> If you make a purchase, we collect payment details through secure third-party payment processors (e.g., Payhip). We do not directly store your credit card numbers on our servers.</li>
+                        <li><strong>Project Details:</strong> When discussing web design or custom script projects, you may provide sensitive business information, content, and access credentials. This information is treated with strict confidentiality.</li>
+                    </ul>
+
+                    <h3>b. Information Collected Automatically:</h3>
+                    <ul>
+                        <li><strong>Usage Data:</strong> We collect information about how you access and use our website. This may include your IP address, browser type, operating system, referral URLs, pages viewed, time spent on pages, and clickstream data.</li>
+                        <li><strong>Cookies and Tracking Technologies:</strong> We use cookies and similar tracking technologies (like Google Analytics) to track activity on our service and hold certain information. Cookies are files with a small amount of data that are sent to your browser from a website and stored on your device.
+                            <ul>
+                                <li><strong>Google Analytics:</strong> We use Google Analytics to understand website traffic and user behavior. Google Analytics collects information anonymously and reports website trends without identifying individual visitors. You can opt-out of Google Analytics without affecting how you visit our site. For more information on opting out of Google Analytics across all websites you use, visit this Google page: <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer">https://tools.google.com/dlpage/gaoptout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h2>2. How We Use Your Information</h2>
+
+                    <p>We use the collected information for various purposes:</p>
+
+                    <ul>
+                        <li><strong>To Provide and Maintain Our Service:</strong> Including processing your inquiries, fulfilling orders for automation tools, and delivering web design services.</li>
+                        <li><strong>To Improve Our Service:</strong> Understanding how our website is used helps us enhance functionality, content, and user experience.</li>
+                        <li><strong>To Communicate with You:</strong> Responding to your questions, sending service-related updates, marketing communications (if you've opted in), and important notices.</li>
+                        <li><strong>For Analytics and Research:</strong> To monitor and analyze trends, usage, and activities in connection with our services.</li>
+                        <li><strong>For Security and Fraud Prevention:</strong> To protect the integrity and security of our services and to prevent fraudulent activities.</li>
+                        <li><strong>To Comply with Legal Obligations:</strong> Including responding to legal requests and enforcing our terms and conditions.</li>
+                    </ul>
+
+                    <h2>3. Sharing Your Information</h2>
+
+                    <p>We do not sell, trade, or otherwise transfer your personally identifiable information to outside parties without your consent, except in the following limited circumstances:</p>
+
+                    <ul>
+                        <li><strong>Service Providers:</strong> We may share your information with trusted third-party service providers who assist us in operating our website, conducting our business, or serving you, provided that these parties agree to keep this information confidential. Examples include payment processors (e.g., Payhip), analytics providers (e.g., Google Analytics), and email service providers.</li>
+                        <li><strong>Business Transfers:</strong> In the event of a merger, acquisition, or asset sale, your personal data may be transferred. We will provide notice before your personal data is transferred and becomes subject to a different Privacy Policy.</li>
+                        <li><strong>Legal Requirements:</strong> We may disclose your information if required to do so by law or in response to valid requests by public authorities (e.g., a court or government agency).</li>
+                        <li><strong>With Your Consent:</strong> We may share your information with third parties when we have your explicit consent to do so.</li>
+                    </ul>
+
+                    <h2>4. Data Security</h2>
+
+                    <p>We implement a variety of security measures to maintain the safety of your personal information when you place an order or enter, submit, or access your personal information. However, no method of transmission over the Internet or method of electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your personal data, we cannot guarantee its absolute security.</p>
+
+                    <h2>5. Your Data Protection Rights</h2>
+
+                    <p>Depending on your location, you may have the following rights regarding your personal data:</p>
+
+                    <ul>
+                        <li><strong>The Right to Access:</strong> You have the right to request copies of your personal data.</li>
+                        <li><strong>The Right to Rectification:</strong> You have the right to request that we correct any information you believe is inaccurate or complete information you believe is incomplete.</li>
+                        <li><strong>The Right to Erasure:</strong> You have the right to request that we erase your personal data, under certain conditions.</li>
+                        <li><strong>The Right to Restrict Processing:</strong> You have the right to request that we restrict the processing of your personal data, under certain conditions.</li>
+                        <li><strong>The Right to Object to Processing:</strong> You have the right to object to our processing of your personal data, under certain conditions.</li>
+                        <li><strong>The Right to Data Portability:</strong> You have the right to request that we transfer the data that we have collected to another organization, or directly to you, under certain conditions.</li>
+                    </ul>
+
+                    <p>If you make a request, we have one month to respond to you. If you would like to exercise any of these rights, please contact us.</p>
+
+                    <h2>6. Links to Other Websites</h2>
+
+                    <p>Our website may contain links to other websites that are not operated by us. If you click on a third-party link, you will be directed to that third party's site. We strongly advise you to review the Privacy Policy of every site you visit. We have no control over and assume no responsibility for the content, privacy policies, or practices of any third-party sites or services.</p>
+
+                    <h2>7. Changes to This Privacy Policy</h2>
+
+                    <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page. You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.</p>
+
+                    <h2>8. Contact Us</h2>
+
+                    <p>If you have any questions about this Privacy Policy, please contact us:</p>
+                    <ul>
+                        <li>By visiting the contact page on our website.</li>
+                    </ul>
+                </div>
+            </section>
+        );
+
+        // --- Terms of Service Page Component ---
+        const TermsOfServicePage = () => (
+            <section className="py-16 md:py-20 px-4 bg-gray-900 min-h-screen">
+                <div class="policy-container">
+                    <h1>Terms of Service for Script Pilot</h1>
+
+                    <p><strong>Last Updated:</strong> June 20, 2025</p>
+
+                    <p>Welcome to Script Pilot! These Terms of Service ("Terms") govern your access to and use of Script Pilot's website ([yourwebsite.com]) and services, including web design, automation tool bundles, and custom script creation (collectively, the "Services"). By accessing or using our Services, you agree to be bound by these Terms. If you disagree with any part of the terms, then you may not access the Service.</p>
+
+                    <h2>1. Services Provided</h2>
+
+                    <p>Script Pilot offers:</p>
+                    <ul>
+                        <li><strong>Web Design Services:</strong> Development, redesign, and enhancement of websites, including business websites, e-commerce stores, and portfolios.</li>
+                        <li><strong>Automation Tool Bundles:</strong> Pre-built collections of Ducky Scripts for Flipper Zero and PowerShell scripts for IT automation.</li>
+                        <li><strong>Custom Script Creation:</strong> Tailor-made Ducky Scripts or PowerShell scripts developed to meet specific client requirements.</li>
+                        <li><strong>Deployment & Post-Launch Support:</strong> Services related to launching websites and ongoing maintenance, updates, and consultations.</li>
+                    </ul>
+
+                    <h2>2. User Obligations</h2>
+
+                    <p>By using our Services, you agree to:</p>
+                    <ul>
+                        <li>Provide accurate, current, and complete information as requested during any contact or project initiation.</li>
+                        <li>Use the Services only for lawful purposes and in a manner that does not infringe the rights of, or restrict or inhibit the use and enjoyment of the Service by any third party.</li>
+                        <li>For automation tools, ensure you have the necessary permissions and authorization to use the tools on any systems or devices. Script Pilot is not responsible for any misuse or unauthorized activity.</li>
+                        <li>For web design projects, provide all necessary content (text, images, logos) and feedback in a timely manner. Delays in providing materials may impact project timelines and costs.</li>
+                    </ul>
+
+                    <h2>3. Payment Terms</h2>
+
+                    <ul>
+                        <li><strong>Pricing:</strong> Pricing for Services is as outlined in our "Script Pilot Pricing Plan 2025" or as specified in a custom proposal provided to you.</li>
+                        <li><strong>Payment Schedule:</strong>
+                            <ul>
+                                <li><strong>Web Design Projects:</strong> Typically require an upfront payment (30-40%), followed by milestone payments (30-40%), and a final payment (20-30%) upon project completion before final launch.</li>
+                                <li><strong>Automation Tool Bundles:</strong> Require full upfront payment for immediate access.</li>
+                                <li><strong>Custom Script Creation:</strong> Requires full upfront payment.</li>
+                                <li><strong>Ongoing Services (Maintenance, CI/CD):</strong> Billed monthly or as per agreed terms.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Late Payments:</strong> Invoices are due upon receipt unless otherwise agreed. Late payments may be subject to additional charges.</li>
+                    </ul>
+
+                    <h2>4. Intellectual Property</h2>
+
+                    <ul>
+                        <li><strong>Client Ownership:</strong> Upon full payment for web design services or custom scripts, you will own the intellectual property rights to the final deliverables specifically created for you.</li>
+                        <li><strong>Script Pilot Rights:</strong> Script Pilot retains the right to use completed projects in our portfolio and for promotional purposes, unless a specific non-disclosure agreement (NDA) or similar agreement prohibits such use.</li>
+                        <li><strong>Pre-existing Components:</strong> Any pre-existing tools, libraries, or intellectual property owned by Script Pilot or licensed from third parties, and incorporated into your project, remain the property of Script Pilot or their respective owners.</li>
+                    </ul>
+
+                    <h2>5. Limitation of Liability</h2>
+
+                    <p>To the maximum extent permitted by applicable law, in no event shall Script Pilot, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from (i) your access to or use of or inability to access or use the Service; (ii) any conduct or content of any third party on the Service; (iii) any content obtained from the Service; and (iv) unauthorized access, use or alteration of your transmissions or content, whether based on warranty, contract, tort (including negligence) or any other legal theory, whether or not we have been informed of the possibility of such damage, and even if a remedy set forth herein is found to have failed of its essential purpose.</p>
+
+                    <p>Our total liability to you for any damages arising out of or related to these Terms or the Services shall not exceed the total amount you paid to Script Pilot for the specific Services giving rise to the claim.</p>
+
+                    <h2>6. Disclaimer of Warranties</h2>
+
+                    <p>Your use of the Service is at your sole risk. The Service is provided on an "AS IS" and "AS AVAILABLE" basis. The Service is provided without warranties of any kind, whether express or implied, including, but not limited to, implied warranties of merchantability, fitness for a particular purpose, non-infringement, or course of performance.</p>
+
+                    <p>Script Pilot does not warrant that a) the Service will function uninterrupted, secure or available at any particular time or location; b) any errors or defects will be corrected; c) the Service is free of viruses or other harmful components; or d) the results of using the Service will meet your requirements.</p>
+
+                    <h2>7. Termination</h2>
+
+                    <p>We may terminate or suspend your access to our Service immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach the Terms. Upon termination, your right to use the Service will immediately cease.</p>
+
+                    <h2>8. Governing Law</h2>
+
+                    <p>These Terms shall be governed and construed in accordance with the laws of the State of Missouri, United States, without regard to its conflict of law provisions.</p>
+
+                    <h2>9. Changes to These Terms</h2>
+
+                    <p>We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is material, we will try to provide at least 30 days' notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion. By continuing to access or use our Service after those revisions become effective, you agree to be bound by the revised terms. If you do not agree to the new terms, please stop using the Service.</p>
+
+                    <h2>10. Contact Us</h2>
+
+                    <p>If you have any questions about these Terms, please contact us:</p>
+                    <ul>
+                        <li>By visiting the contact page on our website.</li>
+                    </ul>
+                </div>
+            </section>
+        );
+
 
         // --- Page Components ---
         const HomePage = ({ navigateTo }) => (
@@ -1041,21 +1274,19 @@
             const [currentPage, setCurrentPage] = useState('home');
             const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // State for mobile menu
 
-            // Function to open immersive in a new tab using JavaScript
-            const openImmersivePage = (id) => {
-                // Construct the URL based on the immersive ID.
-                // In this environment, /id is often the direct path.
-                const url = `/${id}`;
-                window.open(url, '_blank');
-            };
-
             // Effect to read hash from URL for direct links like #esign-contract
             useEffect(() => {
                 const handleHashChange = () => {
                     const hash = window.location.hash.substring(1); // Remove '#'
+                    // Handle direct links to specific pages, including new policy pages
                     if (hash === 'esign-contract') {
                         setCurrentPage('esign-contract');
-                    } else if (hash) {
+                    } else if (hash === 'privacy-policy') { // New case for Privacy Policy
+                        setCurrentPage('privacy-policy');
+                    } else if (hash === 'terms-of-service') { // New case for Terms of Service
+                        setCurrentPage('terms-of-service');
+                    }
+                    else if (hash) {
                          // Optional: if you want to handle other hash links for navigation too
                         setCurrentPage(hash);
                     }
@@ -1106,8 +1337,14 @@
                     case 'contact':
                         PageComponent = ContactPage;
                         break;
-                    case 'esign-contract': // This case is included for completeness but not linked from nav
+                    case 'esign-contract':
                         PageComponent = ESignContractPage;
+                        break;
+                    case 'privacy-policy': // New page case
+                        PageComponent = PrivacyPolicyPage;
+                        break;
+                    case 'terms-of-service': // New page case
+                        PageComponent = TermsOfServicePage;
                         break;
                     default:
                         PageComponent = HomePage;
@@ -1117,7 +1354,6 @@
                         <PageComponent navigateTo={navigateTo} />
                     </div>
                 );
-                // No need for a separate policy component here, as they'll be external HTML files.
             };
 
             return (
@@ -1188,9 +1424,9 @@
                         <footer className="py-8 md:py-10 px-4 bg-gray-950 text-gray-500 text-center text-sm md:text-base">
                             <p>&copy; {new Date().getFullYear()} Script Pilot. All rights reserved.</p>
                             <div className="mt-4 flex flex-col sm:flex-row justify-center space-y-2 sm:space-y-0 sm:space-x-4">
-                                {/* Changed href to onClick with a JS function */}
-                                <button onClick={() => openImmersivePage('privacy-policy-page')} className="text-gray-400 hover:text-teal-400 transition-colors duration-200 bg-transparent border-none cursor-pointer p-0 m-0">Privacy Policy</button>
-                                <button onClick={() => openImmersivePage('terms-of-service-page')} className="text-gray-400 hover:text-teal-400 transition-colors duration-200 bg-transparent border-none cursor-pointer p-0 m-0">Terms of Service</button>
+                                {/* Now using navigateTo for internal routing */}
+                                <button onClick={() => navigateTo('privacy-policy')} className="text-gray-400 hover:text-teal-400 transition-colors duration-200 bg-transparent border-none cursor-pointer p-0 m-0">Privacy Policy</button>
+                                <button onClick={() => navigateTo('terms-of-service')} className="text-gray-400 hover:text-teal-400 transition-colors duration-200 bg-transparent border-none cursor-pointer p-0 m-0">Terms of Service</button>
                             </div>
                             <p className="mt-2">
                                 Disclaimer: For educational and ethical use only. Use responsibly and with permission.

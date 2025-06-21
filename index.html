@@ -1041,6 +1041,14 @@
             const [currentPage, setCurrentPage] = useState('home');
             const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // State for mobile menu
 
+            // Function to open immersive in a new tab using JavaScript
+            const openImmersivePage = (id) => {
+                // Construct the URL based on the immersive ID.
+                // In this environment, /id is often the direct path.
+                const url = `/${id}`;
+                window.open(url, '_blank');
+            };
+
             // Effect to read hash from URL for direct links like #esign-contract
             useEffect(() => {
                 const handleHashChange = () => {
@@ -1180,9 +1188,9 @@
                         <footer className="py-8 md:py-10 px-4 bg-gray-950 text-gray-500 text-center text-sm md:text-base">
                             <p>&copy; {new Date().getFullYear()} Script Pilot. All rights reserved.</p>
                             <div className="mt-4 flex flex-col sm:flex-row justify-center space-y-2 sm:space-y-0 sm:space-x-4">
-                                {/* Updated links to point to the new HTML immersive IDs without leading slash */}
-                                <a href="privacy-policy-page" target="_blank" className="text-gray-400 hover:text-teal-400 transition-colors duration-200">Privacy Policy</a>
-                                <a href="terms-of-service-page" target="_blank" className="text-gray-400 hover:text-teal-400 transition-colors duration-200">Terms of Service</a>
+                                {/* Changed href to onClick with a JS function */}
+                                <button onClick={() => openImmersivePage('privacy-policy-page')} className="text-gray-400 hover:text-teal-400 transition-colors duration-200 bg-transparent border-none cursor-pointer p-0 m-0">Privacy Policy</button>
+                                <button onClick={() => openImmersivePage('terms-of-service-page')} className="text-gray-400 hover:text-teal-400 transition-colors duration-200 bg-transparent border-none cursor-pointer p-0 m-0">Terms of Service</button>
                             </div>
                             <p className="mt-2">
                                 Disclaimer: For educational and ethical use only. Use responsibly and with permission.

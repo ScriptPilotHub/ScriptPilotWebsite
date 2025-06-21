@@ -1109,6 +1109,7 @@
                         <PageComponent navigateTo={navigateTo} />
                     </div>
                 );
+                // No need for a separate policy component here, as they'll be external HTML files.
             };
 
             return (
@@ -1179,8 +1180,9 @@
                         <footer className="py-8 md:py-10 px-4 bg-gray-950 text-gray-500 text-center text-sm md:text-base">
                             <p>&copy; {new Date().getFullYear()} Script Pilot. All rights reserved.</p>
                             <div className="mt-4 flex flex-col sm:flex-row justify-center space-y-2 sm:space-y-0 sm:space-x-4">
-                                <a href="/privacy-policy-doc" target="_blank" className="text-gray-400 hover:text-teal-400 transition-colors duration-200">Privacy Policy</a>
-                                <a href="/terms-of-service-doc" target="_blank" className="text-gray-400 hover:text-teal-400 transition-colors duration-200">Terms of Service</a>
+                                {/* Updated links to point to the new HTML immersive IDs without leading slash */}
+                                <a href="privacy-policy-page" target="_blank" className="text-gray-400 hover:text-teal-400 transition-colors duration-200">Privacy Policy</a>
+                                <a href="terms-of-service-page" target="_blank" className="text-gray-400 hover:text-teal-400 transition-colors duration-200">Terms of Service</a>
                             </div>
                             <p className="mt-2">
                                 Disclaimer: For educational and ethical use only. Use responsibly and with permission.

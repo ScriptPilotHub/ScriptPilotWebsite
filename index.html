@@ -7,7 +7,7 @@
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Font: Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <!-- Include React and ReactDOM development versions -->
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
@@ -23,23 +23,42 @@
       gtag('config', 'G-XBVM9RFY0Y');
     </script>
     <style>
+        /* Base styles for the entire application */
+        body {
+            background-color: #0f172a; /* Deeper dark blue for the body */
+            color: #e2e8f0; /* Light gray text */
+            font-family: 'Inter', sans-serif;
+            line-height: 1.75;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Reusable container for content */
+        .container {
+            max-width: 1200px; /* Increased max-width for more spacious layout */
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
+
         /* Keyframes for subtle background blob animation */
         @keyframes blob {
-            0% { transform: translate(0px, 0px) scale(1); }
-            33% { transform: translate(30px, -50px) scale(1.1); }
-            66% { transform: translate(-20px, 20px) scale(0.9); }
-            100% { transform: translate(0px, 0px) scale(1); }
+            0% { transform: translate(0px, 0px) scale(1); border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+            33% { transform: translate(30px, -50px) scale(1.1); border-radius: 70% 30% 60% 40% / 50% 60% 30% 60%; }
+            66% { transform: translate(-20px, 20px) scale(0.9); border-radius: 40% 60% 70% 30% / 60% 40% 60% 50%; }
+            100% { transform: translate(0px, 0px) scale(1); border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
         }
-        .animate-blob { animation: blob 7s infinite cubic-bezier(0.6, 0.4, 0.4, 0.8); }
+        .animate-blob { animation: blob 12s infinite ease-in-out; }
         .animation-delay-2000 { animation-delay: 2s; }
         .animation-delay-4000 { animation-delay: 4s; }
 
         /* Keyframes for content fade-in-up animation */
         @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
+            from { opacity: 0; transform: translateY(40px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        .animate-fade-in-up { animation: fadeInUp 1s ease-out forwards; }
+        .animate-fade-in-up { animation: fadeInUp 1s cubic-bezier(0.17, 0.55, 0.55, 1) forwards; opacity: 0; }
         .delay-100ms { animation-delay: 0.1s; }
         .delay-200ms { animation-delay: 0.2s; }
         .delay-300ms { animation-delay: 0.3s; }
@@ -47,14 +66,17 @@
         .delay-500ms { animation-delay: 0.5s; }
         .delay-600ms { animation-delay: 0.6s; }
         .delay-700ms { animation-delay: 0.7s; }
+        .delay-800ms { animation-delay: 0.8s; }
+        .delay-900ms { animation-delay: 0.9s; }
+        .delay-1000ms { animation-delay: 1.0s; }
 
         /* Page transition animation */
         @keyframes pageEnter {
-            from { opacity: 0; transform: translateY(15px); }
+            from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
         .animate-page-enter {
-            animation: pageEnter 0.6s ease-out forwards;
+            animation: pageEnter 0.7s cubic-bezier(0.23, 1, 0.32, 1) forwards;
         }
 
         /* Keyframes for pulsing effect on feature icons */
@@ -64,28 +86,34 @@
             100% { transform: scale(0.9); opacity: 0.7; }
         }
         .animate-pulse-circle {
-            animation: pulse-circle 2s infinite ease-in-out;
+            animation: pulse-circle 2.5s infinite ease-in-out;
         }
 
         /* New keyframes for a subtle scale-in-up effect for cards */
         @keyframes scaleInUp {
-            from { opacity: 0; transform: translateY(30px) scale(0.9); }
+            from { opacity: 0; transform: translateY(40px) scale(0.95); }
             to { opacity: 1; transform: translateY(0) scale(1); }
         }
         .animate-scale-in-up {
-            animation: scaleInUp 0.8s ease-out forwards;
+            animation: scaleInUp 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) forwards; opacity: 0;
         }
 
+        /* Custom glow effect for buttons/cards on hover */
+        .glow-hover:hover {
+            box-shadow: 0 0 25px rgba(45, 212, 191, 0.6), 0 0 50px rgba(74, 222, 128, 0.4);
+        }
 
         /* FAQ accordion styles */
         .faq-answer {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.3s ease-out;
+            transition: max-height 0.4s ease-out;
+            padding: 0 1.5rem; /* Consistent padding */
         }
         .faq-answer.open {
-            max-height: 200px; /* Adjust based on max expected content height */
-            transition: max-height 0.5s ease-in;
+            max-height: 250px; /* Increased max-height for more content */
+            transition: max-height 0.6s ease-in;
+            padding-bottom: 1.5rem; /* Add padding when open */
         }
         .faq-question-button {
             display: flex;
@@ -93,10 +121,10 @@
             align-items: center;
             width: 100%;
             text-align: left;
-            padding: 1rem;
-            font-size: 1.25rem; /* text-xl */
-            font-weight: 600; /* font-semibold */
-            color: #f3f4f6; /* text-gray-100 */
+            padding: 1.5rem; /* Increased padding */
+            font-size: 1.375rem; /* text-2xl */
+            font-weight: 700; /* font-bold */
+            color: #f1f5f9; /* text-gray-100 */
             background: none;
             border: none;
             cursor: pointer;
@@ -115,10 +143,212 @@
         /* Mobile menu specific styles */
         .mobile-menu-overlay {
             transform: translateX(100%);
-            transition: transform 0.3s ease-out;
+            transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
         }
         .mobile-menu-overlay.open {
             transform: translateX(0);
+        }
+
+        /* E-Sign Contract Specific Styles (if contract page were to be re-integrated) */
+        .contract-container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: #1a202c; /* Gray-800 */
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+            color: #e2e8f0; /* Gray-200 */
+        }
+        .contract-h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #2dd4bf; /* Teal-400 */
+            margin-bottom: 1.5rem;
+            text-align: center;
+            line-height: 1.2;
+        }
+        .contract-h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #67e8f9; /* Teal-300 */
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #475569; /* Gray-600 */
+            padding-bottom: 0.5rem;
+        }
+        .contract-h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #a78bfa; /* Purple-400 */
+            margin-top: 1.8rem;
+            margin-bottom: 0.8rem;
+        }
+        .contract-p {
+            margin-bottom: 1rem;
+        }
+        .contract-ul {
+            list-style-type: disc;
+            margin-left: 25px;
+            margin-bottom: 1rem;
+        }
+        .contract-ol {
+            list-style-type: decimal;
+            margin-left: 25px;
+            margin-bottom: 1rem;
+        }
+        .contract-link {
+            color: #38b2ac; /* Teal-500 */
+            text-decoration: none;
+        }
+        .contract-link:hover {
+            text-decoration: underline;
+        }
+        .contract-form-group {
+            margin-bottom: 1.5rem;
+        }
+        .contract-form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #cbd5e1; /* Gray-300 */
+        }
+        .contract-form-input, .contract-form-textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            border: 1px solid #475569; /* Gray-600 */
+            background-color: #2d3748; /* Gray-700 */
+            color: #e2e8f0; /* Gray-200 */
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .contract-form-input:focus, .contract-form-textarea:focus {
+            outline: none;
+            border-color: #2dd4bf; /* Teal-400 */
+            box-shadow: 0 0 0 3px rgba(45, 212, 191, 0.5); /* Teal-400 with opacity */
+        }
+        .contract-form-textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        .contract-checkbox-group {
+            display: flex;
+            align-items: center;
+            margin-top: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .contract-checkbox-input {
+            margin-right: 0.75rem;
+            width: 1.25rem;
+            height: 1.25rem;
+            border-radius: 0.25rem;
+            border: 1px solid #475569;
+            background-color: #2d3748;
+            accent-color: #2dd4bf; /* Teal-400 */
+        }
+        .contract-signature-pad {
+            border: 2px dashed #475569; /* Gray-600 */
+            background-color: #2d3748; /* Gray-700 */
+            border-radius: 0.5rem;
+            cursor: crosshair;
+            touch-action: none; /* Prevent scrolling when drawing on touch devices */
+        }
+        .contract-signature-buttons {
+            display: flex;
+            justify-content: flex-end; /* Align to right */
+            gap: 1rem;
+            margin-top: 1rem;
+            flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+        }
+        .contract-btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            transition: background-color 0.2s, transform 0.2s;
+            cursor: pointer;
+        }
+        .contract-btn-primary {
+            background-color: #2dd4bf; /* Teal-400 */
+            color: #1a202c; /* Gray-800 */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        .contract-btn-primary:hover {
+            background-color: #20b2aa; /* Darker Teal */
+            transform: translateY(-2px);
+        }
+        .contract-btn-secondary {
+            background-color: #475569; /* Gray-600 */
+            color: #e2e8f0; /* Gray-200 */
+        }
+        .contract-btn-secondary:hover {
+            background-color: #64748b; /* Lighter Gray */
+            transform: translateY(-2px);
+        }
+        .contract-error-message {
+            color: #ef4444; /* Red-500 */
+            font-size: 0.875rem;
+            margin-top: 0.5rem;
+            display: none; /* Hidden by default */
+        }
+        .contract-success-message {
+            background-color: #22c55e; /* Green-500 */
+            color: white;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            margin-top: 2rem;
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: 600;
+            /* display: none; */ /* Hidden by default - managed by JS */
+        }
+        .contract-note-block {
+            background-color: #1f2937; /* Gray-800 darker shade */
+            border-left: 4px solid #a78bfa; /* Purple-400 */
+            padding: 1rem 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 0.5rem;
+        }
+        .contract-print-hidden {
+            /* For elements that should not appear in the print version */
+            display: block; /* Default to visible */
+        }
+
+        /* Print-specific styles for better PDF output */
+        @media print {
+            body {
+                background-color: #ffffff !important;
+                color: #000000 !important;
+            }
+            .container {
+                box-shadow: none !important;
+                border: none !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                max-width: 100% !important;
+                background-color: #ffffff !important;
+            }
+            .contract-h1, .contract-h2, .contract-h3, .contract-p, .contract-ul, .contract-ol, .contract-form-label {
+                color: #000000 !important;
+            }
+            .contract-form-input, .contract-form-textarea, .contract-checkbox-input, .contract-signature-pad {
+                border-color: #94a3b8 !important; /* Gray-400 */
+                background-color: #e2e8f0 !important; /* Gray-200 */
+            }
+            .contract-signature-pad {
+                 height: 150px !important; /* Ensure signature area is visible */
+                 width: 100% !important;
+                 border: 1px solid #000 !important;
+                 background-color: #ffffff !important;
+            }
+            .contract-signature-buttons, .contract-error-message, .contract-success-message, .contract-note-block {
+                display: none !important; /* Hide interactive elements from print */
+            }
+            .contract-print-hidden {
+                display: none !important;
+            }
+            /* Force print media color adjustment */
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
         }
     </style>
 </head>
@@ -128,15 +358,12 @@
     <script type="text/babel">
         const React = window.React;
         const ReactDOM = window.ReactDOM;
-        const { useState, useEffect } = React;
+        const { useState, useEffect, useRef } = React;
 
         // --- FAQ Item Component (for accordion) ---
         const FAQItem = ({ question, answer, index }) => {
             const [isOpen, setIsOpen] = useState(false);
-
-            // Staggered fade-in for FAQ items
             const animateClass = `animate-fade-in-up delay-${(index * 100) + 100}ms`;
-
             return (
                 <div className={`bg-gray-900 rounded-xl p-0 shadow-md border border-gray-700 ${animateClass}`}>
                     <button
@@ -165,8 +392,268 @@
             );
         };
 
-        // --- Page Components ---
+        // --- ESignContractPage Component (keeping it for context, though not directly linked from nav) ---
+        const ESignContractPage = () => {
+            const signatureCanvasRef = useRef(null);
+            const [isDrawing, setIsDrawing] = useState(false);
+            const [signatureMade, setSignatureMade] = useState(false);
+            const [lastPos, setLastPos] = useState({ x: 0, y: 0 });
+            const [formSubmitted, setFormSubmitted] = useState(false);
+            const [validationErrors, setValidationErrors] = useState({});
+            const [signedData, setSignedData] = useState({
+                clientName: '',
+                clientEmail: '',
+                signatureDataURL: '',
+                signDate: ''
+            });
 
+            useEffect(() => {
+                const canvas = signatureCanvasRef.current;
+                if (!canvas) return; // Ensure canvas is mounted
+                const ctx = canvas.getContext('2d');
+
+                canvas.width = canvas.offsetWidth;
+                canvas.height = canvas.offsetHeight;
+
+                ctx.strokeStyle = '#e2e8f0';
+                ctx.lineWidth = 3;
+                ctx.lineCap = 'round';
+                ctx.lineJoin = 'round';
+
+                const getCanvasPos = (event) => {
+                    const rect = canvas.getBoundingClientRect();
+                    if (event.touches && event.touches.length > 0) {
+                        return {
+                            x: event.touches[0].clientX - rect.left,
+                            y: event.touches[0].clientY - rect.top
+                        };
+                    }
+                    return {
+                        x: event.clientX - rect.left,
+                        y: event.clientY - rect.top
+                    };
+                };
+
+                const startDrawing = (e) => {
+                    setIsDrawing(true);
+                    const pos = getCanvasPos(e);
+                    setLastPos({ x: pos.x, y: pos.y });
+                    setSignatureMade(true);
+                    setValidationErrors(prev => ({ ...prev, signature: false }));
+                };
+
+                const drawLine = (e) => {
+                    if (!isDrawing) return;
+                    e.preventDefault();
+                    const ctx = canvas.getContext('2d');
+                    ctx.beginPath();
+                    ctx.moveTo(lastPos.x, lastPos.y);
+                    const currentPos = getCanvasPos(e);
+                    ctx.lineTo(currentPos.x, currentPos.y);
+                    ctx.stroke();
+                    setLastPos(currentPos);
+                };
+
+                const stopDrawing = () => {
+                    setIsDrawing(false);
+                };
+
+                // Add event listeners
+                canvas.addEventListener('mousedown', startDrawing);
+                canvas.addEventListener('mousemove', drawLine);
+                canvas.addEventListener('mouseup', stopDrawing);
+                canvas.addEventListener('mouseout', stopDrawing);
+
+                canvas.addEventListener('touchstart', startDrawing, { passive: false });
+                canvas.addEventListener('touchmove', drawLine, { passive: false });
+                canvas.addEventListener('touchend', stopDrawing);
+                canvas.addEventListener('touchcancel', stopDrawing);
+
+                return () => {
+                    canvas.removeEventListener('mousedown', startDrawing);
+                    canvas.removeEventListener('mousemove', drawLine);
+                    canvas.removeEventListener('mouseup', stopDrawing);
+                    canvas.removeEventListener('mouseout', stopDrawing);
+
+                    canvas.removeEventListener('touchstart', startDrawing);
+                    canvas.removeEventListener('touchmove', drawLine);
+                    canvas.removeEventListener('touchend', stopDrawing);
+                    canvas.removeEventListener('touchcancel', stopDrawing);
+                };
+            }, [isDrawing, lastPos]);
+
+            const clearSignature = () => {
+                const canvas = signatureCanvasRef.current;
+                if (canvas) {
+                    const ctx = canvas.getContext('2d');
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    setSignatureMade(false);
+                }
+            };
+
+            const handleSubmit = (e) => {
+                e.preventDefault();
+                const clientName = e.target.clientName.value.trim();
+                const clientEmail = e.target.clientEmail.value.trim();
+                const agreeTerms = e.target.agreeTerms.checked;
+
+                const newErrors = {};
+                if (!clientName) newErrors.name = true;
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailPattern.test(clientEmail)) newErrors.email = true;
+                if (!signatureMade) newErrors.signature = true;
+                if (!agreeTerms) newErrors.terms = true;
+
+                setValidationErrors(newErrors);
+
+                if (Object.keys(newErrors).length === 0) {
+                    const signatureDataURL = signatureCanvasRef.current.toDataURL('image/png');
+                    const signDate = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+
+                    setSignedData({ clientName, clientEmail, signatureDataURL, signDate });
+                    setFormSubmitted(true);
+                }
+            };
+
+            const handleSignatureDownload = () => {
+                const a = document.createElement('a');
+                a.href = signedData.signatureDataURL;
+                a.download = `ScriptPilot_Signature_${signedData.clientName.replace(/\s/g, '_')}.png`;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+            };
+
+            return (
+                <section className="py-16 md:py-20 px-4 bg-gray-900 min-h-screen">
+                    <div className="contract-container">
+                        <h1 className="contract-h1">Script Pilot Service Agreement</h1>
+                        <p className="text-center text-gray-400 text-lg mb-8">
+                            This agreement outlines the terms and conditions for services provided by Script Pilot.
+                        </p>
+
+                        <div className="contract-note-block">
+                            <p><strong>Important Note:</strong> This is a generalized template for demonstration purposes only. It should not be used as a legal document without review and customization by a qualified legal professional. Script Pilot is not a law firm and does not provide legal advice.</p>
+                        </div>
+
+                        <h2 className="contract-h2">Parties Involved</h2>
+                        <p className="contract-p">This Service Agreement ("Agreement") is made and entered into effective as of <span id="agreementDate" className="font-bold text-teal-300">{signedData.signDate || new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>, by and between:</p>
+                        <p className="contract-p">
+                            **Script Pilot** ("Service Provider"), with its principal place of business at Springfield, Missouri.<br/>
+                            **AND**<br/>
+                            **Client** ("Client"), as identified by the name and email provided below.
+                        </p>
+
+                        <h2 className="contract-h2">1. Scope of Services</h2>
+                        <p className="contract-p">The Service Provider agrees to provide the Client with the digital services ("Services") as specifically outlined and agreed upon in the attached or referenced project proposal, Statement of Work (SOW), or chosen pricing package from Script Pilot's official pricing plan (e.g., Starter Website Package, Custom Script Creation, etc.).</p>
+                        <p className="contract-p">The specific Services to be rendered include, but are not limited to:</p>
+                        <ul className="contract-ul">
+                            <li>[Insert specific website design, development, revamp, or automation script details as per agreed proposal/package]</li>
+                            <li>[Example: Development of a 5-page responsive business website.]</li>
+                            <li>[Example: Creation of a custom PowerShell script for network automation.]</li>
+                            <li>[Example: UI/UX redesign for an existing Shopify store.]</li>
+                        </ul>
+                        <p className="contract-p">Any additional services requested by the Client outside the agreed-upon scope will be quoted separately and require a new written agreement or amendment to this Agreement.</p>
+
+                        <h2 className="contract-h2">2. Term of Agreement</h2>
+                        <p className="contract-p">This Agreement shall commence on the Effective Date and shall continue until the completion of the Services as defined in Section 1, unless terminated earlier as provided herein. For ongoing services (e.g., maintenance, continuous deployment), the term will be specified in the respective service agreement or billing cycle.</p>
+
+                        <h2 className="contract-h2">3. Payment Terms</h2>
+                        <p className="contract-p">Client agrees to compensate Service Provider for the Services as per the pricing structure detailed in the most current Script Pilot Pricing Plan 2025, or as outlined in a custom proposal/invoice. Payment schedules for web design projects typically involve:</p>
+                        <ul className="contract-ul">
+                            <li>**30-40% Upfront:** To initiate the project and secure dedicated resources.</li>
+                            <li>**30-40% Upon Milestone Completion:** Often after key design approvals or core development phases are completed.</li>
+                            <li>**20-30% Upon Project Completion:** Before the final public launch, once all agreed-upon deliverables are met.</li>
+                        </ul>
+                        <p className="contract-p">Automation tool bundles and Custom Script Creation require full payment upfront. Deployment and ongoing services are billed according to their respective terms. All invoices are due upon receipt unless otherwise specified. Late payments may incur charges as per standard industry practice.</p>
+
+                        <h2 className="contract-h2">4. Client Responsibilities</h2>
+                        <p className="contract-p">Client agrees to provide all necessary information, content (text, images, logos), access, and feedback in a timely manner to facilitate the Service Provider's work. Delays caused by the Client's failure to provide required materials may extend project timelines and potentially incur additional costs.</p>
+
+                        <h2 className="contract-h2">5. Confidentiality</h2>
+                        <p className="contract-p">Both parties agree to keep confidential all non-public information disclosed by the other party during the course of this Agreement. This obligation survives the termination of this Agreement.</p>
+
+                        <h2 className="contract-h2">6. Intellectual Property</h2>
+                        <p className="contract-p">Upon full payment for the Services, the Client shall own the intellectual property rights to the final deliverables (e.g., website design, custom scripts). Service Provider retains the right to use the completed project in its portfolio and for promotional purposes.</p>
+
+                        <h2 className="contract-h2">7. Limitation of Liability</h2>
+                        <p className="contract-p">Service Provider shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising out of or related to this Agreement. Service Provider's total liability under this Agreement shall not exceed the total fees paid by the Client for the specific Services giving rise to the claim.</p>
+
+                        <h2 className="contract-h2">8. Governing Law</h2>
+                        <p className="contract-p">This Agreement shall be governed by and construed in accordance with the laws of the State of Missouri, without regard to its conflict of law principles.</p>
+
+                        <h2 className="contract-h2">9. Acceptance and Signature</h2>
+                        <p className="contract-p">By signing below, the Client acknowledges that they have read, understood, and agree to the terms and conditions set forth in this Service Agreement. The Client also confirms that all information provided is accurate and truthful.</p>
+
+                        {!formSubmitted ? (
+                            <form onSubmit={handleSubmit} className="mt-8 p-6 bg-gray-700 rounded-lg shadow-inner contract-print-hidden">
+                                <div className="contract-form-group">
+                                    <label htmlFor="clientName" className="contract-form-label">Client Full Name:</label>
+                                    <input type="text" id="clientName" name="clientName" className="contract-form-input" placeholder="Enter your full name" required />
+                                    {validationErrors.name && <div className="contract-error-message block">Client name is required.</div>}
+                                </div>
+
+                                <div className="contract-form-group">
+                                    <label htmlFor="clientEmail" className="contract-form-label">Client Email:</label>
+                                    <input type="email" id="clientEmail" name="clientEmail" className="contract-form-input" placeholder="enter@example.com" required />
+                                    {validationErrors.email && <div className="contract-error-message block">A valid email is required.</div>}
+                                </div>
+
+                                <div className="contract-form-group">
+                                    <label htmlFor="signatureCanvas" className="contract-form-label">Client Signature:</label>
+                                    <canvas id="signatureCanvas" ref={signatureCanvasRef} className="contract-signature-pad w-full h-[150px]"></canvas>
+                                    {validationErrors.signature && <div className="contract-error-message block">Signature is required.</div>}
+                                    <div className="contract-signature-buttons">
+                                        <button type="button" onClick={clearSignature} className="contract-btn contract-btn-secondary">Clear Signature</button>
+                                    </div>
+                                </div>
+
+                                <div className="contract-checkbox-group">
+                                    <input type="checkbox" id="agreeTerms" name="agreeTerms" className="contract-checkbox-input" required />
+                                    <label htmlFor="agreeTerms" className="text-gray-300 text-sm">I have read and agree to the terms and conditions of this Service Agreement.</label>
+                                    {validationErrors.terms && <div className="contract-error-message block">You must agree to the terms.</div>}
+                                </div>
+
+                                <button type="submit" className="contract-btn contract-btn-primary w-full">Sign Agreement</button>
+                            </form>
+                        ) : (
+                            <div className="contract-success-message block">
+                                Agreement signed successfully!
+                                <div className="mt-4 text-sm font-normal flex flex-col items-center space-y-3">
+                                    <p>For a physical record, please use your browser's print option to "Save as PDF".</p>
+                                    {signedData.signatureDataURL && (
+                                        <button
+                                            onClick={handleSignatureDownload}
+                                            className="contract-btn contract-btn-secondary mt-2 px-6 py-2"
+                                            aria-label="Download your signature image"
+                                        >
+                                            Download Your Signature Image (PNG)
+                                        </button>
+                                    )}
+                                </div>
+                            </div>
+                        )}
+
+                        {formSubmitted && (
+                             <div className="mt-8 p-6 bg-gray-700 rounded-lg shadow-inner" style={{backgroundColor: '#2d3748', color: '#e2e8f0'}}>
+                                <h3 className="contract-h3 text-teal-300 text-center">Agreement Signed Details</h3>
+                                <p className="contract-p"><strong>Signed By:</strong> <span id="displayClientName">{signedData.clientName}</span></p>
+                                <p className="contract-p"><strong>Email:</strong> <span id="displayClientEmail">{signedData.clientEmail}</span></p>
+                                <p className="contract-p"><strong>Date:</strong> <span id="displaySignDate">{signedData.signDate}</span></p>
+                                <p className="contract-p mt-4"><strong>Signature:</strong></p>
+                                {signedData.signatureDataURL && (
+                                    <img src={signedData.signatureDataURL} alt="Client Signature" className="mt-2" style={{maxWidth: '100%', height: 'auto', border: '1px solid #475569', borderRadius: '0.5rem', backgroundColor: '#2d3748'}} />
+                                )}
+                            </div>
+                        )}
+
+                    </div>
+                </section>
+            );
+        };
+
+
+        // --- Page Components ---
         const HomePage = ({ navigateTo }) => (
             <>
                 {/* Hero Section */}
@@ -177,7 +664,7 @@
                     <div className="absolute -bottom-8 left-20 w-64 h-64 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
 
                     <div className="relative z-10 max-w-4xl w-full">
-                        <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-500 mb-6 drop-shadow-lg animate-fade-in-up">
+                        <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-500 mb-6 drop-shadow-lg animate-fade-in-up delay-100ms">
                             Build a Strong Online Presence.<br className="md:hidden"/> Make Your Work Easier.
                         </h1>
                         <p className="text-lg md:text-xl lg:text-2xl text-gray-300 mb-10 leading-relaxed max-w-2xl mx-auto animate-fade-in-up delay-300ms">
@@ -205,7 +692,7 @@
                 </section>
 
                 {/* Trusted by Clients Section */}
-                <section className="py-10 md:py-14 px-4 bg-gray-950 text-center shadow-inner animate-fade-in-up delay-100ms">
+                <section className="py-10 md:py-14 px-4 bg-gray-950 text-center shadow-inner animate-fade-in-up delay-800ms">
                     <div className="container mx-auto max-w-4xl">
                         <p className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500 mb-6 leading-[1.7] py-1">
                             Trusted by clients who get real results online.
@@ -226,7 +713,7 @@
                         At Script Pilot, we don't just put pages online; we build engaging online spaces. Whether it's a website that tells your brand's story perfectly or an e-commerce site designed for easy shopping, our custom web designs are made to grab attention, show off your unique ideas, and help you get results. Let's make an online home that truly speaks to your audience.
                     </p>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 md:gap-10">
-                        <div className="bg-gray-800 rounded-xl p-6 md:p-8 shadow-xl border border-gray-700 flex flex-col items-center text-center transform hover:scale-105 transition-all duration-300 animate-fade-in-up delay-300ms group relative overflow-hidden">
+                        <div className="bg-gray-800 rounded-xl p-6 md:p-8 shadow-xl border border-gray-700 flex flex-col items-center text-center transform hover:scale-105 transition-all duration-300 animate-scale-in-up delay-300ms group relative overflow-hidden glow-hover">
                             <div className="absolute inset-0 bg-gradient-to-br from-blue-700 to-purple-800 opacity-0 group-hover:opacity-20 transition-opacity duration-300 rounded-xl"></div>
                             <img src="https://placehold.co/400x250/0f172a/67e8f9?text=Modern+Business" alt="Sleek Corporate Website Design" className="rounded-lg mb-6 shadow-md w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-300" />
                             <h3 className="text-2xl font-semibold text-teal-300 mb-3 relative z-10">Modern Business Websites</h3>
@@ -234,7 +721,7 @@
                                 Professional, easy-to-use designs that show off your expertise and build trust with clients.
                             </p>
                         </div>
-                        <div className="bg-gray-800 rounded-xl p-6 md:p-8 shadow-xl border border-gray-700 flex flex-col items-center text-center transform hover:scale-105 transition-all duration-300 animate-fade-in-up delay-400ms group relative overflow-hidden">
+                        <div className="bg-gray-800 rounded-xl p-6 md:p-8 shadow-xl border border-gray-700 flex flex-col items-center text-center transform hover:scale-105 transition-all duration-300 animate-scale-in-up delay-400ms group relative overflow-hidden glow-hover">
                             <div className="absolute inset-0 bg-gradient-to-br from-blue-700 to-purple-800 opacity-0 group-hover:opacity-20 transition-opacity duration-300 rounded-xl"></div>
                             <img src="https://placehold.co/400x250/0f172a/c084fc?text=Engaging+E-commerce" alt="Dynamic E-commerce Platform Design" className="rounded-lg mb-6 shadow-md w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-300" />
                             <h3 className="text-2xl font-semibold text-purple-300 mb-3 relative z-10">Shopfronts That Work</h3>
@@ -242,7 +729,7 @@
                                 Online stores designed for smooth shopping, leading to more sales and loyal customers.
                             </p>
                         </div>
-                        <div className="bg-gray-800 rounded-xl p-6 md:p-8 shadow-xl border border-gray-700 flex flex-col items-center text-center transform hover:scale-105 transition-all duration-300 md:col-span-2 lg:col-span-2 mx-auto max-w-md animate-fade-in-up delay-500ms group relative overflow-hidden">
+                        <div className="bg-gray-800 rounded-xl p-6 md:p-8 shadow-xl border border-gray-700 flex flex-col items-center text-center transform hover:scale-105 transition-all duration-300 md:col-span-2 lg:col-span-2 mx-auto max-w-md animate-scale-in-up delay-500ms group relative overflow-hidden glow-hover">
                             <div className="absolute inset-0 bg-gradient-to-br from-blue-700 to-purple-800 opacity-0 group-hover:opacity-20 transition-opacity duration-300 rounded-xl"></div>
                             <img src="https://placehold.co/400x250/0f172a/f472b6?text=Creative+Portfolios" alt="Engaging Portfolio Website Design" className="rounded-lg mb-6 shadow-md w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-300" />
                             <h3 className="text-2xl font-semibold text-pink-300 mb-3 relative z-10">Showcase Your Creative Side</h3>
@@ -254,7 +741,7 @@
                     <div className="mt-12 animate-fade-in-up delay-600ms">
                         <button
                             onClick={() => navigateTo('contact')}
-                            className="inline-block bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white font-bold py-4 px-10 rounded-full shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-300 ease-in-out text-xl uppercase tracking-wider group relative overflow-hidden"
+                            className="inline-block bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white font-bold py-4 px-10 rounded-full shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-300 ease-in-out text-xl uppercase tracking-wider group relative overflow-hidden glow-hover"
                             aria-label="Discuss Your Web Design Project"
                         >
                             <span className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300"></span>
@@ -270,7 +757,7 @@
                 <div className="container mx-auto max-w-6xl text-center">
                     <h2 className="text-3xl md:text-4xl font-bold text-teal-400 mb-10 md:mb-12 animate-fade-in-up delay-100ms">Automation Tools: Make Your Work Flow</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 lg:gap-12">
-                        <div className="bg-gray-900 rounded-xl p-6 md:p-8 shadow-xl border border-gray-700 flex flex-col items-center transform hover:scale-[1.02] transition-transform duration-300 animate-fade-in-up delay-200ms group relative overflow-hidden">
+                        <div className="bg-gray-900 rounded-xl p-6 md:p-8 shadow-xl border border-gray-700 flex flex-col items-center transform hover:scale-[1.02] transition-transform duration-300 animate-scale-in-up delay-200ms group relative overflow-hidden glow-hover">
                             <div className="absolute inset-0 bg-gradient-to-br from-teal-700 to-green-800 opacity-0 group-hover:opacity-20 transition-opacity duration-300 rounded-xl"></div>
                             <h3 className="text-2xl md:text-3xl font-semibold text-teal-300 mb-4 relative z-10">Flipper Zero Ducky Script Pack</h3>
                             <p className="text-gray-300 text-base md:text-lg mb-6 leading-relaxed relative z-10">
@@ -280,14 +767,14 @@
                                 href="https://payhip.com/b/WwhKZ"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-block bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 ease-in-out text-lg group relative overflow-hidden"
+                                className="inline-block bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out text-lg group relative overflow-hidden"
                                 aria-label="Buy Flipper Zero Ducky Script Bundle"
                             >
                                 <span className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300"></span>
                                 Buy Flipper Zero Pack
                             </a>
                         </div>
-                        <div className="bg-gray-900 rounded-xl p-6 md:p-8 shadow-xl border border-gray-700 flex flex-col items-center transform hover:scale-[1.02] transition-transform duration-300 animate-fade-in-up delay-300ms group relative overflow-hidden">
+                        <div className="bg-gray-900 rounded-xl p-6 md:p-8 shadow-xl border border-gray-700 flex flex-col items-center transform hover:scale-[1.02] transition-transform duration-300 animate-scale-in-up delay-300ms group relative overflow-hidden glow-hover">
                             <div className="absolute inset-0 bg-gradient-to-br from-teal-700 to-green-800 opacity-0 group-hover:opacity-20 transition-opacity duration-300 rounded-xl"></div>
                             <h3 className="text-2xl md:text-3xl font-semibold text-green-300 mb-4 relative z-10">ScriptPilot PowerShell Automation Kit (NEW!)</h3>
                             <p className="text-gray-300 text-base md:text-lg mb-6 leading-relaxed relative z-10">
@@ -297,14 +784,14 @@
                                 href="https://payhip.com/b/kc6jL"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-block bg-gradient-to-r from-teal-500 to-green-600 hover:from-teal-600 hover:to-green-700 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 ease-in-out text-lg group relative overflow-hidden"
+                                className="inline-block bg-gradient-to-r from-teal-500 to-green-600 hover:from-teal-600 hover:to-green-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out text-lg group relative overflow-hidden"
                                 aria-label="Buy ScriptPilot PowerShell Automation Toolkit"
                             >
                                 <span className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300"></span>
                                 Buy The Automation Kit
                             </a>
                         </div>
-                        <div className="bg-gray-900 rounded-xl p-6 md:p-8 shadow-xl border border-gray-700 flex flex-col items-center transform hover:scale-[1.02] transition-transform duration-300 animate-fade-in-up delay-400ms group relative overflow-hidden">
+                        <div className="bg-gray-900 rounded-xl p-6 md:p-8 shadow-xl border border-gray-700 flex flex-col items-center transform hover:scale-[1.02] transition-transform duration-300 animate-scale-in-up delay-400ms group relative overflow-hidden glow-hover">
                             <div className="absolute inset-0 bg-gradient-to-br from-teal-700 to-green-800 opacity-0 group-hover:opacity-20 transition-opacity duration-300 rounded-xl"></div>
                             <h3 className="text-2xl md:text-3xl font-semibold text-purple-300 mb-4 relative z-10">Advanced PowerShell IT Kit (Older Version)</h3>
                             <p className="text-gray-300 text-base md:text-lg mb-6 leading-relaxed relative z-10">
@@ -314,14 +801,14 @@
                                 href="https://payhip.com/b/hMWCp"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-block bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 ease-in-out text-lg group relative overflow-hidden"
+                                className="inline-block bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out text-lg group relative overflow-hidden"
                                 aria-label="Buy Advanced PowerShell IT Toolkit"
                             >
                                 <span className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300"></span>
                                 Buy PowerShell Kit
                             </a>
                         </div>
-                        <div className="bg-gradient-to-br from-indigo-700 to-purple-900 rounded-xl p-6 md:p-8 shadow-2xl border border-purple-600 flex flex-col items-center transform hover:scale-[1.03] transition-transform duration-300 animate-fade-in-up delay-500ms group relative overflow-hidden">
+                        <div className="bg-gradient-to-br from-indigo-700 to-purple-900 rounded-xl p-6 md:p-8 shadow-2xl border border-purple-600 flex flex-col items-center transform hover:scale-[1.03] transition-transform duration-300 animate-scale-in-up delay-500ms group relative overflow-hidden glow-hover">
                             <div className="absolute inset-0 bg-purple-900 opacity-0 group-hover:opacity-20 transition-opacity duration-300 rounded-xl"></div>
                             <div className="absolute top-4 right-4 bg-yellow-400 text-gray-900 text-xs font-bold px-3 py-1 rounded shadow-md z-10">
                                 Featured
@@ -338,7 +825,7 @@
                                 href="https://payhip.com/b/ZBkCP"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-block bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-gray-900 font-bold py-4 px-10 rounded-full shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-300 ease-in-out text-xl uppercase tracking-wider group relative overflow-hidden"
+                                className="inline-block bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-gray-900 font-bold py-4 px-10 rounded-full shadow-lg transform hover:scale-110 transition-all duration-300 ease-in-out text-xl uppercase tracking-wider group relative overflow-hidden"
                                 aria-label="Order Your Custom Script"
                             >
                                 <span className="absolute inset-0 bg-gray-900 opacity-0 group-hover:opacity-10 transition-opacity duration-300"></span>
@@ -355,33 +842,33 @@
                 <div className="container mx-auto max-w-6xl text-center">
                     <h2 className="text-3xl md:text-4xl font-bold text-pink-400 mb-10 md:mb-12 animate-fade-in-up delay-100ms">What Our Clients Say About Script Pilot</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
-                        <div className="bg-gray-800 rounded-xl p-6 md:p-8 shadow-xl border border-gray-700 flex flex-col items-center text-center transform hover:scale-105 transition-all duration-300 animate-fade-in-up delay-200ms group relative overflow-hidden">
+                        <div className="bg-gray-800 rounded-xl p-6 md:p-8 shadow-xl border border-gray-700 flex flex-col items-center text-center transform hover:scale-105 transition-all duration-300 animate-scale-in-up delay-200ms group relative overflow-hidden glow-hover">
                             <div className="absolute inset-0 bg-gradient-to-br from-pink-700 to-purple-800 opacity-0 group-hover:opacity-20 transition-opacity duration-300 rounded-xl"></div>
                             <blockquote className="text-gray-300 text-lg italic mb-6 relative z-10">
                                 "Our old website was slow, outdated, and frankly, hurting our business. Visitors would leave almost immediately, and we barely showed up on search. Script Pilot totally transformed it. They built us a sleek, fast site that actually brings in leads. Since launching, our online leads have increased by 30%, and we're finally getting the visibility we needed. It's a huge relief!"
                             </blockquote>
-                            <p className="text-teal-300 font-semibold relative z-10">- Sarah L., Small Business Owner</p>
+                            <p className="text-teal-300 font-semibold relative z-10">Sarah L., Small Business Owner</p>
                         </div>
-                        <div className="bg-gray-800 rounded-xl p-6 md:p-8 shadow-xl border border-gray-700 flex flex-col items-center text-center transform hover:scale-105 transition-all duration-300 animate-fade-in-up delay-300ms group relative overflow-hidden">
+                        <div className="bg-gray-800 rounded-xl p-6 md:p-8 shadow-xl border border-gray-700 flex flex-col items-center text-center transform hover:scale-105 transition-all duration-300 animate-scale-in-up delay-300ms group relative overflow-hidden glow-hover">
                             <div className="absolute inset-0 bg-gradient-to-br from-pink-700 to-purple-800 opacity-0 group-hover:opacity-20 transition-opacity duration-300 rounded-xl"></div>
                             <blockquote className="text-gray-300 text-lg italic mb-6 relative z-10">
-                                "Before Script Pilot, our IT team was buried under endless manual tasks—setting up new user accounts, deploying software updates across dozens of machines, constant troubleshooting. It was draining our resources and stopping us from bigger projects. The custom PowerShell scripts Script Pilot delivered are genius. They've automated so much of that repetitive grunt work, freeing up literally hundreds of hours a month. Now, my team can actually focus on system improvements and security, not just putting out fires. It's a reliable, elegant solution that changed everything for us."
+                                "Before Script Pilot, our IT team was buried under endless manual tasks, setting up new user accounts, deploying software updates across dozens of machines, constant troubleshooting. It was draining our resources and stopping us from bigger projects. The custom PowerShell scripts Script Pilot delivered are genius. They've automated so much of that repetitive grunt work, freeing up literally hundreds of hours a month. Now, my team can actually focus on system improvements and security, not just putting out fires. It's a reliable, elegant solution that changed everything for us."
                             </blockquote>
-                            <p className="text-teal-300 font-semibold relative z-10">- David M., IT Manager</p>
+                            <p className="text-teal-300 font-semibold relative z-10">David M., IT Manager</p>
                         </div>
-                        <div className="bg-gray-800 rounded-xl p-6 md:p-8 shadow-xl border border-gray-700 flex flex-col items-center text-center transform hover:scale-105 transition-all duration-300 animate-fade-in-up delay-400ms group relative overflow-hidden">
+                        <div className="bg-gray-800 rounded-xl p-6 md:p-8 shadow-xl border border-gray-700 flex flex-col items-center text-center transform hover:scale-105 transition-all duration-300 animate-scale-in-up delay-400ms group relative overflow-hidden glow-hover">
                             <div className="absolute inset-0 bg-gradient-to-br from-pink-700 to-purple-800 opacity-0 group-hover:opacity-20 transition-opacity duration-300 rounded-xl"></div>
                             <blockquote className="text-gray-300 text-lg italic mb-6 relative z-10">
                                 "I had this super fiddly, repetitive sequence I needed to run on my Flipper Zero, and nothing I found online even came close. It was a massive time sink. I reached out to Script Pilot for a custom Ducky Script, and what they delivered was perfect. It runs with zero hiccups, exactly as I envisioned, and honestly, it makes me feel like a wizard. The precision and how quickly they got it done blew me away. It's not just a script; it's exactly what I needed to make my Flipper genuinely powerful for my specific projects. Totally worth it."
                             </blockquote>
-                            <p className="text-teal-300 font-semibold relative z-10">- Alex P., Tech Enthusiast</p>
+                            <p className="text-teal-300 font-semibold relative z-10">Alex P., Tech Enthusiast</p>
                         </div>
                     </div>
                     <div className="mt-12 animate-fade-in-up delay-500ms">
                         <h3 className="text-2xl font-bold text-teal-400 mb-6">Ready to Create Your Own Success Story?</h3>
                         <button
                             onClick={() => navigateTo('contact')}
-                            className="inline-block bg-gradient-to-r from-teal-500 to-blue-600 hover:from-teal-600 hover:to-blue-700 text-white font-bold py-3 px-7 md:py-4 md:px-10 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 ease-in-out text-base md:text-xl group relative overflow-hidden"
+                            className="inline-block bg-gradient-to-r from-teal-500 to-blue-600 hover:from-teal-600 hover:to-blue-700 text-white font-bold py-3 px-7 md:py-4 md:px-10 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 ease-in-out text-base md:text-xl group relative overflow-hidden glow-hover"
                             aria-label="Connect With Script Pilot"
                         >
                             <span className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300"></span>
@@ -395,13 +882,13 @@
         const AboutPage = ({ navigateTo }) => (
             <section className="py-16 md:py-20 px-4 bg-gray-800 min-h-screen">
                 <div className="container mx-auto max-w-5xl text-center">
-                    <h2 className="text-3xl md:text-4xl font-bold text-teal-400 mb-6 md:mb-8 animate-fade-in-up delay-100ms">About Script Pilot: Where Ideas Become Reality</h2>
+                    <h2 className="text-3xl md:text-4xl font-bold text-teal-400 mb-6 md:mb-8 animate-fade-in-up delay-100ms">About Script Pilot: Your Local Springfield Web Design Partner</h2>
                     <p className="text-md md:text-lg text-gray-300 leading-relaxed px-2 animate-fade-in-up delay-200ms">
-                        At Script Pilot, we're all about helping your digital plans come to life. We mix creative web design with smart automation, giving you a unique set of services to boost your brand and simplify your daily work. From making a great-looking website that connects with your audience to building clever scripts that handle complex tasks for Flipper Zero users and IT pros, every solution we create is done with care. We make sure it's reliable, works well with your setup, and helps you succeed.
+                        Script Pilot emerged in 2021 as a dynamic tech startup right here in Springfield, Missouri. We are a super small team of dedicated developers passionate about empowering local businesses through exceptional web design. We've had the privilege of partnering with tons of local businesses around the area, helping them build strong, visible, and engaging online presences that drive real growth. Our agile team is ready to handle any web design task, from crafting stunning new sites to revamping existing ones, always ensuring a solution that truly captures your brand's essence and connects effectively with your target audience.
                     </p>
                     <h2 className="text-3xl md:text-4xl font-bold text-teal-400 text-center mt-16 mb-10 md:mb-12 animate-fade-in-up delay-300ms">Why Choose Script Pilot? We're Here to Help You Succeed.</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 place-items-center">
-                        <div className="bg-gray-800 rounded-xl p-6 md:p-8 shadow-xl transform hover:scale-105 transition-all duration-300 animate-scale-in-up delay-400ms group relative overflow-hidden">
+                        <div className="bg-gray-800 rounded-xl p-6 md:p-8 shadow-xl transform hover:scale-105 transition-all duration-300 animate-scale-in-up delay-400ms group relative overflow-hidden glow-hover">
                             <div className="absolute inset-0 bg-gradient-to-br from-blue-700 to-purple-800 opacity-0 group-hover:opacity-20 transition-opacity duration-300 rounded-xl"></div>
                             <div className="relative z-10 text-4xl md:text-5xl mb-4 text-blue-400 group-hover:scale-110 transition-transform duration-300">
                                 <div className="absolute inset-0 rounded-full bg-blue-500 opacity-20 animate-pulse-circle"></div>
@@ -409,11 +896,11 @@
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 17v-2m3 2v-2m3 2v-2m3 2V7M9 7h.01M12 7h.01M15 7h.01M18 7h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                                 </svg>
                             </div>
-                            <h3 className="text-xl md:text-2xl font-semibold text-gray-100 mb-3 relative z-10">Complete Digital Solutions</h3>
-                            <p className="text-gray-400 text-sm relative z-10">Get all your digital needs covered, from great web designs to smart automation scripts.</p>
+                            <h3 className="text-xl md:text-2xl font-semibold text-gray-100 mb-3 relative z-10">Local Expertise, Global Standards</h3>
+                            <p className="text-gray-400 text-sm relative z-10">Deep understanding of the Springfield market combined with cutting-edge web development practices.</p>
                         </div>
 
-                        <div className="bg-gray-800 rounded-xl p-6 md:p-8 shadow-xl transform hover:scale-105 transition-all duration-300 animate-scale-in-up delay-500ms group relative overflow-hidden">
+                        <div className="bg-gray-800 rounded-xl p-6 md:p-8 shadow-xl transform hover:scale-105 transition-all duration-300 animate-scale-in-up delay-500ms group relative overflow-hidden glow-hover">
                             <div className="absolute inset-0 bg-gradient-to-br from-pink-700 to-orange-800 opacity-0 group-hover:opacity-20 transition-opacity duration-300 rounded-xl"></div>
                             <div className="relative z-10 text-4xl md:text-5xl mb-4 text-pink-400 group-hover:scale-110 transition-transform duration-300">
                                 <div className="absolute inset-0 rounded-full bg-pink-500 opacity-20 animate-pulse-circle"></div>
@@ -421,11 +908,11 @@
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                                 </svg>
                             </div>
-                            <h3 className="text-xl md:text-2xl font-semibold text-gray-100 mb-3 relative z-10">Custom-Made & Reliable</h3>
-                            <p className="text-gray-400 text-sm relative z-10">Every project is built just for you and thoroughly tested to work perfectly.</p>
+                            <h3 className="text-xl md:text-2xl font-semibold text-gray-100 mb-3 relative z-10">Tailored Web Solutions</h3>
+                            <p className="text-gray-400 text-sm relative z-10">Custom designs and functionality built specifically for your business needs and audience.</p>
                         </div>
 
-                        <div className="bg-gray-800 rounded-xl p-6 md:p-8 shadow-xl transform hover:scale-105 transition-all duration-300 animate-scale-in-up delay-600ms group relative overflow-hidden">
+                        <div className="bg-gray-800 rounded-xl p-6 md:p-8 shadow-xl transform hover:scale-105 transition-all duration-300 animate-scale-in-up delay-600ms group relative overflow-hidden glow-hover">
                             <div className="absolute inset-0 bg-gradient-to-br from-green-700 to-teal-800 opacity-0 group-hover:opacity-20 transition-opacity duration-300 rounded-xl"></div>
                             <div className="relative z-10 text-4xl md:text-5xl mb-4 text-green-400 group-hover:scale-110 transition-transform duration-300">
                                 <div className="absolute inset-0 rounded-full bg-green-500 opacity-20 animate-pulse-circle"></div>
@@ -433,15 +920,15 @@
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 15v2m-2 4h4m-4-10V4a2 2 0 012-2h4a2 2 0 012 2v7.586l-.293.293A1 1 0 0115 12h-2.172a2 2 0 00-1.414.586L10 14.172V15z" />
                                 </svg>
                             </div>
-                            <h3 className="text-xl md:text-2xl font-semibold text-gray-100 mb-3 relative z-10">We Work With You</h3>
-                            <p className="text-gray-400 text-sm relative z-10">We'll be with you every step of the way to make sure your ideas become real, exactly as you picture them.</p>
+                            <h3 className="text-xl md:text-2xl font-semibold text-gray-100 mb-3 relative z-10">Dedicated Partnership</h3>
+                            <p className="text-gray-400 text-sm relative z-10">As a small, agile team, we offer personalized attention and rapid response to all your needs.</p>
                         </div>
                     </div>
                     <div className="mt-12 animate-fade-in-up delay-700ms">
                         <h3 className="text-2xl font-bold text-teal-400 mb-6">Let's Build Something Great Together</h3>
                         <button
                             onClick={() => navigateTo('contact')}
-                            className="inline-block bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white font-bold py-4 px-10 rounded-full shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-300 ease-in-out text-xl uppercase tracking-wider group relative overflow-hidden"
+                            className="inline-block bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white font-bold py-4 px-10 rounded-full shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-300 ease-in-out text-xl uppercase tracking-wider group relative overflow-hidden glow-hover"
                             aria-label="Contact Script Pilot to build something great"
                         >
                             <span className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300"></span>
@@ -482,7 +969,7 @@
                         <h3 className="text-2xl font-bold text-teal-400 mb-6">Didn't Find Your Answer?</h3>
                         <button
                             onClick={() => navigateTo('contact')}
-                            className="inline-block bg-gradient-to-r from-teal-500 to-blue-600 hover:from-teal-600 hover:to-blue-700 text-white font-bold py-3 px-7 md:py-4 md:px-10 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 ease-in-out text-base md:text-xl group relative overflow-hidden"
+                            className="inline-block bg-gradient-to-r from-teal-500 to-blue-600 hover:from-teal-600 hover:to-blue-700 text-white font-bold py-3 px-7 md:py-4 md:px-10 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 ease-in-out text-base md:text-xl group relative overflow-hidden glow-hover"
                             aria-label="Contact Script Pilot to ask a question"
                         >
                             <span className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300"></span>
@@ -538,7 +1025,7 @@
                         <div className="flex items-center justify-center">
                             <button
                                 type="submit"
-                                className="bg-gradient-to-r from-teal-500 to-blue-600 hover:from-teal-600 hover:to-blue-700 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 ease-in-out text-lg"
+                                className="bg-gradient-to-r from-teal-500 to-blue-600 hover:from-teal-600 hover:to-blue-700 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 ease-in-out text-lg glow-hover"
                             >
                                 Send Message
                             </button>
@@ -549,13 +1036,37 @@
             </section>
         );
 
+
         const App = () => {
             const [currentPage, setCurrentPage] = useState('home');
             const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // State for mobile menu
 
+            // Effect to read hash from URL for direct links like #esign-contract
+            useEffect(() => {
+                const handleHashChange = () => {
+                    const hash = window.location.hash.substring(1); // Remove '#'
+                    if (hash === 'esign-contract') {
+                        setCurrentPage('esign-contract');
+                    } else if (hash) {
+                         // Optional: if you want to handle other hash links for navigation too
+                        setCurrentPage(hash);
+                    }
+                };
+
+                window.addEventListener('hashchange', handleHashChange);
+                // Initial check on load
+                handleHashChange();
+
+                return () => {
+                    window.removeEventListener('hashchange', handleHashChange);
+                };
+            }, []);
+
             const navigateTo = (page) => {
                 setCurrentPage(page);
                 setIsMobileMenuOpen(false); // Close mobile menu on navigation
+                // Update URL hash for consistent navigation and direct linking
+                window.location.hash = page;
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             };
 
@@ -587,6 +1098,9 @@
                     case 'contact':
                         PageComponent = ContactPage;
                         break;
+                    case 'esign-contract': // This case is included for completeness but not linked from nav
+                        PageComponent = ESignContractPage;
+                        break;
                     default:
                         PageComponent = HomePage;
                 }
@@ -610,8 +1124,8 @@
                                     <button onClick={() => navigateTo('bundles')} className={`text-gray-300 hover:text-teal-400 transition-colors duration-200 text-lg ${currentPage === 'bundles' ? 'text-teal-400 font-bold' : ''}`}>Automation Tools</button>
                                     <button onClick={() => navigateTo('about')} className={`text-gray-300 hover:text-teal-400 transition-colors duration-200 text-lg ${currentPage === 'about' ? 'text-teal-400 font-bold' : ''}`}>About Us</button>
                                     <button onClick={() => navigateTo('testimonials')} className={`text-gray-300 hover:text-teal-400 transition-colors duration-200 text-lg ${currentPage === 'testimonials' ? 'text-teal-400 font-bold' : ''}`}>Reviews</button>
-                                    <button onClick={() => navigateTo('faq')} className={`text-gray-300 hover:text-teal-400 transition-colors duration-200 text-lg ${currentPage === 'faq' ? 'text-teal-400 font-bold' : ''}`}>FAQ</button>
-                                    <button onClick={() => navigateTo('contact')} className={`text-gray-300 hover:text-teal-400 transition-colors duration-200 text-lg ${currentPage === 'contact' ? 'text-teal-400 font-bold' : ''}`}>Contact</button>
+                                    <button onClick={() => navigateTo('faq')} className={`text-gray-300 hover:text-teal-400 transition-colors duration-200 text-lg ${currentPage === 'faq' ? 'text-teal-400' : ''}`}>FAQ</button>
+                                    <button onClick={() => navigateTo('contact')} className={`text-gray-300 hover:text-teal-400 transition-colors duration-200 text-lg ${currentPage === 'contact' ? 'text-teal-400' : ''}`}>Contact</button>
                                 </div>
 
                                 {/* Mobile Menu Button (Hamburger Icon) */}

@@ -13,6 +13,8 @@
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <!-- Babel for JSX -->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- Calendly Widget Script -->
+    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XBVM9RFY0Y"></script>
     <script>
@@ -274,14 +276,14 @@
                     </AnimatedSection>
 
                      <section className="mb-20">
-                        <AnimatedSection>
+                         <AnimatedSection delay={100}>
                             <h2 className="text-3xl font-bold text-center text-white mb-12">Our Core Values</h2>
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                                <div className="bg-slate-800/50 border border-slate-700/50 rounded-xl p-8"><Icons.Innovation/><h3 className="text-xl font-semibold text-blue-300 mt-4 mb-2">Innovation</h3><p className="text-sm text-slate-400">Pushing boundaries with modern technology and creative solutions.</p></div>
+                                <div className="bg-slate-800/50 border border-slate-700/50 rounded-xl p-8"><Icons.Collaboration/><h3 className="text-xl font-semibold text-purple-300 mt-4 mb-2">Collaboration</h3><p className="text-sm text-slate-400">Your vision, our expertise. We build great things together.</p></div>
+                                <div className="bg-slate-800/50 border border-slate-700/50 rounded-xl p-8"><Icons.Quality/><h3 className="text-xl font-semibold text-teal-300 mt-4 mb-2">Quality</h3><p className="text-sm text-slate-400">Uncompromising commitment to performance, design, and reliability.</p></div>
+                            </div>
                         </AnimatedSection>
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-                            <AnimatedSection delay={100}><div className="bg-slate-800/50 border border-slate-700/50 rounded-xl p-8"><Icons.Innovation/><h3 className="text-xl font-semibold text-blue-300 mt-4 mb-2">Innovation</h3><p className="text-sm text-slate-400">Pushing boundaries with modern technology and creative solutions.</p></div></AnimatedSection>
-                            <AnimatedSection delay={200}><div className="bg-slate-800/50 border border-slate-700/50 rounded-xl p-8"><Icons.Collaboration/><h3 className="text-xl font-semibold text-purple-300 mt-4 mb-2">Collaboration</h3><p className="text-sm text-slate-400">Your vision, our expertise. We build great things together.</p></div></AnimatedSection>
-                            <AnimatedSection delay={300}><div className="bg-slate-800/50 border border-slate-700/50 rounded-xl p-8"><Icons.Quality/><h3 className="text-xl font-semibold text-teal-300 mt-4 mb-2">Quality</h3><p className="text-sm text-slate-400">Uncompromising commitment to performance, design, and reliability.</p></div></AnimatedSection>
-                        </div>
                      </section>
                     
                     <section>
@@ -404,26 +406,43 @@
 
             return (
                 <section className="pt-32 pb-16 md:pt-40 md:pb-20 px-4 bg-slate-900 animate-fade-in text-white">
-                    <div className="container mx-auto max-w-2xl">
+                    <div className="container mx-auto max-w-6xl">
                         <AnimatedSection>
                             <div className="text-center mb-12">
                                 <h1 className="text-4xl md:text-5xl font-bold text-green-400">Get in Touch</h1>
-                                <p className="text-lg text-slate-300 mt-4">Have a project in mind? Let's connect and make it happen.</p>
+                                <p className="text-lg text-slate-300 mt-4">Book a free consultation or send us a message.</p>
                             </div>
                         </AnimatedSection>
-                        <AnimatedSection delay={200}>
-                            <div className="bg-slate-800/50 rounded-xl p-8 shadow-2xl border border-slate-700/50">
-                                <form onSubmit={handleSubmit}>
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                                        <div className="relative"><div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none"><Icons.UserIcon/></div><input type="text" name="name" placeholder="Name" className="w-full bg-slate-700/50 text-white rounded-lg border-2 border-slate-600 focus:border-green-500 focus:ring-0 transition pl-10 pr-4 py-2.5" required /></div>
-                                        <div className="relative"><div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none"><Icons.EmailIcon/></div><input type="email" name="email" placeholder="Email" className="w-full bg-slate-700/50 text-white rounded-lg border-2 border-slate-600 focus:border-green-500 focus:ring-0 transition pl-10 pr-4 py-2.5" required /></div>
-                                    </div>
-                                    <div className="mb-6"><textarea name="message" rows="5" placeholder="Your message..." className="w-full bg-slate-700/50 text-white rounded-lg border-2 border-slate-600 focus:border-green-500 focus:ring-0 transition px-4 py-2.5" required></textarea></div>
-                                    <div className="text-center"><button type="submit" disabled={isSubmitting} className="bg-gradient-to-r from-green-500 to-teal-500 hover:from-green-600 hover:to-teal-600 text-white font-bold py-3 px-10 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed">{isSubmitting ? 'Sending...' : 'Send Message'}</button></div>
-                                </form>
-                                {status && <p className="text-center mt-6 text-green-300">{status}</p>}
-                            </div>
-                        </AnimatedSection>
+                        <div className="grid lg:grid-cols-2 gap-12 items-start">
+                            <AnimatedSection delay={200}>
+                                 <div className="bg-slate-800/50 rounded-xl p-8 shadow-2xl border border-slate-700/50 h-full">
+                                    <h3 className="text-2xl font-bold text-white mb-6 text-center">Send a Direct Message</h3>
+                                    <form onSubmit={handleSubmit}>
+                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                            <div className="relative"><div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none"><Icons.UserIcon/></div><input type="text" name="name" placeholder="Name" className="w-full bg-slate-700/50 text-white rounded-lg border-2 border-slate-600 focus:border-green-500 focus:ring-0 transition pl-10 pr-4 py-2.5" required /></div>
+                                            <div className="relative"><div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none"><Icons.EmailIcon/></div><input type="email" name="email" placeholder="Email" className="w-full bg-slate-700/50 text-white rounded-lg border-2 border-slate-600 focus:border-green-500 focus:ring-0 transition pl-10 pr-4 py-2.5" required /></div>
+                                        </div>
+                                        <div className="mb-6"><textarea name="message" rows="5" placeholder="Your message..." className="w-full bg-slate-700/50 text-white rounded-lg border-2 border-slate-600 focus:border-green-500 focus:ring-0 transition px-4 py-2.5" required></textarea></div>
+                                        <div className="text-center"><button type="submit" disabled={isSubmitting} className="bg-gradient-to-r from-green-500 to-teal-500 hover:from-green-600 hover:to-teal-600 text-white font-bold py-3 px-10 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed">{isSubmitting ? 'Sending...' : 'Send Message'}</button></div>
+                                    </form>
+                                    {status && <p className="text-center mt-6 text-green-300">{status}</p>}
+                                </div>
+                            </AnimatedSection>
+                             <AnimatedSection delay={400}>
+                                <div className="bg-slate-800/50 rounded-xl p-8 shadow-2xl border border-slate-700/50 h-full text-center">
+                                    <h3 className="text-2xl font-bold text-white mb-6">Book a Free Consultation</h3>
+                                    <p className="text-slate-400 mb-6">Pick a time that works for you. We'll call you to discuss your project in detail.</p>
+                                    <a 
+                                        href="https://calendly.com/t6ckmedia/30min"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-block bg-gradient-to-r from-teal-500 to-sky-500 hover:from-teal-600 hover:to-sky-600 text-white font-bold py-4 px-10 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300"
+                                    >
+                                        Book Your Call
+                                    </a>
+                                </div>
+                            </AnimatedSection>
+                        </div>
                     </div>
                 </section>
             );

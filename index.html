@@ -3,7 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Script Pilot | Custom Web Solutions</title>
+    
+    <!-- SEO: Updated Title for Local Targeting -->
+    <title>Script Pilot | Web Design & E-commerce Solutions</title>
+    
+    <!-- SEO: Meta Description -->
+    <meta name="description" content="Script Pilot is a premier web design agency specializing in custom websites, e-commerce solutions, and SEO for growing businesses.">
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Font: Inter -->
@@ -22,6 +28,35 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('config', 'G-XBVM9RFY0Y');
     </script>
+
+    <!-- SEO: JSON-LD Schema for Local Business -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Script Pilot",
+      "image": "",
+      "url": "YOUR_WEBSITE_URL_HERE",
+      "priceRange": "$$",
+      "areaServed": {
+        "@type": "AdministrativeArea",
+        "name": "Southwest Missouri"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "09:00",
+        "closes": "17:00"
+      }
+    }
+    </script>
+    
     <style>
         /* Base styles */
         body {
@@ -194,20 +229,13 @@
         );
         
         const WebDesignPageContent = () => (
-            <div className="animate-fade-in">
-                <header className="pt-40 pb-20 px-4 bg-slate-900 text-center">
-                    <AnimatedSection>
-                        <h1 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-sky-300 via-teal-300 to-emerald-400 animated-gradient-text mb-4">Web Design Services</h1>
-                        <p className="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto">We build intuitive, high-performance web experiences that captivate and convert.</p>
-                    </AnimatedSection>
-                </header>
-
+            <div className="animate-fade-in pt-32">
                 <section className="py-20 md:py-28 px-4 bg-slate-950">
                     <div className="container mx-auto max-w-6xl">
                         <AnimatedSection>
                             <div className="text-center mb-16">
-                                <h2 className="text-3xl font-bold text-white">Core Services</h2>
-                                <p className="text-slate-400 mt-2">Solutions crafted for your specific needs.</p>
+                                <h1 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-sky-300 via-teal-300 to-emerald-400 animated-gradient-text mb-4">Core Services</h1>
+                                <p className="text-lg text-slate-400 mt-2">Solutions crafted for your specific needs.</p>
                             </div>
                         </AnimatedSection>
                         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -246,15 +274,18 @@
                         </AnimatedSection>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                            {[
-                                { icon: <Icons.CodeBracket/>, title: "Full Source Code", desc: "You own 100% of the code.", delay: 100 },
-                                { icon: <Icons.Support/>, title: "One Month of Support", desc: "We'll fix any bugs post-launch.", delay: 200 },
-                                { icon: <Icons.Rocket/>, title: "Deployment Assistance", desc: "We'll get your new site live.", delay: 300 },
-                                { icon: <Icons.Search/>, title: "SEO-Ready Markup", desc: "Built for visibility on search engines.", delay: 400 }
+                                { icon: <Icons.CodeBracket/>, title: "Full Source Code", desc: "You receive all project files, giving you complete ownership and control over your website's future.", delay: 100 },
+                                { icon: <Icons.Support/>, title: "One Month of Support", desc: "We provide 30 days of post-launch support to fix any bugs and ensure a smooth transition.", delay: 200 },
+                                { icon: <Icons.Rocket/>, title: "Deployment Assistance", desc: "We handle the entire process of getting your website live on your hosting provider.", delay: 300 },
+                                { icon: <Icons.Search/>, title: "SEO-Ready Markup", desc: "Your site is built with search engine best practices to help you get found on Google.", delay: 400 }
                             ].map(item => (
                                <AnimatedSection delay={item.delay} key={item.title}>
-                                   <div className="flex items-center gap-4 bg-slate-800/50 p-4 rounded-lg border border-transparent hover:border-slate-700 transition-colors">
+                                   <div className="relative flex items-center gap-4 bg-slate-800/50 p-4 rounded-lg border border-transparent hover:border-slate-700 transition-colors group">
                                        {item.icon}
-                                       <p><span className="font-semibold text-white">{item.title}</span><br/><span className="text-sm text-slate-400">{item.desc}</span></p>
+                                       <span className="font-semibold text-white">{item.title}</span>
+                                       <div className="absolute left-0 bottom-full mb-2 w-full max-w-xs p-3 bg-slate-700 text-sm text-slate-300 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none">
+                                           {item.desc}
+                                       </div>
                                    </div>
                                </AnimatedSection>
                            ))}
@@ -431,7 +462,7 @@
                              <AnimatedSection delay={400}>
                                 <div className="bg-slate-800/50 rounded-xl p-8 shadow-2xl border border-slate-700/50 h-full text-center">
                                     <h3 className="text-2xl font-bold text-white mb-6">Book a Free Consultation</h3>
-                                    <p className="text-slate-400 mb-6">Pick a time that works for you. We'll call you to discuss your project in detail.</p>
+                                    <p className="text-slate-400 mb-6">Ready to discuss your project? Click the button below to open our scheduling page and find a time that works for you. We'll call you to discuss your project in detail.</p>
                                     <a 
                                         href="https://calendly.com/t6ckmedia/30min"
                                         target="_blank"
@@ -482,8 +513,15 @@
         const Footer = () => (
             <footer className="bg-slate-950 text-slate-400 py-8 px-4 border-t border-slate-800/50">
                 <div className="container mx-auto flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-6">
-                    <div><a href="#home" className="flex items-center justify-start gap-2 mb-2 group"><Icons.Logo /></a><p className="text-sm">Crafting Digital Excellence, One Line at a Time.</p></div>
-                    <div className="text-sm"><p>&copy; {new Date().getFullYear()} Script Pilot. All Rights Reserved.</p></div>
+                    <div>
+                        <a href="#home" className="flex items-center justify-center md:justify-start gap-2 mb-2 group">
+                            <Icons.Logo />
+                        </a>
+                        <p className="text-sm">Crafting Digital Excellence, One Line at a Time.</p>
+                    </div>
+                    <div className="text-sm text-slate-500">
+                        <p>Serving Springfield & Southwest Missouri</p>
+                    </div>
                 </div>
             </footer>
         );

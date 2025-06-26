@@ -98,6 +98,13 @@
             50% { transform: translateY(-10px); }
             100% { transform: translateY(0px); }
         }
+        
+        /* Keyframe for Deployment Assistance icon */
+        @keyframes dash {
+          to {
+            stroke-dashoffset: -12;
+          }
+        }
 
         /* Smoother scroll-triggered animations (for sections within a page) */
         .fade-in-section {
@@ -200,12 +207,13 @@
             Responsive: () => <svg width="100%" viewBox="0 0 64 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="group"><g className="transition-transform duration-500 ease-out group-hover:-translate-y-1"><path d="M4 12h56v24H4z" className="fill-slate-700/30 stroke-slate-600" strokeWidth="1.5" rx="2"/><path d="M10 18h30" className="stroke-slate-500" strokeWidth="1.5" strokeLinecap="round"/><path d="M10 24h20" className="stroke-slate-500" strokeWidth="1.5" strokeLinecap="round" /></g><g className="transition-all duration-500 ease-out opacity-0 group-hover:opacity-100 group-hover:translate-x-2 group-hover:-translate-y-1"><rect x="42" y="16" width="16" height="28" rx="2" className="fill-slate-800/80 stroke-sky-400" strokeWidth="1.5"/><path d="M46 20h8" className="stroke-slate-600 group-hover:stroke-sky-500 transition-colors" strokeWidth="1" strokeLinecap="round"/><path d="M46 24h4" className="stroke-slate-600 group-hover:stroke-sky-500 transition-colors" style={{transitionDelay:'100ms'}} strokeWidth="1" strokeLinecap="round"/></g></svg>,
             ECommerce: () => <svg width="100%" viewBox="0 0 64 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="group"><path d="M4 10h56v28H4z" className="fill-slate-700/30 stroke-slate-600" strokeWidth="1.5" rx="2"/><path d="M4 18h56" className="stroke-slate-700" strokeWidth="1"/><rect x="10" y="24" width="7" height="7" rx="1" className="fill-slate-600 group-hover:fill-purple-500/50 transition-colors" style={{transitionDelay: '100ms'}}/><rect x="20" y="24" width="7" height="7" rx="1" className="fill-slate-600 group-hover:fill-purple-500/50 transition-colors" style={{transitionDelay: '200ms'}}/><rect x="30" y="24" width="7" height="7" rx="1" className="fill-slate-600 group-hover:fill-purple-500/50 transition-colors" style={{transitionDelay: '300ms'}}/><g className="transition-all duration-300 ease-in-out opacity-0 group-hover:opacity-100 group-hover:-translate-y-2"><path d="M48 30v-6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v6" className="stroke-purple-400" strokeWidth="1.5" strokeLinecap="round"/><path d="M46 30h12v4a2 2 0 0 1-2 2H48a2 2 0 0 1-2-2v-4z" className="fill-purple-400/80 stroke-purple-400" strokeWidth="1.5"/></g></svg>,
             CustomApp: () => <svg width="100%" viewBox="0 0 64 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="group"><path d="M4 10h56v28H4z" className="fill-slate-700/30 stroke-slate-600" strokeWidth="1.5" rx="2"/><g className="transition-transform duration-300 group-hover:scale-90" style={{transformOrigin: 'center'}}><rect x="10" y="15" width="44" height="18" rx="1" className="fill-slate-800/50 stroke-slate-700" strokeWidth="1"/><path d="M14 19h36" stroke="#252F3D" strokeWidth="1" strokeLinecap="round"/><path d="M14 24h20" stroke="#252F3D" strokeWidth="1" strokeLinecap="round"/><path d="M14 29h28" stroke="#252F3D" strokeWidth="1" strokeLinecap="round"/></g><g className="opacity-0 group-hover:opacity-100 transition-opacity duration-300"><path d="M16 24 l-4 -4 4 -4" className="stroke-pink-400" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/><path d="M24 20h8" className="stroke-pink-400" strokeWidth="1.5" strokeLinecap="round"/></g><g className="transition-transform duration-500 ease-out group-hover:translate-x-4"><circle cx="48" cy="24" r="3" className="fill-pink-400/20 stroke-pink-400" strokeWidth="1"/></g></svg>,
+            // NEW ICON: Deployment Assistance
+            DeploymentAssistance: () => <svg width="100%" viewBox="0 0 64 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="group"><rect x="12" y="14" width="40" height="20" rx="2" className="fill-slate-700/30 stroke-slate-600" strokeWidth="1.5"/><circle cx="18" cy="20" r="1.5" className="fill-slate-600 group-hover:fill-green-500/80 transition-colors" style={{transitionDelay:'100ms'}} /><circle cx="18" cy="26" r="1.5" className="fill-slate-600 group-hover:fill-slate-500 transition-colors" style={{transitionDelay:'200ms'}} /><g className="transition-transform duration-500 ease-out group-hover:-translate-y-4"><path d="M32 24V10" className="stroke-green-400" strokeWidth="2" strokeLinecap="round"/><path d="M28 14l4-4 4 4" className="stroke-green-400" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></g><path d="M26 30h12" className="stroke-green-400/50 opacity-0 group-hover:opacity-100 transition-opacity" strokeWidth="1" strokeDasharray="2 4" style={{animation: 'dash 1s linear infinite', transitionDelay: '200ms'}} /><path d="M26 34h12" className="stroke-green-400/50 opacity-0 group-hover:opacity-100 transition-opacity" strokeWidth="1" strokeDasharray="2 4" style={{animation: 'dash 1s linear infinite reverse', transitionDelay: '300ms'}}/></svg>,
             UserIcon: () => <svg className="h-5 w-5 text-slate-500" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" /></svg>,
             EmailIcon: () => <svg className="h-5 w-5 text-slate-500"  viewBox="0 0 20 20" fill="currentColor"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" /><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" /></svg>,
             Innovation: () => <svg className="h-10 w-10 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.293 2.293a1 1 0 010 1.414L10 17l-4 4 4-4 3.293-3.293a1 1 0 011.414 0l2.293 2.293M5 3l4 4" /></svg>,
             Collaboration: () => <svg className="h-10 w-10 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a3.004 3.004 0 015.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>,
             Quality: () => <svg className="h-10 w-10 text-teal-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /></svg>,
-            // FINAL FIX: Using official, brand-accurate SVG logos from a reliable external source.
             ReactIcon: () => <img src="https://cdn.simpleicons.org/react/61DAFB" alt="React Logo" className="w-12 h-12" />,
             JavaScript: () => <img src="https://cdn.simpleicons.org/javascript/F7DF1E" alt="JavaScript Logo" className="w-12 h-12 rounded-md" />,
             Nodejs: () => <img src="https://cdn.simpleicons.org/nodedotjs/339933" alt="Node.js Logo" className="w-12 h-12" />,
@@ -348,7 +356,8 @@
                                     <p className="text-lg text-slate-400 mt-2">Solutions crafted for your specific needs.</p>
                                 </div>
                             </AnimatedSection>
-                            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                            {/* UPDATED: Grid changed to 2x2 for better balance */}
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
                                 <AnimatedSection>
                                     <div className="bg-gradient-to-br from-slate-800/60 to-slate-900/50 rounded-xl shadow-lg border border-slate-700/50 p-8 h-full flex flex-col group hover:border-sky-400/50 transition-colors duration-300">
                                         <div className="aspect-[4/3] mb-6"><Icons.Responsive /></div>
@@ -368,6 +377,14 @@
                                         <div className="aspect-[4/3] mb-6"><Icons.CustomApp /></div>
                                         <h3 className="text-2xl font-semibold text-pink-300 my-4">Custom Web Applications</h3>
                                         <p className="text-slate-400 flex-grow">Developing bespoke web tools and platforms tailored to your unique business processes.</p>
+                                    </div>
+                                </AnimatedSection>
+                                {/* NEW: Deployment Assistance Service Card */}
+                                <AnimatedSection delay={600}>
+                                    <div className="bg-gradient-to-br from-slate-800/60 to-slate-900/50 rounded-xl shadow-lg border border-slate-700/50 p-8 h-full flex flex-col group hover:border-green-400/50 transition-colors duration-300">
+                                        <div className="aspect-[4/3] mb-6"><Icons.DeploymentAssistance /></div>
+                                        <h3 className="text-2xl font-semibold text-green-300 my-4">Deployment Assistance</h3>
+                                        <p className="text-slate-400 flex-grow">Ensuring a smooth, secure, and seamless launch for your project from the server to your users' screens.</p>
                                     </div>
                                 </AnimatedSection>
                             </div>

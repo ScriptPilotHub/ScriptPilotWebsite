@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <!-- SEO: Updated Title for Local Targeting -->
     <title>Script Pilot | Web Design & E-commerce Solutions</title>
-    
+
     <!-- SEO: Meta Description -->
     <meta name="description" content="Script Pilot is a premier web design agency specializing in custom websites, e-commerce solutions, and SEO for growing businesses.">
 
@@ -19,8 +19,6 @@
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <!-- Babel for JSX -->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <!-- Calendly Widget Script -->
-    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XBVM9RFY0Y"></script>
     <script>
@@ -56,7 +54,7 @@
       }
     }
     </script>
-    
+
     <style>
         /* Base styles */
         body {
@@ -77,14 +75,31 @@
             66% { transform: translate(-20px, 20px) scale(0.9); }
             100% { transform: translate(0px, 0px) scale(1); }
         }
-        
+
         @keyframes animated-gradient {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
-        
-        /* Smoother scroll-triggered animations */
+
+        /* Keyframes for page fade-in */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+        }
+
+        /* Keyframe for subtle floating icons */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Smoother scroll-triggered animations (for sections within a page) */
         .fade-in-section {
             opacity: 0;
             transform: translateY(25px) scale(0.98);
@@ -100,7 +115,7 @@
             background-size: 250%;
             animation: animated-gradient 8s ease-in-out infinite;
         }
-        
+
         /* Nav link underline effect */
         .nav-link-underline::after {
             content: '';
@@ -133,7 +148,7 @@
             useEffect(() => {
                 const handleHashChange = () => {
                     setPathname(window.location.hash.substring(1) || 'home');
-                    window.scrollTo(0, 0);
+                    window.scrollTo(0, 0); // Scroll to top on page change
                 };
                 window.addEventListener('hashchange', handleHashChange);
                 return () => window.removeEventListener('hashchange', handleHashChange);
@@ -172,30 +187,37 @@
                 </div>
             );
         };
+        
+        // --- LOGO COMPONENT ---
+        const LogoText = () => (
+             <span className="text-2xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-teal-300 via-blue-400 to-purple-400 animated-gradient-text">
+                Script Pilot
+             </span>
+        );
 
         // --- SVG ASSETS & ICONS ---
         const Icons = {
-            Logo: () => (
-                 <span className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-500 hover:from-teal-300 hover:to-blue-400 transition-all duration-300">Script Pilot</span>
-            ),
             Responsive: () => <svg width="100%" viewBox="0 0 64 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="group"><g className="transition-transform duration-500 ease-out group-hover:-translate-y-1"><path d="M4 12h56v24H4z" className="fill-slate-700/30 stroke-slate-600" strokeWidth="1.5" rx="2"/><path d="M10 18h30" className="stroke-slate-500" strokeWidth="1.5" strokeLinecap="round"/><path d="M10 24h20" className="stroke-slate-500" strokeWidth="1.5" strokeLinecap="round" /></g><g className="transition-all duration-500 ease-out opacity-0 group-hover:opacity-100 group-hover:translate-x-2 group-hover:-translate-y-1"><rect x="42" y="16" width="16" height="28" rx="2" className="fill-slate-800/80 stroke-sky-400" strokeWidth="1.5"/><path d="M46 20h8" className="stroke-slate-600 group-hover:stroke-sky-500 transition-colors" strokeWidth="1" strokeLinecap="round"/><path d="M46 24h4" className="stroke-slate-600 group-hover:stroke-sky-500 transition-colors" style={{transitionDelay:'100ms'}} strokeWidth="1" strokeLinecap="round"/></g></svg>,
             ECommerce: () => <svg width="100%" viewBox="0 0 64 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="group"><path d="M4 10h56v28H4z" className="fill-slate-700/30 stroke-slate-600" strokeWidth="1.5" rx="2"/><path d="M4 18h56" className="stroke-slate-700" strokeWidth="1"/><rect x="10" y="24" width="7" height="7" rx="1" className="fill-slate-600 group-hover:fill-purple-500/50 transition-colors" style={{transitionDelay: '100ms'}}/><rect x="20" y="24" width="7" height="7" rx="1" className="fill-slate-600 group-hover:fill-purple-500/50 transition-colors" style={{transitionDelay: '200ms'}}/><rect x="30" y="24" width="7" height="7" rx="1" className="fill-slate-600 group-hover:fill-purple-500/50 transition-colors" style={{transitionDelay: '300ms'}}/><g className="transition-all duration-300 ease-in-out opacity-0 group-hover:opacity-100 group-hover:-translate-y-2"><path d="M48 30v-6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v6" className="stroke-purple-400" strokeWidth="1.5" strokeLinecap="round"/><path d="M46 30h12v4a2 2 0 0 1-2 2H48a2 2 0 0 1-2-2v-4z" className="fill-purple-400/80 stroke-purple-400" strokeWidth="1.5"/></g></svg>,
             CustomApp: () => <svg width="100%" viewBox="0 0 64 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="group"><path d="M4 10h56v28H4z" className="fill-slate-700/30 stroke-slate-600" strokeWidth="1.5" rx="2"/><g className="transition-transform duration-300 group-hover:scale-90" style={{transformOrigin: 'center'}}><rect x="10" y="15" width="44" height="18" rx="1" className="fill-slate-800/50 stroke-slate-700" strokeWidth="1"/><path d="M14 19h36" stroke="#252F3D" strokeWidth="1" strokeLinecap="round"/><path d="M14 24h20" stroke="#252F3D" strokeWidth="1" strokeLinecap="round"/><path d="M14 29h28" stroke="#252F3D" strokeWidth="1" strokeLinecap="round"/></g><g className="opacity-0 group-hover:opacity-100 transition-opacity duration-300"><path d="M16 24 l-4 -4 4 -4" className="stroke-pink-400" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/><path d="M24 20h8" className="stroke-pink-400" strokeWidth="1.5" strokeLinecap="round"/></g><g className="transition-transform duration-500 ease-out group-hover:translate-x-4"><circle cx="48" cy="24" r="3" className="fill-pink-400/20 stroke-pink-400" strokeWidth="1"/></g></svg>,
             UserIcon: () => <svg className="h-5 w-5 text-slate-500" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" /></svg>,
             EmailIcon: () => <svg className="h-5 w-5 text-slate-500"  viewBox="0 0 20 20" fill="currentColor"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" /><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" /></svg>,
-            CodeBracket: () => <svg className="h-8 w-8 text-teal-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>,
-            Support: () => <svg className="h-8 w-8 text-purple-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>,
-            Rocket: () => <svg className="h-8 w-8 text-sky-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>,
-            Search: () => <svg className="h-8 w-8 text-pink-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>,
             Innovation: () => <svg className="h-10 w-10 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.293 2.293a1 1 0 010 1.414L10 17l-4 4 4-4 3.293-3.293a1 1 0 011.414 0l2.293 2.293M5 3l4 4" /></svg>,
             Collaboration: () => <svg className="h-10 w-10 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a3.004 3.004 0 015.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>,
             Quality: () => <svg className="h-10 w-10 text-teal-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /></svg>,
+            // FINAL FIX: Using official, brand-accurate SVG logos from a reliable external source.
+            ReactIcon: () => <img src="https://cdn.simpleicons.org/react/61DAFB" alt="React Logo" className="w-12 h-12" />,
+            JavaScript: () => <img src="https://cdn.simpleicons.org/javascript/F7DF1E" alt="JavaScript Logo" className="w-12 h-12 rounded-md" />,
+            Nodejs: () => <img src="https://cdn.simpleicons.org/nodedotjs/339933" alt="Node.js Logo" className="w-12 h-12" />,
+            Shopify: () => <img src="https://cdn.simpleicons.org/shopify/7AB55C" alt="Shopify Logo" className="w-12 h-12" />,
+            WordPress: () => <img src="https://cdn.simpleicons.org/wordpress/21759B" alt="WordPress Logo" className="w-12 h-12" />,
+            Figma: () => <img src="https://cdn.simpleicons.org/figma/F24E1E" alt="Figma Logo" className="w-12 h-12" />,
         };
-        
+
         // --- PAGE COMPONENTS ---
 
         const HomePageContent = () => (
-             <>
+             <div className="animate-fade-in">
                 <section className="relative min-h-screen flex flex-col items-center justify-center text-center bg-slate-900 overflow-hidden px-4 pt-24 pb-16">
                     <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCI+PHJlY3Qgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBmaWxsPSJ0cmFuc3BhcmVudCI+PC9yZWN0PjxjaXJjbGUgY3g9IjIwIiBjeT0iMjAiIHI9IjEiIGZpbGw9InJnYmEoMTUsIDIzLCA0MiwgMC4zKSI+PC9jaXJjbGU+PC9zdmc+')] opacity-50"></div>
                     <div className="absolute inset-0 bg-gradient-to-b from-slate-900 via-slate-900/80 to-slate-900"></div>
@@ -225,75 +247,138 @@
                         </AnimatedSection>
                     </div>
                 </section>
-            </>
+             </div>
         );
         
-        const WebDesignPageContent = () => (
-            <div className="animate-fade-in pt-32">
-                <section className="py-20 md:py-28 px-4 bg-slate-950">
-                    <div className="container mx-auto max-w-6xl">
+        // --- Redesigned Technology Stack Section Components ---
+        const TechnologyCard = ({ tech, index }) => {
+            const [isHovered, setIsHovered] = useState(false);
+            return (
+                <AnimatedSection delay={index * 100}>
+                    <div 
+                        className="relative flex flex-col items-center justify-center p-4 cursor-pointer"
+                        onMouseEnter={() => setIsHovered(true)}
+                        onMouseLeave={() => setIsHovered(false)}
+                    >
+                        <div className={`
+                            w-24 h-24 flex items-center justify-center rounded-full bg-slate-800/60 
+                            border-2 border-slate-700/50 group-hover:border-teal-400/50
+                            transition-all duration-300 transform hover:scale-110 hover:-translate-y-2
+                        `} 
+                        style={{animation: `float 6s ease-in-out ${index * 0.5}s infinite`}}
+                        >
+                            <tech.Icon />
+                        </div>
+                        <div className={`
+                            absolute bottom-full mb-4 w-64 p-4 rounded-lg bg-slate-900/95 backdrop-blur-sm 
+                            border border-slate-700 shadow-lg text-center
+                            transition-all duration-300 ease-in-out
+                            ${isHovered ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2 pointer-events-none'}
+                        `}>
+                            <h4 className="font-bold text-lg text-teal-300">{tech.name}</h4>
+                            <p className="text-slate-300 text-sm leading-relaxed mt-1">{tech.description}</p>
+                        </div>
+                    </div>
+                </AnimatedSection>
+            );
+        };
+
+        const TechnologyStackSection = () => {
+            const techCategories = {
+                'Frontend': [
+                    { name: 'React', Icon: Icons.ReactIcon, description: "For creating incredibly fast, dynamic, and interactive user interfaces." },
+                    { name: 'JavaScript', Icon: Icons.JavaScript, description: "The foundational language for building rich, interactive features on the web." }
+                ],
+                'Backend': [
+                    { name: 'Node.js', Icon: Icons.Nodejs, description: "Enables fast, scalable, and efficient server-side applications." }
+                ],
+                'Platforms & CMS': [
+                    { name: 'Shopify', Icon: Icons.Shopify, description: "The world's leading platform for building powerful and scalable e-commerce stores." },
+                    { name: 'WordPress', Icon: Icons.WordPress, description: "A flexible and powerful content management system for any type of website." }
+                ],
+                'Design': [
+                    { name: 'Figma', Icon: Icons.Figma, description: "Our tool for crafting pixel-perfect, collaborative mockups and prototypes." }
+                ]
+            };
+
+            return (
+                <section className="py-20 md:py-32 px-4 bg-slate-900 border-t border-b border-slate-800/50">
+                    <div className="container mx-auto max-w-7xl">
                         <AnimatedSection>
-                            <div className="text-center mb-16">
-                                <h1 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-sky-300 via-teal-300 to-emerald-400 animated-gradient-text mb-4">Core Services</h1>
-                                <p className="text-lg text-slate-400 mt-2">Solutions crafted for your specific needs.</p>
+                            <div className="text-center mb-20">
+                                {/* FIXED: Added padding-bottom to prevent text clipping */}
+                                <h2 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-teal-300 via-blue-400 to-purple-400 animated-gradient-text mb-4 pb-4">
+                                    Technology That Empowers
+                                </h2>
+                                <p className="text-lg text-slate-400 max-w-3xl mx-auto">
+                                    We build with a curated stack of modern, reliable, and scalable technologies to ensure your project is a success now and in the future.
+                                </p>
                             </div>
                         </AnimatedSection>
-                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                        <div className="space-y-16">
+                            {Object.entries(techCategories).map(([category, techs], categoryIndex) => (
+                                <AnimatedSection key={category} delay={categoryIndex * 200}>
+                                    <div className="text-center">
+                                        <h3 className="text-2xl font-semibold text-slate-300 border-b-2 border-slate-700/80 inline-block pb-2 px-4">
+                                            {category}
+                                        </h3>
+                                    </div>
+                                    <div className="mt-12 flex flex-wrap justify-center items-start gap-x-10 gap-y-16">
+                                        {techs.map((tech, index) => (
+                                            <TechnologyCard tech={tech} index={index} key={tech.name} />
+                                        ))}
+                                    </div>
+                                </AnimatedSection>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+            );
+        };
+
+        const WebDesignPageContent = () => {
+            return (
+                <div className="animate-fade-in pt-32">
+                    {/* Core Services Section */}
+                    <section className="py-20 md:py-28 px-4 bg-slate-950">
+                        <div className="container mx-auto max-w-6xl">
                             <AnimatedSection>
-                                <div className="bg-gradient-to-br from-slate-800/60 to-slate-900/50 rounded-xl shadow-lg border border-slate-700/50 p-8 h-full flex flex-col group hover:border-sky-400/50 transition-colors duration-300">
-                                    <div className="aspect-[4/3] mb-6"><Icons.Responsive /></div>
-                                    <h3 className="text-2xl font-semibold text-sky-300 my-4">Responsive Website Design</h3>
-                                    <p className="text-slate-400 flex-grow">Crafting sites that provide a flawless experience on any device, from desktops to smartphones.</p>
+                                <div className="text-center mb-16">
+                                    <h1 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-sky-300 via-teal-300 to-emerald-400 animated-gradient-text mb-4">Core Services</h1>
+                                    <p className="text-lg text-slate-400 mt-2">Solutions crafted for your specific needs.</p>
                                 </div>
                             </AnimatedSection>
-                            <AnimatedSection delay={200}>
-                                <div className="bg-gradient-to-br from-slate-800/60 to-slate-900/50 rounded-xl shadow-lg border border-slate-700/50 p-8 h-full flex flex-col group hover:border-purple-400/50 transition-colors duration-300">
-                                    <div className="aspect-[4/3] mb-6"><Icons.ECommerce /></div>
-                                    <h3 className="text-2xl font-semibold text-purple-300 my-4">E-commerce Solutions</h3>
-                                    <p className="text-slate-400 flex-grow">Building secure, user-friendly online stores that convert visitors into loyal customers.</p>
-                                </div>
-                            </AnimatedSection>
-                            <AnimatedSection delay={400}>
-                                <div className="bg-gradient-to-br from-slate-800/60 to-slate-900/50 rounded-xl shadow-lg border border-slate-700/50 p-8 h-full flex flex-col group hover:border-pink-400/50 transition-colors duration-300">
-                                    <div className="aspect-[4/3] mb-6"><Icons.CustomApp /></div>
-                                    <h3 className="text-2xl font-semibold text-pink-300 my-4">Custom Web Applications</h3>
-                                    <p className="text-slate-400 flex-grow">Developing bespoke web tools and platforms tailored to your unique business processes.</p>
-                                </div>
-                            </AnimatedSection>
-                        </div>
-                    </div>
-                </section>
-                
-                <section className="py-20 md:py-28 px-4 bg-slate-900">
-                    <div className="container mx-auto max-w-5xl">
-                        <AnimatedSection>
-                            <div className="text-center mb-16">
-                                <h2 className="text-3xl font-bold text-white">What You Can Expect</h2>
-                                <p className="text-slate-400 mt-2">Every project is a partnership, and every partnership comes with our standard of excellence.</p>
+                            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                                <AnimatedSection>
+                                    <div className="bg-gradient-to-br from-slate-800/60 to-slate-900/50 rounded-xl shadow-lg border border-slate-700/50 p-8 h-full flex flex-col group hover:border-sky-400/50 transition-colors duration-300">
+                                        <div className="aspect-[4/3] mb-6"><Icons.Responsive /></div>
+                                        <h3 className="text-2xl font-semibold text-sky-300 my-4">Responsive Website Design</h3>
+                                        <p className="text-slate-400 flex-grow">Crafting sites that provide a flawless experience on any device, from desktops to smartphones.</p>
+                                    </div>
+                                </AnimatedSection>
+                                <AnimatedSection delay={200}>
+                                    <div className="bg-gradient-to-br from-slate-800/60 to-slate-900/50 rounded-xl shadow-lg border border-slate-700/50 p-8 h-full flex flex-col group hover:border-purple-400/50 transition-colors duration-300">
+                                        <div className="aspect-[4/3] mb-6"><Icons.ECommerce /></div>
+                                        <h3 className="text-2xl font-semibold text-purple-300 my-4">E-commerce Solutions</h3>
+                                        <p className="text-slate-400 flex-grow">Building secure, user-friendly online stores that convert visitors into loyal customers.</p>
+                                    </div>
+                                </AnimatedSection>
+                                <AnimatedSection delay={400}>
+                                    <div className="bg-gradient-to-br from-slate-800/60 to-slate-900/50 rounded-xl shadow-lg border border-slate-700/50 p-8 h-full flex flex-col group hover:border-pink-400/50 transition-colors duration-300">
+                                        <div className="aspect-[4/3] mb-6"><Icons.CustomApp /></div>
+                                        <h3 className="text-2xl font-semibold text-pink-300 my-4">Custom Web Applications</h3>
+                                        <p className="text-slate-400 flex-grow">Developing bespoke web tools and platforms tailored to your unique business processes.</p>
+                                    </div>
+                                </AnimatedSection>
                             </div>
-                        </AnimatedSection>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                           {[
-                                { icon: <Icons.CodeBracket/>, title: "Full Source Code", desc: "You receive all project files, giving you complete ownership and control over your website's future.", delay: 100 },
-                                { icon: <Icons.Support/>, title: "One Month of Support", desc: "We provide 30 days of post-launch support to fix any bugs and ensure a smooth transition.", delay: 200 },
-                                { icon: <Icons.Rocket/>, title: "Deployment Assistance", desc: "We handle the entire process of getting your website live on your hosting provider.", delay: 300 },
-                                { icon: <Icons.Search/>, title: "SEO-Ready Markup", desc: "Your site is built with search engine best practices to help you get found on Google.", delay: 400 }
-                            ].map(item => (
-                               <AnimatedSection delay={item.delay} key={item.title}>
-                                   <div className="relative flex items-center gap-4 bg-slate-800/50 p-4 rounded-lg border border-transparent hover:border-slate-700 transition-colors group">
-                                       {item.icon}
-                                       <span className="font-semibold text-white">{item.title}</span>
-                                       <div className="absolute left-0 bottom-full mb-2 w-full max-w-xs p-3 bg-slate-700 text-sm text-slate-300 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none">
-                                           {item.desc}
-                                       </div>
-                                   </div>
-                               </AnimatedSection>
-                           ))}
                         </div>
-                    </div>
-                </section>
-            </div>
-        );
+                    </section>
+                    
+                    {/* INTEGRATED: The new Technology Stack Section */}
+                    <TechnologyStackSection />
+                </div>
+            );
+        };
 
 
         const AboutPage = () => (
@@ -306,17 +391,17 @@
                         </div>
                     </AnimatedSection>
 
-                     <section className="mb-20">
+                    <section className="mb-20">
                          <AnimatedSection delay={100}>
                             <h2 className="text-3xl font-bold text-center text-white mb-12">Our Core Values</h2>
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-                                <div className="bg-slate-800/50 border border-slate-700/50 rounded-xl p-8"><Icons.Innovation/><h3 className="text-xl font-semibold text-blue-300 mt-4 mb-2">Innovation</h3><p className="text-sm text-slate-400">Pushing boundaries with modern technology and creative solutions.</p></div>
-                                <div className="bg-slate-800/50 border border-slate-700/50 rounded-xl p-8"><Icons.Collaboration/><h3 className="text-xl font-semibold text-purple-300 mt-4 mb-2">Collaboration</h3><p className="text-sm text-slate-400">Your vision, our expertise. We build great things together.</p></div>
-                                <div className="bg-slate-800/50 border border-slate-700/50 rounded-xl p-8"><Icons.Quality/><h3 className="text-xl font-semibold text-teal-300 mt-4 mb-2">Quality</h3><p className="text-sm text-slate-400">Uncompromising commitment to performance, design, and reliability.</p></div>
+                                <div className="bg-slate-800/50 border border-slate-700/50 rounded-xl p-8 flex flex-col items-center"><Icons.Innovation/><h3 className="text-xl font-semibold text-blue-300 mt-4 mb-2">Innovation</h3><p className="text-sm text-slate-400">Pushing boundaries with modern technology and creative solutions.</p></div>
+                                <div className="bg-slate-800/50 border border-slate-700/50 rounded-xl p-8 flex flex-col items-center"><Icons.Collaboration/><h3 className="text-xl font-semibold text-purple-300 mt-4 mb-2">Collaboration</h3><p className="text-sm text-slate-400">Your vision, our expertise. We build great things together.</p></div>
+                                <div className="bg-slate-800/50 border border-slate-700/50 rounded-xl p-8 flex flex-col items-center"><Icons.Quality/><h3 className="text-xl font-semibold text-teal-300 mt-4 mb-2">Quality</h3><p className="text-sm text-slate-400">Uncompromising commitment to performance, design, and reliability.</p></div>
                             </div>
                         </AnimatedSection>
-                     </section>
-                    
+                       </section>
+
                     <section>
                         <AnimatedSection>
                             <h2 className="text-3xl font-bold text-center text-white mb-12">Meet the Pilots</h2>
@@ -339,8 +424,7 @@
                 </div>
             </section>
         );
-        
-        // --- NEW FAQ PAGE ---
+
         const FAQPage = () => {
             const [openIndex, setOpenIndex] = useState(null);
 
@@ -366,7 +450,7 @@
                     answer: "Since every project is unique, we provide custom quotes based on the specific requirements and scope of work. Please get in touch via our contact page for a free, no-obligation estimate for your project."
                 }
             ];
-            
+
             const AccordionItem = ({ faq, index, isOpen, onToggle }) => (
                 <div className="border-b border-slate-700/50">
                     <button
@@ -392,7 +476,7 @@
 
             return (
                  <section className="pt-32 pb-16 md:pt-40 md:pb-20 px-4 bg-slate-900 animate-fade-in text-white">
-                    <div className="container mx-auto max-w-4xl">
+                     <div className="container mx-auto max-w-4xl">
                         <AnimatedSection>
                             <div className="text-center mb-12">
                                 <h1 className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-teal-300 via-sky-400 to-indigo-400 animated-gradient-text">Frequently Asked Questions</h1>
@@ -437,7 +521,7 @@
 
             return (
                 <section className="pt-32 pb-16 md:pt-40 md:pb-20 px-4 bg-slate-900 animate-fade-in text-white">
-                    <div className="container mx-auto max-w-6xl">
+                     <div className="container mx-auto max-w-6xl">
                         <AnimatedSection>
                             <div className="text-center mb-12">
                                 <h1 className="text-4xl md:text-5xl font-bold text-green-400">Get in Touch</h1>
@@ -463,7 +547,7 @@
                                 <div className="bg-slate-800/50 rounded-xl p-8 shadow-2xl border border-slate-700/50 h-full text-center">
                                     <h3 className="text-2xl font-bold text-white mb-6">Book a Free Consultation</h3>
                                     <p className="text-slate-400 mb-6">Ready to discuss your project? Click the button below to open our scheduling page and find a time that works for you. We'll call you to discuss your project in detail.</p>
-                                    <a 
+                                    <a
                                         href="https://calendly.com/t6ckmedia/30min"
                                         target="_blank"
                                         rel="noopener noreferrer"
@@ -478,7 +562,7 @@
                 </section>
             );
         };
-        
+
         // --- LAYOUT COMPONENTS (Header & Footer) ---
 
         const Header = () => {
@@ -498,7 +582,10 @@
                 <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-slate-900/80 backdrop-blur-lg shadow-lg' : 'bg-transparent'}`}>
                     <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                         <div className={`flex items-center justify-between transition-all duration-300 ${isScrolled ? 'h-16' : 'h-24'}`}>
-                            <a href="#home" className="flex items-center justify-start gap-2 flex-shrink-0 group"><Icons.Logo /></a>
+                            {/* FIXED: Added flex-shrink-0 to prevent logo from shrinking */}
+                            <a href="#home" className="flex items-center justify-start flex-shrink-0 group">
+                                <LogoText />
+                            </a>
                             <nav className="hidden md:flex items-center space-x-8">
                                 {navLinks.map(link => (<a key={link.href} href={link.href} className={`nav-link-underline text-base font-medium transition-colors duration-300 relative group ${pathname === link.href.substring(1) ? 'text-teal-300 active' : 'text-slate-300 hover:text-white'}`}>{link.label}</a>))}
                             </nav>
@@ -509,13 +596,13 @@
                 </header>
             );
         };
-        
+
         const Footer = () => (
             <footer className="bg-slate-950 text-slate-400 py-8 px-4 border-t border-slate-800/50">
                 <div className="container mx-auto flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-6">
                     <div>
                         <a href="#home" className="flex items-center justify-center md:justify-start gap-2 mb-2 group">
-                            <Icons.Logo />
+                             <LogoText />
                         </a>
                         <p className="text-sm">Crafting Digital Excellence, One Line at a Time.</p>
                     </div>
@@ -529,9 +616,9 @@
         // --- MAIN APP COMPONENT ---
         const App = () => {
             const pathname = usePathname();
-            const baseRoute = pathname.split('/')[0];
+            
             const renderPage = () => {
-                switch (baseRoute) {
+                switch (pathname) {
                     case 'home': return <HomePageContent />;
                     case 'web-design': return <WebDesignPageContent />;
                     case 'about': return <AboutPage />;

@@ -27,34 +27,6 @@
       gtag('config', 'G-XBVM9RFY0Y');
     </script>
 
-    <!-- SEO: JSON-LD Schema for Local Business -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "Script Pilot",
-      "image": "",
-      "url": "YOUR_WEBSITE_URL_HERE",
-      "priceRange": "$$",
-      "areaServed": {
-        "@type": "AdministrativeArea",
-        "name": "Southwest Missouri"
-      },
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday"
-        ],
-        "opens": "09:00",
-        "closes": "17:00"
-      }
-    }
-    </script>
-
     <style>
         /* Base styles */
         body {
@@ -220,6 +192,10 @@
             Shopify: () => <img src="https://cdn.simpleicons.org/shopify/7AB55C" alt="Shopify Logo" className="w-12 h-12" />,
             WordPress: () => <img src="https://cdn.simpleicons.org/wordpress/21759B" alt="WordPress Logo" className="w-12 h-12" />,
             Figma: () => <img src="https://cdn.simpleicons.org/figma/F24E1E" alt="Figma Logo" className="w-12 h-12" />,
+            ReportIcon: () => <svg className="h-10 w-10 text-teal-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M9 17v-4m3 4v-4m3 4v-4m-9 8h.01M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>,
+            MaintenanceIcon: () => <svg className="h-10 w-10 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" /></svg>,
+            ChatIcon: () => <svg className="h-10 w-10 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" /></svg>,
+            ConsultationIcon: () => <svg className="h-10 w-10 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M9.663 17h4.673M12 21h.01M12 3v10.663M15.456 4.348l-1.047 1.047M5.022 15.022l1.047-1.047M19.978 15.022l-1.047-1.047m-4.43-1.206L9.663 5.348M12 3L7.544 5.348m5.012 16.294l-1.047-1.047M5.022 8.978l1.047 1.047m-1.206 4.43l-1.047 1.047m-4.43-1.206l-1.047 1.047M19.978 8.978l-1.047 1.047m-1.206-4.43l1.047-1.047" /></svg>
         };
 
         // --- PAGE COMPONENTS ---
@@ -227,7 +203,7 @@
         const HomePageContent = () => (
              <div className="animate-fade-in">
                 <section className="relative min-h-screen flex flex-col items-center justify-center text-center bg-slate-900 overflow-hidden px-4 pt-24 pb-16">
-                    <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCI+PHJlY3Qgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBmaWxsPSJ0cmFuc3BhcmVudCI+PC9yZWN0PjxjaXJjbGUgY3g9IjIwIiBjeT0iMjAiIHI9IjEiIGZpbGw9InJnYmEoMTUsIDIzLCA0MiwgMC4zKSI+PC9jaXJjbGU+PC9zdmc+')] opacity-50"></div>
+                    <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCI+PHJlY3Qgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBmaWxsPSJ0cmFuc3BhcmVudCI+PC9yZWN0PjxjaXJjbGUgY3g9IjIwIiBjeT0iMjAiIHI9IjEiIGZpbGw9InJnYmEoMTUsIDIzLCA0MiwgMC4zRf')] opacity-50"></div>
                     <div className="absolute inset-0 bg-gradient-to-b from-slate-900 via-slate-900/80 to-slate-900"></div>
                     <div className="absolute top-[-10%] left-[-10%] w-72 h-72 bg-teal-500/50 rounded-full mix-blend-screen filter blur-2xl opacity-20 animate-[blob_8s_infinite]"></div>
                     <div className="absolute top-0 right-[-10%] w-72 h-72 bg-purple-500/50 rounded-full mix-blend-screen filter blur-2xl opacity-20 animate-[blob_8s_infinite] [animation-delay:2s]"></div>
@@ -244,7 +220,7 @@
                                 We create websites that truly connect with your audience and help you achieve your digital goals.
                             </p>
                         </AnimatedSection>
-                         <AnimatedSection delay={400}>
+                           <AnimatedSection delay={400}>
                             <a
                                 href="#web-design"
                                 className="inline-block bg-gradient-to-r from-blue-500 to-teal-500 hover:from-blue-600 hover:to-teal-600 text-white font-bold py-4 px-8 rounded-full shadow-lg hover:shadow-blue-500/20 transform hover:scale-105 transition-all duration-300 ease-in-out text-lg group relative overflow-hidden"
@@ -397,6 +373,148 @@
             );
         };
 
+        // NEW: Pricing Page Content
+        const PricingPageContent = () => (
+            <div className="animate-fade-in pt-32">
+                <div className="container mx-auto max-w-4xl p-4 sm:p-8 md:p-12">
+                    {/* Introduction */}
+                    <AnimatedSection>
+                        <section className="my-10">
+                            <h2 className="text-2xl font-bold text-white mb-4">Driving Digital Growth for Local Businesses</h2>
+                            <p className="text-slate-400 leading-relaxed">
+                                At Script Pilot, we specialize in building powerful online platforms, especially e-commerce sites, to help local businesses succeed. This document shows our clear pricing for 2025, designed to give you great value and help you grow.
+                            </p>
+                        </section>
+                    </AnimatedSection>
+
+                    {/* Pricing Philosophy */}
+                    <AnimatedSection delay={100}>
+                        <section className="my-10 p-6 bg-slate-800/50 border border-slate-700/50 rounded-xl">
+                            <h3 className="text-xl font-semibold text-teal-300 mb-4">Our Pricing Philosophy: Real Value & Partnership</h3>
+                            <p className="text-slate-400 leading-relaxed mb-4">
+                                Every dollar you invest with us is meant to bring you excellent results. We carefully consider:
+                            </p>
+                            <ul className="space-y-2 text-slate-400 list-inside list-disc">
+                                <li><span className="font-semibold text-slate-300">Fair Pricing:</span> Our rates are competitive for the Missouri market, giving you top quality at a good price.</li>
+                                <li><span className="font-semibold text-slate-300">Clear Benefits:</span> We focus on results you can measure, like more sales, smoother operations, and a better brand image.</li>
+                                <li><span className="font-semibold text-slate-300">Custom Fit:</span> Our prices are flexible and adjust to your project's unique size and needs.</li>
+                                <li><span className="font-semibold text-slate-300">Skilled Team:</span> Our costs cover our team's high-level skills and our commitment to excellent quality.</li>
+                            </ul>
+                        </section>
+                    </AnimatedSection>
+
+                    {/* I. Web Design Services (Main Content) - REORDERED AND RENAMED */}
+                    <AnimatedSection delay={200}>
+                        <section className="my-12">
+                            <h2 className="text-3xl font-bold text-white mb-2 border-b-2 border-teal-400/50 pb-2">I. Web Design & E-commerce Services</h2>
+                            <p className="text-slate-400 mt-4 leading-relaxed">Your website is your online storefront. We build engaging online experiences that capture attention and drive real business results.</p>
+                            
+                            {/* Package 1: Starter Website Package (Formerly Foundational) */}
+                            <div className="mt-8 p-6 bg-slate-800/30 rounded-xl border-2 border-sky-400/30">
+                                <h3 className="text-2xl font-bold text-sky-300">1. Starter Website Package</h3>
+                                <p className="text-slate-400 mt-1 mb-2">Perfect for new businesses or anyone needing a professional, informative website to get started online.</p>
+                                <p className="text-green-400 font-semibold mb-4">Get everything you need to launch your business online, including professional design and hassle-free setup!</p>
+                                <div className="space-y-3">
+                                    <div className="flex flex-col sm:flex-row justify-between py-2 border-t border-slate-700/50"><span className="font-semibold text-slate-200 w-full sm:w-1/3">Custom Look & Feel</span> <span className="text-slate-400 w-full sm:w-2/3">Up to 5 unique, modern, and mobile-friendly page designs.</span></div>
+                                    <div className="flex flex-col sm:flex-row justify-between py-2 border-t border-slate-700/50"><span className="font-semibold text-slate-200 w-full sm:w-1/3">Mobile-Friendly</span> <span className="text-slate-400 w-full sm:w-2/3">Looks great and works perfectly on phones, tablets, and computers.</span></div>
+                                    <div className="flex flex-col sm:flex-row justify-between py-2 border-t border-slate-700/50"><span className="font-semibold text-slate-200 w-full sm:w-1/3">Contact Form</span> <span className="text-slate-400 w-full sm:w-2/3">A professional contact form to help you get new leads.</span></div>
+                                    <div className="flex flex-col sm:flex-row justify-between py-2 border-t border-slate-700/50"><span className="font-semibold text-slate-200 w-full sm:w-1/3">Basic Search Visibility</span> <span className="text-slate-400 w-full sm:w-2/3">Essential setup to help your website appear in search results like Google.</span></div>
+                                </div>
+                                <div className="mt-6 flex flex-wrap justify-between items-center bg-slate-700/50 rounded-lg p-4">
+                                    <div className="text-lg"><span className="font-bold text-white">Sale Price:</span> <span className="text-sky-300 font-semibold">$850 + $300 Deployment (Total $1,150)</span></div>
+                                    <div className="text-lg"><span className="font-bold text-white">Completion Time:</span> <span className="text-slate-300 font-semibold">2-3 Weeks</span></div>
+                                </div>
+                            </div>
+
+                            {/* Package 2: E-commerce Accelerator Package (Formerly E-commerce Growth) */}
+                            <div className="mt-8 p-6 bg-slate-800/30 rounded-xl border-2 border-teal-400/30">
+                                <h3 className="text-2xl font-bold text-teal-300">2. E-commerce Accelerator Package</h3>
+                                <p className="text-slate-400 mt-1 mb-4">Our premier offering, perfect for businesses ready to sell online and drive significant growth.</p>
+                                <div className="space-y-3">
+                                    <div className="py-2"><span className="font-semibold text-slate-200 w-full">Includes all features from our Starter Website Package, PLUS:</span></div>
+                                    <div className="flex flex-col sm:flex-row justify-between py-2 border-t border-slate-700/50"><span className="font-semibold text-slate-200 w-full sm:w-1/3">Extensive Custom Design</span> <span className="text-slate-400 w-full sm:w-2/3">Up to 15 unique and engaging page designs tailored to your brand.</span></div>
+                                    <div className="flex flex-col sm:flex-row justify-between py-2 border-t border-slate-700/50"><span className="font-semibold text-slate-200 w-full sm:w-1/3">Online Store Setup</span> <span className="text-slate-400 w-full sm:w-2/3">Ready to sell up to 25 products with secure payments and easy inventory tracking.</span></div>
+                                    <div className="flex flex-col sm:flex-row justify-between py-2 border-t border-slate-700/50"><span className="font-semibold text-slate-200 w-full sm:w-1/3">Easy Content Updates (CMS)</span> <span className="text-slate-400 w-full sm:w-2/3">Simple system (like WordPress/WooCommerce or Shopify) to update your site yourself.</span></div>
+                                     <div className="flex flex-col sm:flex-row justify-between py-2 border-t border-slate-700/50"><span className="font-semibold text-slate-200 w-full sm:w-1/3">Integrated Blog</span> <span className="text-slate-400 w-full sm:w-2/3">A ready-to-use blog section for sharing your stories and attracting customers.</span></div>
+                                </div>
+                                <div className="mt-6 flex flex-wrap justify-between items-center bg-slate-700/50 rounded-lg p-4">
+                                    <div className="text-lg"><span className="font-bold text-white">Price Range:</span> <span className="text-teal-300 font-semibold">$2,500 - $6,000</span></div>
+                                    <div className="text-lg"><span className="font-bold text-white">Completion Time:</span> <span className="text-slate-300 font-semibold">4-8 Weeks</span></div>
+                                </div>
+                            </div>
+
+                            {/* Package 3: Website Refresh & Modernization (Formerly Revamp) */}
+                            <div className="mt-8 p-6 bg-slate-800/30 rounded-xl border-2 border-slate-700">
+                                <h3 className="text-2xl font-bold text-purple-300">3. Website Refresh & Modernization</h3>
+                                <p className="text-slate-400 mt-1 mb-4">Ideal for businesses with an existing website that needs a fresh, modern look and improved ease of use.</p>
+                                <div className="space-y-3">
+                                    <div className="flex flex-col sm:flex-row justify-between py-2 border-t border-slate-700/50"><span className="font-semibold text-slate-200 w-full sm:w-1/3">Existing Site Check-up</span> <span className="text-slate-400 w-full sm:w-2/3">A thorough review of your current website's design, usability, mobile-friendliness, and performance.</span></div>
+                                    <div className="flex flex-col sm:flex-row justify-between py-2 border-t border-slate-700/50"><span className="font-semibold text-slate-200 w-full sm:w-1/3">Modern Design Upgrade</span> <span className="text-slate-400 w-full sm:w-2/3">A fresh, contemporary visual redesign and a smoother experience for your visitors on key pages.</span></div>
+                                    <div className="flex flex-col sm:flex-row justify-between py-2 border-t border-slate-700/50"><span className="font-semibold text-slate-200 w-full sm:w-1/3">Speed Boost</span> <span className="text-slate-400 w-full sm:w-2/3">Updates to make your website load faster and perform better overall.</span></div>
+                                </div>
+                                <div className="mt-6 flex flex-wrap justify-between items-center bg-slate-700/50 rounded-lg p-4">
+                                    <div className="text-lg"><span className="font-bold text-white">Price Range:</span> <span className="text-purple-300 font-semibold">$950 - $1,300</span></div>
+                                    <div className="text-lg"><span className="font-bold text-white">Completion Time:</span> <span className="text-slate-300 font-semibold">3-6 Weeks</span></div>
+                                </div>
+                            </div>
+
+                            {/* Package 4: Enterprise Custom Solutions (Formerly Custom Pro) */}
+                            <div className="mt-8 p-6 bg-slate-800/30 rounded-xl border-2 border-rose-400/30">
+                                <h3 className="text-2xl font-bold text-rose-300">4. Enterprise Custom Solutions</h3>
+                                <p className="text-slate-400 mt-1 mb-4">For businesses with unique needs that require highly customized web tools or advanced connections.</p>
+                                <div className="space-y-3">
+                                    <div className="py-2"><span className="font-semibold text-slate-200 w-full">Includes all features from our E-commerce Accelerator Package, PLUS:</span></div>
+                                    <div className="flex flex-col sm:flex-row justify-between py-2 border-t border-slate-700/50"><span className="font-semibold text-slate-200 w-full sm:w-1/3">Advanced System Connections</span> <span className="text-slate-400 w-full sm:w-2/3">Connecting your website with your customer management (CRM), business planning (ERP), other software, or older systems.</span></div>
+                                    <div className="flex flex-col sm:flex-row justify-between py-2 border-t border-slate-700/50"><span className="font-semibold text-slate-200 w-full sm:w-1/3">Custom Web Applications</span> <span className="text-slate-400 w-full sm:w-2/3">Building unique features or special tools for your internal or external use.</span></div>
+                                    <div className="flex flex-col sm:flex-row justify-between py-2 border-t border-slate-700/50"><span className="font-semibold text-slate-200 w-full sm:w-1/3">Top-Tier Security</span> <span className="text-slate-400 w-full sm:w-2/3">Implementing advanced security measures and ensuring compliance with industry standards (like HIPAA, GDPR).</span></div>
+                                </div>
+                                <div className="mt-6 flex flex-wrap justify-between items-center bg-slate-700/50 rounded-lg p-4">
+                                    <div className="text-lg"><span className="font-bold text-white">Pricing:</span> <span className="text-rose-300 font-semibold">Custom Quote (Starting from $8,000+)</span></div>
+                                    <div className="text-lg"><span className="font-bold text-white">Completion Time:</span> <span className="text-slate-300 font-semibold">10+ Weeks</span></div>
+                                </div>
+                            </div>
+                        </section>
+                    </AnimatedSection>
+
+                    {/* Deployment & Support (Moved Up & Modified) */}
+                    <AnimatedSection delay={300}>
+                        <section className="my-12">
+                             <h2 className="text-3xl font-bold text-white mb-2 border-b-2 border-green-400/50 pb-2">II. Getting You Online & Ongoing Support</h2>
+                             <p className="text-slate-400 mt-4 leading-relaxed">Getting your digital solution live is just the start. We make sure your website launches smoothly and stays performing well with our continuous support.</p>
+
+                            <div className="mt-8 p-6 bg-slate-800/30 rounded-xl border border-slate-700">
+                                <h3 className="text-xl font-bold text-green-300">Standard Website Launch Assistance</h3>
+                                <div className="mt-2 flex flex-col sm:flex-row justify-between items-start">
+                                    <p className="text-slate-400 sm:w-full">We provide professional assistance for setting up your website, configuring hosting (client-provided), managing your web address (DNS), and conducting final tests to ensure a smooth and successful public launch. The $300 fee is included with the Starter Website Package, and for other packages, this is part of your custom quote.</p>
+                                </div>
+                            </div>
+
+                            <div className="mt-8 p-6 bg-slate-800/30 rounded-xl border border-slate-700">
+                                <h3 className="text-xl font-bold text-green-300">Ongoing Care & Growth Services</h3>
+                                 <p className="text-slate-400 mt-2 mb-4 leading-relaxed">Keep your website running smoothly, securely, and effectively long after it launches with our added services.</p>
+                                <ul className="space-y-3 text-slate-300 list-disc list-inside">
+                                    <li><span className="font-semibold text-slate-200">Website Maintenance Plans:</span> Monthly packages for essential updates, backups, security checks, and small content changes. <span className="font-bold text-white">(Starting from $75/month)</span></li>
+                                    <li><span className="font-semibold text-slate-200">Automatic Updates:</span> We set up systems to automatically and reliably deliver new features and improvements to your website. <span className="font-bold text-white">(Starting from $150/month)</span></li>
+                                    <li><span className="font-semibold text-slate-200">Advanced Online Visibility & Content:</span> Ongoing strategies and marketing efforts to help more people find your business online. <span className="font-bold text-white">(Price varies, quoted separately)</span></li>
+                                    <li><span className="font-semibold text-slate-200">Training for Your Team:</span> Personalized sessions to teach your staff how to manage and update your new digital tools. <span className="font-bold text-white">(Price varies, quoted separately)</span></li>
+                                </ul>
+                            </div>
+                        </section>
+                    </AnimatedSection>
+
+
+                    {/* Payment Terms & Next Steps */}
+                    <AnimatedSection delay={400}>
+                        <footer className="pt-8 mt-12 border-t border-slate-700">
+                            <h3 className="text-xl font-semibold text-white">Payment Terms</h3>
+                            <p className="text-slate-400 my-2">For web design projects, we typically ask for a 30-40% upfront payment to start work. The rest will be billed as we reach key project milestones and upon completion. Full details will be in your personalized project proposal.</p>
+                            <h3 className="text-xl font-semibold text-white mt-6">Next Steps</h3>
+                            <p className="text-slate-400 my-2">We're excited to build digital solutions that get real results for your business. To get a detailed proposal made just for your needs, please reach out for a free consultation.</p>
+                        </footer>
+                    </AnimatedSection>
+                </div>
+            </div>
+        );
 
         const AboutPage = () => (
             <section className="pt-32 pb-16 md:pt-40 md:pb-20 px-4 bg-slate-900 animate-fade-in text-white">
@@ -409,7 +527,7 @@
                     </AnimatedSection>
 
                     <section className="mb-20">
-                         <AnimatedSection delay={100}>
+                           <AnimatedSection delay={100}>
                             <h2 className="text-3xl font-bold text-center text-white mb-12">Our Core Values</h2>
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
                                 <div className="bg-slate-800/50 border border-slate-700/50 rounded-xl p-8 flex flex-col items-center"><Icons.Innovation/><h3 className="text-xl font-semibold text-blue-300 mt-4 mb-2">Innovation</h3><p className="text-sm text-slate-400">Pushing boundaries with modern technology and creative solutions.</p></div>
@@ -424,23 +542,121 @@
                             <h2 className="text-3xl font-bold text-center text-white mb-12">Meet the Pilots</h2>
                         </AnimatedSection>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-2xl mx-auto">
-                             {[
-                                { name: "David Tackett", role: "Lead Developer & Architect", delay: 100 },
-                                { name: "Tyler Wells", role: "Developer & Sales Manager", delay: 200 }
-                            ].map(pilot => (
-                                <AnimatedSection delay={pilot.delay} key={pilot.name}>
-                                    <div className="bg-slate-800/50 border border-slate-700/50 rounded-xl p-6 text-center group">
-                                        <img src={`https://placehold.co/100x100/0f172a/94a3b8?text=${pilot.name.charAt(0)}`} alt={`Portrait of ${pilot.name}`} className="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-slate-700 group-hover:border-teal-400 transition-colors" />
-                                        <h3 className="text-xl font-semibold text-white">{pilot.name}</h3>
-                                        <p className="text-teal-400">{pilot.role}</p>
-                                    </div>
-                                </AnimatedSection>
-                            ))}
+                               {[
+                                 { name: "David Tackett", role: "Lead Developer & Architect", delay: 100 },
+                                 { name: "Tyler Wells", role: "Developer & Sales Manager", delay: 200 }
+                               ].map(pilot => (
+                                    <AnimatedSection delay={pilot.delay} key={pilot.name}>
+                                        <div className="bg-slate-800/50 border border-slate-700/50 rounded-xl p-6 text-center group">
+                                            <img src={`https://placehold.co/100x100/0f172a/94a3b8?text=${pilot.name.charAt(0)}`} className="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-slate-700 group-hover:border-teal-400 transition-colors" />
+                                            <h3 className="text-xl font-semibold text-white">{pilot.name}</h3>
+                                            <p className="text-teal-400">{pilot.role}</p>
+                                        </div>
+                                    </AnimatedSection>
+                                ))}
                         </div>
                     </section>
-                </div>
+                 </div>
             </section>
         );
+
+        const PartnerHubPageContent = () => {
+            const [isSigningUp, setIsSigningUp] = useState(false);
+            const [message, setMessage] = useState('');
+
+            const handleSignup = () => {
+                setIsSigningUp(true);
+                setMessage('Processing your request...');
+                // Simulate an API call
+                setTimeout(() => {
+                    setMessage('Welcome to the Partner Hub! You now have access to exclusive features.');
+                    setIsSigningUp(false);
+                    // In a real app, you'd redirect or update user state
+                }, 2000);
+            };
+
+            return (
+                <section className="pt-32 pb-16 md:pt-40 md:pb-20 px-4 bg-slate-900 animate-fade-in text-white">
+                    <div className="container mx-auto max-w-4xl">
+                        <AnimatedSection>
+                            <div className="text-center mb-12">
+                                <h1 className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-teal-400 to-sky-400 animated-gradient-text">
+                                    Partner Hub: Your Growth Command Center
+                                </h1>
+                                <p className="text-lg text-slate-300 mt-4 max-w-3xl mx-auto">
+                                    Empowering our partners with exclusive insights and direct support to maximize their online success.
+                                </p>
+                            </div>
+                        </AnimatedSection>
+
+                        <div className="bg-slate-800/50 rounded-xl shadow-2xl border border-slate-700/50 p-8 md:p-12">
+                            <AnimatedSection delay={100}>
+                                <h2 className="text-3xl font-bold text-white mb-8 text-center">What You Get:</h2>
+                            </AnimatedSection>
+                            
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                                <AnimatedSection delay={200}>
+                                    <div className="flex flex-col items-center text-center p-6 bg-slate-700/30 rounded-lg border border-slate-600/50 h-full">
+                                        <Icons.ReportIcon />
+                                        <h3 className="text-xl font-semibold text-teal-300 mt-4 mb-2">Weekly Performance Reports</h3>
+                                        <p className="text-slate-400">
+                                            Receive detailed analytics on your website's traffic, user engagement, and conversion rates, delivered directly to your inbox every week. Stay informed, make data-driven decisions.
+                                        </p>
+                                    </div>
+                                </AnimatedSection>
+                                <AnimatedSection delay={300}>
+                                    <div className="flex flex-col items-center text-center p-6 bg-slate-700/30 rounded-lg border border-slate-600/50 h-full">
+                                        <Icons.MaintenanceIcon />
+                                        <h3 className="text-xl font-semibold text-blue-300 mt-4 mb-2">Priority Maintenance & Bug Fixes</h3>
+                                        <p className="text-slate-400">
+                                            Submit maintenance requests and bug reports directly through your Partner Hub for prioritized and faster resolution. Keep your site running flawlessly with ease.
+                                        </p>
+                                    </div>
+                                </AnimatedSection>
+                                <AnimatedSection delay={400}>
+                                    <div className="flex flex-col items-center text-center p-6 bg-slate-700/30 rounded-lg border border-slate-600/50 h-full">
+                                        <Icons.ChatIcon />
+                                        <h3 className="text-xl font-semibold text-purple-300 mt-4 mb-2">Direct Communication Channel</h3>
+                                        <p className="text-slate-400">
+                                            A dedicated portal within the hub to communicate directly with our team for quick questions, project updates, and strategic discussions.
+                                        </p>
+                                    </div>
+                                </AnimatedSection>
+                                <AnimatedSection delay={500}>
+                                    <div className="flex flex-col items-center text-center p-6 bg-slate-700/30 rounded-lg border border-slate-600/50 h-full">
+                                        <Icons.ConsultationIcon />
+                                        <h3 className="text-xl font-semibold text-yellow-300 mt-4 mb-2">Expert Consultations</h3>
+                                        <p className="text-slate-400">
+                                            Access exclusive 30-minute consultation slots each month with our expert team to discuss strategy, new features, or performance improvements.
+                                        </p>
+                                    </div>
+                                </AnimatedSection>
+                            </div>
+
+                            <AnimatedSection delay={600}>
+                                <div className="text-center bg-slate-700/50 rounded-lg p-6 mb-8">
+                                    <p className="text-2xl font-bold text-white">Only <span className="text-green-300">$15</span> per month!</p>
+                                    <p className="text-slate-400 text-sm mt-2">Unlock continuous growth insights and priority support for a low monthly fee.</p>
+                                </div>
+                            </AnimatedSection>
+
+                            <AnimatedSection delay={700}>
+                                <div className="text-center">
+                                    <button
+                                        onClick={handleSignup}
+                                        disabled={isSigningUp}
+                                        className="bg-gradient-to-r from-green-500 to-teal-500 hover:from-green-600 hover:to-teal-600 text-white font-bold py-4 px-12 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed text-lg"
+                                    >
+                                        {isSigningUp ? 'Signing Up...' : 'Join the Partner Hub'}
+                                    </button>
+                                    {message && <p className="mt-4 text-green-300">{message}</p>}
+                                </div>
+                            </AnimatedSection>
+                        </div>
+                    </div>
+                </section>
+            );
+        };
 
         const FAQPage = () => {
             const [openIndex, setOpenIndex] = useState(null);
@@ -448,23 +664,35 @@
             const faqs = [
                 {
                     question: "What is your process for starting a new project?",
-                    answer: "Our process begins with a discovery call to understand your vision, goals, and target audience. From there, we move to strategy and wireframing, followed by UI design. Once you approve the design, we begin development, keeping you updated with regular progress reports. We conclude with testing and deployment, ensuring a seamless launch."
-                },
-                {
-                    question: "How long does it take to build a website?",
-                    answer: "The timeline for a website can vary significantly based on its complexity. A simple marketing website might take 1-3 weeks, while a complex e-commerce platform or custom web application could take about a month. After our initial discovery call, we'll provide a detailed project timeline."
-                },
-                {
-                    question: "What kind of support do you offer after launch?",
-                    answer: "We include one month of complimentary support with every project to address any bugs or issues that may arise after launch. We also offer ongoing maintenance retainers for clients who want continued support for updates, security, and performance tuning."
-                },
-                {
-                    question: "Do we get to see the design before you start coding?",
-                    answer: "Absolutely! The design phase is a crucial part of our process. We provide high-fidelity mockups and prototypes for your review and approval. Development only begins once you are 100% satisfied with the visual direction."
+                    answer: "Our process begins with a friendly chat to understand your vision, what you want to achieve, and who your customers are. Then, we plan and sketch out the design. Once you're happy with how it looks, we start building your project, keeping you in the loop with regular updates. We finish with thorough testing and launch, making sure everything runs smoothly."
                 },
                 {
                     question: "How much does a custom website cost?",
-                    answer: "Since every project is unique, we provide custom quotes based on the specific requirements and scope of work. Please get in touch via our contact page for a free, no-obligation estimate for your project."
+                    answer: "Since every project is unique, we provide personalized quotes based on your specific needs and goals. This ensures you only pay for what you truly need. Please reach out via our contact page for a free, no-obligation estimate for your project. We're happy to discuss options that fit your budget."
+                },
+                {
+                    question: "What's the typical payment schedule for a project?",
+                    answer: "For most web design projects, we ask for an initial payment of 30-40% upfront to kick things off. The rest of the payments are spaced out as we complete key parts of the project, with the final payment due upon completion. All the details will be clearly laid out in your custom project proposal."
+                },
+                {
+                    question: "How long does it take to build a website?",
+                    answer: "The time it takes to build a website can vary a lot depending on how complex it is. A basic informational website might be ready in 2-3 weeks, while a full e-commerce store or a more complex custom application could take 4-8 weeks or even longer. After our first chat, we'll give you a clear timeline for your specific project."
+                },
+                {
+                    question: "What kind of support do you offer after my site is live?",
+                    answer: "We include one month of free support after your website launches to make sure everything is perfect and fix any unexpected issues. For ongoing peace of mind, we also offer monthly maintenance plans. These plans cover regular updates, backups, security monitoring, and small content changes to keep your site running smoothly and safely."
+                },
+                {
+                    question: "Do I get to see the design before you start coding?",
+                    answer: "Absolutely! The design phase is super important. We'll show you detailed mockups and interactive previews of your website's design. We only start turning the design into code once you're 100% thrilled with how it looks and feels."
+                },
+                {
+                    question: "Can you help me update my old website?",
+                    answer: "Yes, definitely! Our 'Website Refresh & User Experience Upgrade' package is designed just for this. We'll give your existing site a modern makeover, improve how easy it is for visitors to use, and boost its overall performance. It’s a great way to bring your current online presence up to speed without starting from scratch."
+                },
+                {
+                    question: "What is the Partner Hub?",
+                    answer: "The Partner Hub is an exclusive subscription service for our clients, available for just $15/month. It provides weekly performance reports of your website's growth and offers an easy way to submit maintenance requests for quick bug fixes and ongoing support."
                 }
             ];
 
@@ -492,29 +720,29 @@
             );
 
             return (
-                 <section className="pt-32 pb-16 md:pt-40 md:pb-20 px-4 bg-slate-900 animate-fade-in text-white">
-                     <div className="container mx-auto max-w-4xl">
-                        <AnimatedSection>
-                            <div className="text-center mb-12">
-                                <h1 className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-teal-300 via-sky-400 to-indigo-400 animated-gradient-text">Frequently Asked Questions</h1>
-                                <p className="text-lg text-slate-300 mt-4">Have questions? We've got answers.</p>
-                            </div>
-                        </AnimatedSection>
-                        <AnimatedSection delay={200}>
-                            <div className="bg-slate-800/50 rounded-xl shadow-2xl border border-slate-700/50">
-                                {faqs.map((faq, index) => (
-                                    <AccordionItem
-                                        key={index}
-                                        faq={faq}
-                                        index={index}
-                                        isOpen={openIndex === index}
-                                        onToggle={() => setOpenIndex(openIndex === index ? null : index)}
-                                    />
-                                ))}
-                            </div>
-                        </AnimatedSection>
-                    </div>
-                </section>
+                   <section className="pt-32 pb-16 md:pt-40 md:pb-20 px-4 bg-slate-900 animate-fade-in text-white">
+                       <div className="container mx-auto max-w-4xl">
+                            <AnimatedSection>
+                                <div className="text-center mb-12">
+                                    <h1 className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-teal-300 via-sky-400 to-indigo-400 animated-gradient-text">Frequently Asked Questions</h1>
+                                    <p className="text-lg text-slate-300 mt-4">Have questions? We've got answers.</p>
+                                </div>
+                            </AnimatedSection>
+                            <AnimatedSection delay={200}>
+                                <div className="bg-slate-800/50 rounded-xl shadow-2xl border border-slate-700/50">
+                                    {faqs.map((faq, index) => (
+                                        <AccordionItem
+                                            key={index}
+                                            faq={faq}
+                                            index={index}
+                                            isOpen={openIndex === index}
+                                            onToggle={() => setOpenIndex(openIndex === index ? null : index)}
+                                        />
+                                    ))}
+                                </div>
+                            </AnimatedSection>
+                       </div>
+                   </section>
             );
         };
 
@@ -538,44 +766,44 @@
 
             return (
                 <section className="pt-32 pb-16 md:pt-40 md:pb-20 px-4 bg-slate-900 animate-fade-in text-white">
-                     <div className="container mx-auto max-w-6xl">
-                        <AnimatedSection>
-                            <div className="text-center mb-12">
-                                <h1 className="text-4xl md:text-5xl font-bold text-green-400">Get in Touch</h1>
-                                <p className="text-lg text-slate-300 mt-4">Book a free consultation or send us a message.</p>
+                       <div className="container mx-auto max-w-6xl">
+                            <AnimatedSection>
+                                <div className="text-center mb-12">
+                                    <h1 className="text-4xl md:text-5xl font-bold text-green-400">Get in Touch</h1>
+                                    <p className="text-lg text-slate-300 mt-4">Book a free consultation or send us a message.</p>
+                                </div>
+                            </AnimatedSection>
+                            <div className="grid lg:grid-cols-2 gap-12 items-start">
+                                <AnimatedSection delay={200}>
+                                    <div className="bg-slate-800/50 rounded-xl p-8 shadow-2xl border border-slate-700/50 h-full">
+                                        <h3 className="text-2xl font-bold text-white mb-6 text-center">Send a Direct Message</h3>
+                                        <form onSubmit={handleSubmit}>
+                                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                                <div className="relative"><div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none"><Icons.UserIcon/></div><input type="text" name="name" placeholder="Name" className="w-full bg-slate-700/50 text-white rounded-lg border-2 border-slate-600 focus:border-green-500 focus:ring-0 transition pl-10 pr-4 py-2.5" required /></div>
+                                                <div className="relative"><div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none"><Icons.EmailIcon/></div><input type="email" name="email" placeholder="Email" className="w-full bg-slate-700/50 text-white rounded-lg border-2 border-slate-600 focus:border-green-500 focus:ring-0 transition pl-10 pr-4 py-2.5" required /></div>
+                                            </div>
+                                            <div className="mb-6"><textarea name="message" rows="5" placeholder="Your message..." className="w-full bg-slate-700/50 text-white rounded-lg border-2 border-slate-600 focus:border-green-500 focus:ring-0 transition px-4 py-2.5" required></textarea></div>
+                                            <div className="text-center"><button type="submit" disabled={isSubmitting} className="bg-gradient-to-r from-green-500 to-teal-500 hover:from-green-600 hover:to-teal-600 text-white font-bold py-3 px-10 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed">{isSubmitting ? 'Sending...' : 'Send Message'}</button></div>
+                                        </form>
+                                        {status && <p className="text-center mt-6 text-green-300">{status}</p>}
+                                    </div>
+                                </AnimatedSection>
+                                   <AnimatedSection delay={400}>
+                                    <div className="bg-slate-800/50 rounded-xl p-8 shadow-2xl border border-slate-700/50 h-full text-center">
+                                        <h3 className="text-2xl font-bold text-white mb-6">Book a Free Consultation</h3>
+                                        <p className="text-slate-400 mb-6">Ready to discuss your project? Click the button below to open our scheduling page and find a time that works for you. We'll call you to discuss your project in detail.</p>
+                                        <a
+                                            href="https://calendly.com/t6ckmedia/30min"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="inline-block bg-gradient-to-r from-teal-500 to-sky-500 hover:from-teal-600 hover:to-sky-600 text-white font-bold py-4 px-10 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300"
+                                        >
+                                            Book Your Call
+                                        </a>
+                                    </div>
+                                </AnimatedSection>
                             </div>
-                        </AnimatedSection>
-                        <div className="grid lg:grid-cols-2 gap-12 items-start">
-                            <AnimatedSection delay={200}>
-                                 <div className="bg-slate-800/50 rounded-xl p-8 shadow-2xl border border-slate-700/50 h-full">
-                                    <h3 className="text-2xl font-bold text-white mb-6 text-center">Send a Direct Message</h3>
-                                    <form onSubmit={handleSubmit}>
-                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                                            <div className="relative"><div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none"><Icons.UserIcon/></div><input type="text" name="name" placeholder="Name" className="w-full bg-slate-700/50 text-white rounded-lg border-2 border-slate-600 focus:border-green-500 focus:ring-0 transition pl-10 pr-4 py-2.5" required /></div>
-                                            <div className="relative"><div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none"><Icons.EmailIcon/></div><input type="email" name="email" placeholder="Email" className="w-full bg-slate-700/50 text-white rounded-lg border-2 border-slate-600 focus:border-green-500 focus:ring-0 transition pl-10 pr-4 py-2.5" required /></div>
-                                        </div>
-                                        <div className="mb-6"><textarea name="message" rows="5" placeholder="Your message..." className="w-full bg-slate-700/50 text-white rounded-lg border-2 border-slate-600 focus:border-green-500 focus:ring-0 transition px-4 py-2.5" required></textarea></div>
-                                        <div className="text-center"><button type="submit" disabled={isSubmitting} className="bg-gradient-to-r from-green-500 to-teal-500 hover:from-green-600 hover:to-teal-600 text-white font-bold py-3 px-10 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed">{isSubmitting ? 'Sending...' : 'Send Message'}</button></div>
-                                    </form>
-                                    {status && <p className="text-center mt-6 text-green-300">{status}</p>}
-                                </div>
-                            </AnimatedSection>
-                             <AnimatedSection delay={400}>
-                                <div className="bg-slate-800/50 rounded-xl p-8 shadow-2xl border border-slate-700/50 h-full text-center">
-                                    <h3 className="text-2xl font-bold text-white mb-6">Book a Free Consultation</h3>
-                                    <p className="text-slate-400 mb-6">Ready to discuss your project? Click the button below to open our scheduling page and find a time that works for you. We'll call you to discuss your project in detail.</p>
-                                    <a
-                                        href="https://calendly.com/t6ckmedia/30min"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="inline-block bg-gradient-to-r from-teal-500 to-sky-500 hover:from-teal-600 hover:to-sky-600 text-white font-bold py-4 px-10 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300"
-                                    >
-                                        Book Your Call
-                                    </a>
-                                </div>
-                            </AnimatedSection>
-                        </div>
-                    </div>
+                       </div>
                 </section>
             );
         };
@@ -593,7 +821,16 @@
                 return () => window.removeEventListener('scroll', handleScroll);
             }, []);
 
-            const navLinks = [ { href: "#home", label: "Home" }, { href: "#web-design", label: "Services" }, { href: "#about", label: "About" }, { href: "#faq", label: "FAQ" }, { href: "#contact", label: "Contact" } ];
+            // Updated navLinks to exclude "Partner Hub"
+            const navLinks = [
+                { href: "#home", label: "Home" },
+                { href: "#web-design", label: "Services" },
+                { href: "#pricing", label: "Pricing" },
+                // { href: "#partner-hub", label: "Partner Hub" }, // Partner Hub Link disabled
+                { href: "#about", label: "About" },
+                { href: "#faq", label: "FAQ" },
+                { href: "#contact", label: "Contact" }
+            ];
 
             return (
                 <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-slate-900/80 backdrop-blur-lg shadow-lg' : 'bg-transparent'}`}>
@@ -604,12 +841,41 @@
                                 <LogoText />
                             </a>
                             <nav className="hidden md:flex items-center space-x-8">
-                                {navLinks.map(link => (<a key={link.href} href={link.href} className={`nav-link-underline text-base font-medium transition-colors duration-300 relative group ${pathname === link.href.substring(1) ? 'text-teal-300 active' : 'text-slate-300 hover:text-white'}`}>{link.label}</a>))}
+                                {navLinks.map(link => (
+                                    <a
+                                        key={link.href}
+                                        href={link.href}
+                                        className={`nav-link-underline text-base font-medium transition-colors duration-300 relative group ${pathname === link.href.substring(1) ? 'text-teal-300 active' : 'text-slate-300 hover:text-white'}`}
+                                    >
+                                        {link.label}
+                                    </a>
+                                ))}
                             </nav>
-                            <div className="md:hidden"><button onClick={() => setIsOpen(!isOpen)} className="text-slate-300 hover:text-white focus:outline-none"><svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16m-7 6h7"} /></svg></button></div>
+                            <div className="md:hidden">
+                                <button onClick={() => setIsOpen(!isOpen)} className="text-slate-300 hover:text-white focus:outline-none">
+                                    <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16m-7 6h7"} />
+                                    </svg>
+                                </button>
+                            </div>
                         </div>
                     </div>
-                    {isOpen && (<div className="md:hidden bg-slate-900"><nav className="px-2 pt-2 pb-4 space-y-1 sm:px-3 text-center">{navLinks.map(link => (<a key={link.href} href={link.href} onClick={() => setIsOpen(false)} className={`block px-3 py-2 rounded-md text-base font-medium ${pathname === link.href.substring(1) ? 'bg-slate-800 text-teal-300' : 'text-slate-300 hover:bg-slate-700 hover:text-white'}`}>{link.label}</a>))}</nav></div>)}
+                    {isOpen && (
+                        <div className="md:hidden bg-slate-900">
+                            <nav className="px-2 pt-2 pb-4 space-y-1 sm:px-3 text-center">
+                                {navLinks.map(link => (
+                                    <a
+                                        key={link.href}
+                                        href={link.href}
+                                        onClick={() => setIsOpen(false)}
+                                        className={`block px-3 py-2 rounded-md text-base font-medium ${pathname === link.href.substring(1) ? 'bg-slate-800 text-teal-300' : 'text-slate-300 hover:bg-slate-700 hover:text-white'}`}
+                                    >
+                                        {link.label}
+                                    </a>
+                                ))}
+                            </nav>
+                        </div>
+                    )}
                 </header>
             );
         };
@@ -638,6 +904,8 @@
                 switch (pathname) {
                     case 'home': return <HomePageContent />;
                     case 'web-design': return <WebDesignPageContent />;
+                    case 'pricing': return <PricingPageContent />;
+                    // case 'partner-hub': return <PartnerHubPageContent />; // Partner Hub page disabled
                     case 'about': return <AboutPage />;
                     case 'faq': return <FAQPage />;
                     case 'contact': return <ContactPage />;

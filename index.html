@@ -205,9 +205,10 @@
                 <section className="relative min-h-screen flex flex-col items-center justify-center text-center bg-slate-900 overflow-hidden px-4 pt-24 pb-16">
                     <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCI+PHJlY3Qgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBmaWxsPSJ0cmFuc3BhcmVudCI+PC9yZWN0PjxjaXJjbGUgY3g9IjIwIiBjeT0iMjAiIHI9IjEiIGZpbGw9InJnYmEoMTUsIDIzLCA0MiwgMC4zRf')] opacity-50"></div>
                     <div className="absolute inset-0 bg-gradient-to-b from-slate-900 via-slate-900/80 to-slate-900"></div>
-                    <div className="absolute top-[-10%] left-[-10%] w-72 h-72 bg-teal-500/50 rounded-full mix-blend-screen filter blur-2xl opacity-20 animate-[blob_8s_infinite]"></div>
-                    <div className="absolute top-0 right-[-10%] w-72 h-72 bg-purple-500/50 rounded-full mix-blend-screen filter blur-2xl opacity-20 animate-[blob_8s_infinite] [animation-delay:2s]"></div>
-                    <div className="absolute bottom-[-10%] left-[20%] w-72 h-72 bg-pink-500/50 rounded-full mix-blend-screen filter blur-2xl opacity-20 animate-[blob_8s_infinite] [animation-delay:4s]"></div>
+                    {/* Responsive blob elements */}
+                    <div className="absolute top-[-5%] left-[-15%] w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 bg-teal-500/50 rounded-full mix-blend-screen filter blur-2xl opacity-20 animate-[blob_8s_infinite]"></div>
+                    <div className="absolute top-[5%] right-[-15%] w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 bg-purple-500/50 rounded-full mix-blend-screen filter blur-2xl opacity-20 animate-[blob_8s_infinite] [animation-delay:2s]"></div>
+                    <div className="absolute bottom-[-5%] left-[5%] w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 bg-pink-500/50 rounded-full mix-blend-screen filter blur-2xl opacity-20 animate-[blob_8s_infinite] [animation-delay:4s]"></div>
 
                     <div className="relative z-10 max-w-4xl w-full">
                         <AnimatedSection>
@@ -485,7 +486,7 @@
                             <div className="mt-8 p-6 bg-slate-800/30 rounded-xl border border-slate-700">
                                 <h3 className="text-xl font-bold text-green-300">Standard Website Launch Assistance</h3>
                                 <div className="mt-2 flex flex-col sm:flex-row justify-between items-start">
-                                    <p className="text-slate-400 sm:w-full">We provide professional assistance for setting up your website, configuring hosting (client-provided), managing your web address (DNS), and conducting final tests to ensure a smooth and successful public launch. The $300 fee is included with the Starter Website Package, and for other packages, this is part of your custom quote.</p>
+                                    <p className="text-slate-400 sm:w-full">We provide professional assistance for setting up your website, configuring hosting (client-provided), managing your web address (DNS), and conducting final tests to ensure a smooth and successful public launch. The $300 className is included with the Starter Website Package, and for other packages, this is part of your custom quote.</p>
                                 </div>
                             </div>
 
@@ -720,7 +721,7 @@
             );
 
             return (
-                   <section className="pt-32 pb-16 md:pt-40 md:pb-20 px-4 bg-slate-900 animate-fade-in text-white">
+                   <section className="pt-32 pb-16 md:pt-40 md:pb-20 px-4 bg-slate-900 className-fade-in text-white">
                        <div className="container mx-auto max-w-4xl">
                             <AnimatedSection>
                                 <div className="text-center mb-12">
@@ -765,7 +766,7 @@
             };
 
             return (
-                <section className="pt-32 pb-16 md:pt-40 md:pb-20 px-4 bg-slate-900 animate-fade-in text-white">
+                <section className="pt-32 pb-16 md:pt-40 md:pb-20 px-4 bg-slate-900 className-fade-in text-white">
                        <div className="container mx-auto max-w-6xl">
                             <AnimatedSection>
                                 <div className="text-center mb-12">

@@ -613,10 +613,10 @@
              const [openIndex, setOpenIndex] = useState(null);
              const faqs = [
                 { question: "What is your process for starting a new project?", answer: "Our process begins with a friendly chat to understand your vision, what you want to achieve, and who your customers are. Then, we plan and sketch out the design. Once you're happy with how it looks, we start building your project, keeping you in the loop with regular updates. We finish with thorough testing and launch, making sure everything runs smoothly." },
-                { question: "How much does a custom website cost?", answer: "Since every project unique, we provide personalized quotes based on your specific needs and goals. This ensures you only pay for what you truly need. Please reach out via our contact page for a free, no-obligation estimate for your project. We're happy to discuss options that fit your budget." },
-                { question: "What's the typical payment schedule for a project?", answer: "For most web design projects, we ask for an initial payment of 30-40% upfront to kick things off. The rest of the payments are spaced out as we complete key parts of the project, with the final payment due upon completion. All the details will be clearly laid out in your custom project proposal." },
-                { question: "How long does it take to build a website?", answer: "The time it takes to build a website can vary a lot depending on how complex it is. A basic informational website might be ready in 2-3 weeks, while a full e-commerce store or a more complex custom application could take 4-8 weeks or even longer. After our first chat, we'll give you a clear timeline for your specific project." },
-                { question: "What kind of support do you offer after my site is live?", answer: "We include one month of free support after your website launches to make sure everything is perfect and fix any unexpected issues. For ongoing peace of mind, we also offer monthly maintenance plans. These plans cover regular updates, backups, security monitoring, and small content changes to keep your site running smoothly and safely." },
+                { question: "How much does a custom website cost?", answer: "Since every project is unique, we provide personalized quotes based on your specific needs and goals. This ensures you only pay for what you require. Contact us for a free, no-obligation estimate." },
+                { question: "What's the typical payment schedule for a project?", answer: "We typically require an initial payment of 30-40% to begin work. The remainder is billed at key project milestones, with the final payment due upon completion. All terms are detailed in your project proposal." },
+                { question: "How long does it take to build a website?", answer: "Timelines vary by complexity. A basic site may take 2-3 weeks, while a large e-commerce store or custom application can take 4-8+ weeks. We provide a detailed timeline after our initial consultation." },
+                { question: "What kind of support do you offer after my site is live?", answer: "We provide one month of complimentary support post-launch to address any issues. For continued support, we offer monthly maintenance plans that cover updates, security, backups, and minor content changes." },
              ];
              const AccordionItem = ({ faq, index, isOpen, onToggle }) => (
                 <div className="border-b border-slate-700/50">
@@ -724,10 +724,10 @@
                             Client Portal
                         </h1>
                         <p className="text-lg text-slate-300 mb-12 leading-relaxed">
-                            Welcome to your client hub. Here you can manage your account and subscriptions or make a one-time payment.
+                            Welcome to your client hub. Here you can manage your account, pay an invoice, or subscribe to our protection plan.
                         </p>
                     </AnimatedSection>
-                    <div className="grid md:grid-cols-2 gap-8">
+                    <div className="grid md:grid-cols-2 gap-8 mb-12">
                         <AnimatedSection delay={200}>
                             <div className="bg-slate-800/50 rounded-xl shadow-2xl border border-slate-700/50 p-8 h-full flex flex-col">
                                 <h3 className="text-2xl font-semibold text-white mb-4">Manage Account</h3>
@@ -757,6 +757,22 @@
                             </div>
                         </AnimatedSection>
                     </div>
+                     <AnimatedSection delay={600}>
+                            <div className="bg-gradient-to-br from-teal-900/50 to-slate-800/50 rounded-xl shadow-2xl border border-teal-500/30 p-8 flex flex-col md:flex-row items-center gap-8">
+                                <div className="text-center md:text-left">
+                                    <h3 className="text-2xl font-bold text-white mb-3">Website Protection & Updates</h3>
+                                    <p className="text-slate-300 mb-6 leading-relaxed">Protect your investment and ensure your site stays competitive. Our monthly plan includes proactive cybersecurity monitoring to safeguard your online presence, plus content and SEO updates to increase sales and clicks.</p>
+                                </div>
+                                <a
+                                    href="https://buy.stripe.com/3cI3cwcnyauM6OX40D9EI04"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-block flex-shrink-0 bg-gradient-to-r from-teal-500 to-emerald-500 hover:from-teal-600 hover:to-emerald-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300"
+                                >
+                                    Subscribe Now
+                                </a>
+                            </div>
+                        </AnimatedSection>
                 </div>
              </div>
         );
